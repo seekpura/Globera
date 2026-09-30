@@ -1,0 +1,5 @@
+import { useState } from 'react'
+export type EvidenceState='support'|'contradict'|'conflict'|'unknown'
+export interface EvidenceCard{title:string;source:string;date?:string;summary:string;initial?:EvidenceState}
+const labels={support:'支持',contradict:'反证',conflict:'冲突',unknown:'待核验'}
+export function EvidenceWall({items}:{items:EvidenceCard[]}){const [states,setStates]=useState<Record<number,EvidenceState>>({});return <div className="evidence-wall">{items.map((x,i)=>{const s=states[i]??x.initial??'unknown';return <article key={x.title}><div><strong>{x.title}</strong><span>{x.source}{x.date?` · ${x.date}`:''}</span></div><p>{x.summary}</p><select value={s} onChange={e=>setStates(v=>({...v,[i]:e.target.value as EvidenceState}))}><option value="support">支持</option><option value="contradict">反证</option><option value="conflict">冲突</option><option value="unknown">待核验</option></select><small className={`evidence-state ${s}`}>{labels[s]}</small></article>})}</div>}
