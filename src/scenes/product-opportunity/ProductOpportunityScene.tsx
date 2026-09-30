@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useCourseStore } from '../../store/courseStore'
 
 type EvidenceState='supported'|'unknown'|'conflicted'|'contradicted'
 type GateState='unchecked'|'pass'|'verify'|'stop'
@@ -41,6 +42,9 @@ const competitors=[
 ]
 
 export function ProductOpportunityScene(){
+ const instructorMode=useCourseStore(s=>s.instructorMode)
+ const instructorStep=useCourseStore(s=>s.instructorStep)
+ const [level,setLevel]=useState<1|2|3|4>(1)
  const [active,setActive]=useState(0)
  const [caseId,setCaseId]=useState('blank')
  const [evidence,setEvidence]=useState<Record<string,EvidenceState>>(cases[0].evidence)
@@ -67,6 +71,7 @@ export function ProductOpportunityScene(){
  const positions=questions.map((_,i)=>{const a=Math.PI*2*i/questions.length-Math.PI/2;return{x:450+Math.cos(a)*170,y:230+Math.sin(a)*155}})
  const activeState=evidence[activeQ.id]??'unknown'
  const states=useMemo(()=>questions.map(q=>evidence[q.id]??'unknown'),[evidence])
+ useEffect(()=>{if(!instructorMode)return;const map:[1|2|3|4,1|2|3|4,1|2|3|4,1|2|3|4,1|2|3|4]=[1,1,2,3,4];setLevel(map[instructorStep]??4)},[instructorMode,instructorStep])
 
  function applyCase(id:string){
   const next=cases.find(x=>x.id===id)!
@@ -79,12 +84,14 @@ export function ProductOpportunityScene(){
    <div className={stopped?'status-chip danger':'status-chip'}>{decision}</div>
   </div>
 
+  <div className="semantic-level-bar opportunity-level-bar"><span>Semantic Zoom｜语义缩放</span><button className={level===1?'active':''} onClick={()=>setLevel(1)}>L1 Hypothesis｜假设</button><button className={level===2?'active':''} onClick={()=>setLevel(2)}>L2 Evidence｜证据</button><button className={level===3?'active':''} onClick={()=>setLevel(3)}>L3 Gate & Economics｜闸门与经济</button><button className={level===4?'active':''} onClick={()=>setLevel(4)}>L4 Test Contract｜测试契约</button></div>
+
   <div className="opportunity-casebar">
    <div><span>Teaching Case｜教学案例</span><strong>{activeCase.name}</strong><p>{activeCase.note}</p></div>
    <select value={caseId} onChange={e=>applyCase(e.target.value)}>{cases.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select>
   </div>
 
-  <div className="opportunity-stage">
+  <div className={'opportunity-stage opportunity-level-'+level}>
    <div className="opportunity-space">
     <svg viewBox="0 0 900 460" role="img" aria-label="商品机会六问关系空间">
      <defs><marker id="opp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>
@@ -105,13 +112,13 @@ export function ProductOpportunityScene(){
    </aside>
   </div>
 
-  <section className="competition-cohort">
+  <section className={'competition-cohort opportunity-layer evidence-layer '+(level>=2?'is-visible':'is-muted')}>
    <div className="section-mini-head"><div><span>Effective Competition Cohort｜有效竞争集合</span><strong>先定义“真正可比”，再讨论竞争强弱</strong></div><small>{cohort.length} / {competitors.length} included｜已纳入</small></div>
    <div className="cohort-grid">{competitors.map(x=><button key={x.id} className={cohort.includes(x.id)?'selected':''} onClick={()=>setCohort(v=>v.includes(x.id)?v.filter(id=>id!==x.id):[...v,x.id])}><strong>{x.name}</strong><small>{x.why}</small><span>{cohort.includes(x.id)?'Comparable｜纳入可比':'Not Comparable｜暂不纳入'}</span></button>)}</div>
    <p className="component-callout">搜索结果数量只是候选池。只有购买任务、用途、价格带、目标人群或商品结构足够可比的对象，才应进入有效竞争分析。</p>
   </section>
 
-  <div className="opportunity-lower-grid">
+  <div className={'opportunity-lower-grid opportunity-layer gate-layer '+(level>=3?'is-visible':'is-muted')}>
    <section className="hard-gate-panel">
     <div className="section-mini-head"><div><span>Hard Gates｜硬风险闸门</span><strong>任何 STOP 都独立阻断推进</strong></div><small>不使用需求、内容或利润优势抵消硬风险。</small></div>
     <div className="hard-gate-grid">{gateDefs.map(g=>{const state=gates[g.id]??'unchecked';return <article key={g.id} className={'hard-gate '+state}><strong>{g.label}</strong><p>{g.note}</p><select value={state} onChange={e=>setGates(v=>({...v,[g.id]:e.target.value as GateState}))}>{(Object.keys(gateLabels) as GateState[]).map(s=><option key={s} value={s}>{gateLabels[s]}</option>)}</select></article>})}</div>
@@ -132,7 +139,7 @@ export function ProductOpportunityScene(){
    </section>
   </div>
 
-  <section className="test-plan-lab">
+  <section className={'test-plan-lab opportunity-layer test-layer '+(level>=4?'is-visible':'is-muted')}>
    <div className="section-mini-head"><div><span>Small Test Contract｜小范围测试契约</span><strong>不是“先上架看看”，而是先定义预算、时间、指标和退出条件</strong></div><small>{decision==='SMALL TEST｜小范围测试'?'READY TO DEFINE｜可定义测试':'LOCKED BY EVIDENCE｜仍受证据限制'}</small></div>
    <div className="test-plan-grid"><label><span>Test Budget｜测试预算</span><input type="range" min="50" max="1000" step="10" value={testBudget} onChange={e=>setTestBudget(Number(e.target.value))}/><strong>{testBudget}</strong></label><label><span>Test Window｜测试周期</span><input type="range" min="3" max="30" value={testDays} onChange={e=>setTestDays(Number(e.target.value))}/><strong>{testDays} 天</strong></label><article><span>Primary Metric｜主指标</span><strong>商品级有效转化 + 贡献</strong><p>同时观察退款、内容证明和硬风险变化。</p></article><article><span>Exit Condition｜退出条件</span><strong>关键假设被反证 / Gate STOP</strong><p>停止条件应在投入前写清楚。</p></article></div>
   </section>
