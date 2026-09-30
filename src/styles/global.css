@@ -301,3 +301,35 @@ button:hover,button.active{border-color:#4b8c91;background:#e8f2f1}
 .test-plan-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}.test-plan-grid label,.test-plan-grid article{padding:12px;border:1px solid #ddd7cc;border-radius:13px;background:#f8f5ee}.test-plan-grid label{display:grid;gap:7px}.test-plan-grid label span,.test-plan-grid article span{font-size:9px;color:#68767c}.test-plan-grid article strong{display:block;margin:5px 0}.test-plan-grid article p{font-size:9px;color:#65737a}.opportunity-decision-strip{display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;gap:8px;margin-top:14px}.opportunity-decision-strip>div{padding:13px;border:1px solid #d8d2c7;border-radius:15px;background:#f8f5ee}.opportunity-decision-strip span,.opportunity-decision-strip strong{display:block}.opportunity-decision-strip span{font-size:9px;color:#68767c}.opportunity-decision-strip strong{margin:5px 0}.opportunity-decision-strip p{margin:0;font-size:9px;color:#65737a}.opportunity-decision-strip .decision-main{background:#e8f2f0}
 @media(max-width:1100px){.market-explorer-stage,.opportunity-stage,.opportunity-lower-grid{grid-template-columns:1fr}.market-evidence-strip,.opportunity-decision-strip{grid-template-columns:1fr 1fr}.cohort-grid{grid-template-columns:1fr 1fr 1fr}.test-plan-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.market-product-switch,.opportunity-casebar{min-width:0}.opportunity-casebar{grid-template-columns:1fr}.market-evidence-strip,.opportunity-decision-strip,.cohort-grid,.hard-gate-grid,.test-plan-grid{grid-template-columns:1fr}.research-sequence article{grid-template-columns:28px 1fr}.research-sequence article select{grid-column:2}.evidence-state-switch{grid-template-columns:1fr}.opp-econ-controls label{grid-template-columns:1fr}}
+
+
+/* Benchmark-specific Presenter Step choreography */
+.instructor-mode .presenter-step-0 .platform-benchmark .semantic-level-bar,
+.instructor-mode .presenter-step-0 .platform-benchmark .universe-canvas,
+.instructor-mode .presenter-step-0 .platform-benchmark .platform-observation-strip,
+.instructor-mode .presenter-step-0 .platform-benchmark .quick-actions,
+.instructor-mode .presenter-step-0 .platform-benchmark .insight-panel{opacity:.06;filter:blur(2px);pointer-events:none}
+.instructor-mode .presenter-step-1 .platform-benchmark .quick-actions,
+.instructor-mode .presenter-step-1 .platform-benchmark .insight-panel{opacity:.08;filter:blur(1px);pointer-events:none}
+.instructor-mode .presenter-step-2 .platform-benchmark .quick-actions{opacity:.16;pointer-events:none}
+.instructor-mode .presenter-step-3 .platform-benchmark>*,
+.instructor-mode .presenter-step-4 .platform-benchmark>*{opacity:1;filter:none;pointer-events:auto}
+
+.instructor-mode .presenter-step-0 .market-benchmark .market-explorer-stage,
+.instructor-mode .presenter-step-0 .market-benchmark .market-evidence-strip{opacity:.06;filter:blur(2px);pointer-events:none}
+.instructor-mode .presenter-step-1 .market-benchmark .market-research-queue,
+.instructor-mode .presenter-step-1 .market-benchmark .market-evidence-strip{opacity:.12;filter:blur(1px);pointer-events:none}
+.instructor-mode .presenter-step-2 .market-benchmark .market-evidence-strip{opacity:.16;pointer-events:none}
+.instructor-mode .presenter-step-3 .market-benchmark>*,
+.instructor-mode .presenter-step-4 .market-benchmark>*{opacity:1;filter:none;pointer-events:auto}
+
+.instructor-mode .presenter-step-0 .opportunity-benchmark .opportunity-case-switch,
+.instructor-mode .presenter-step-0 .opportunity-benchmark .opportunity-stage,
+.instructor-mode .presenter-step-0 .opportunity-benchmark .opportunity-lower-grid,
+.instructor-mode .presenter-step-0 .opportunity-benchmark .opportunity-decision-strip{opacity:.06;filter:blur(2px);pointer-events:none}
+.instructor-mode .presenter-step-1 .opportunity-benchmark .opportunity-lower-grid,
+.instructor-mode .presenter-step-1 .opportunity-benchmark .opportunity-decision-strip{opacity:.08;filter:blur(1px);pointer-events:none}
+.instructor-mode .presenter-step-2 .opportunity-benchmark .opportunity-decision-strip{opacity:.12;filter:blur(1px);pointer-events:none}
+.instructor-mode .presenter-step-3 .opportunity-benchmark>*,
+.instructor-mode .presenter-step-4 .opportunity-benchmark>*{opacity:1;filter:none;pointer-events:auto}
+.platform-benchmark>*,.market-benchmark>*,.opportunity-benchmark>*{transition:opacity .42s ease,filter .42s ease,transform .42s ease}
