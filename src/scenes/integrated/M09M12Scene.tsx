@@ -2,8 +2,6 @@ import type { LessonContent } from '../../types/content'
 import { FlowJourney } from '../../components/teaching/FlowJourney'
 import { GateJourney } from '../../components/teaching/GateJourney'
 import { ParameterLab } from '../../components/teaching/ParameterLab'
-import { ProfitBridge } from '../../components/teaching/ProfitBridge'
-import { MoneyFlow } from '../../components/teaching/MoneyFlow'
 import { AssetLineage } from '../../components/teaching/AssetLineage'
 import { ContentRemix } from '../../components/teaching/ContentRemix'
 import { EvidenceWall } from '../../components/teaching/EvidenceWall'
@@ -13,18 +11,15 @@ import { PriorityRoom } from '../../components/teaching/PriorityRoom'
 import { TimelineScrubber } from '../../components/teaching/TimelineScrubber'
 import { CompareSpace } from '../../components/teaching/CompareSpace'
 import { DynamicGraph } from '../../components/teaching/DynamicGraph'
-import { VideoAnalyzer } from '../../components/teaching/VideoAnalyzer'
 import { AttributionLab } from '../../components/teaching/AttributionLab'
 import { OrderCashLab } from '../../components/teaching/OrderCashLab'
 import { OperatingEconomicsLab } from '../../components/teaching/OperatingEconomicsLab'
-import { componentsForLesson } from '../../data/motherComponentMap'
 
 const evidence=[{title:'E1',source:'官方 / 监管 / 平台原始资料',summary:'动态功能、规则、归因和结算口径需按开课时间核验。',initial:'support' as const},{title:'E4',source:'真实业务数据',summary:'内容、达人、广告、订单、物流和财务结果用于验证经营判断。',initial:'unknown' as const}]
 const decisions=[{id:'test',title:'Small Test｜小额测试',evidence:'基础条件成立但仍需验证',risk:'控制预算和暴露'},{id:'scale',title:'Scale Ready｜可放大',evidence:'商品、创意、转化与经济模型已有证据',risk:'继续观察边际效果'},{id:'hold',title:'Hold｜暂缓',evidence:'关键条件未知或冲突',risk:'先补证据'}]
 
 export function M09M12Scene({lesson}:{lesson:LessonContent}){
- const mapped=componentsForLesson(lesson.code)
- const head=<div className="scene-heading"><div><div className="eyebrow">Integrated Teaching Lab｜综合教学实验 · {lesson.code}</div><h1>{lesson.title}</h1><p>{lesson.coreStatement}</p></div><div className="status-chip">{mapped.join(' · ')}</div></div>
+ const head=<div className="scene-heading"><div><div className="eyebrow">Interactive Teaching Lab｜交互教学实验 · {lesson.code}</div><h1>{lesson.title}</h1><p>{lesson.coreStatement}</p></div><div className="status-chip">Operating Lab｜经营实验</div></div>
  if(lesson.code==='T01-M09-L01')return <section className="workbench family-scene">{head}<VideoAnalyzer duration={26} beats={[{start:0,end:3,label:'Hook｜钩子',purpose:'赢得继续观看的机会'},{start:3,end:7,label:'Problem / Desire｜问题/欲望',purpose:'让用户理解为什么与自己有关'},{start:7,end:14,label:'Demo｜演示',purpose:'展示商品如何工作'},{start:14,end:21,label:'Proof｜证明',purpose:'降低结果与商品事实的不确定性'},{start:21,end:26,label:'CTA｜行动引导',purpose:'把意图导向下一步动作'}]}/><FlowJourney steps={[{title:'Ignore → Notice｜忽略→注意',note:'Hook先赢得继续观看的机会'},{title:'Understand｜理解',note:'问题/欲望与商品关系变清楚'},{title:'Believe｜相信',note:'Demo与Proof降低不确定性'},{title:'Want｜想要',note:'场景与结果建立购买动机'},{title:'Act｜行动',note:'CTA把意图导向商品/购买动作'}]}/></section>\n if(lesson.code==='T01-M09-L02')return <section className="workbench family-scene">{head}<CompareSpace dimensions={['核心证明','适用场景','主要风险']} items={[{name:'Direct Demo｜直接演示',values:{'核心证明':'动作/结果','适用场景':'效果可视化商品','主要风险':'演示与实物不一致'}},{name:'Before/After｜前后对比',values:{'核心证明':'变化','适用场景':'可验证改善','主要风险':'夸大效果'}},{name:'UGC｜用户表达',values:{'核心证明':'体验/信任','适用场景':'需要社会证明','主要风险':'授权与真实性'}}]}/><DecisionBoard options={decisions}/></section>
  if(lesson.code==='T01-M09-L03')return <section className="workbench family-scene">{head}<AssetLineage/><FlowJourney steps={[{title:'Real Assets｜真实资产',note:'锁定商品事实'},{title:'AI Scene / Video｜AI场景/视频',note:'重构表达，不改变商品事实'},{title:'TTS / Subtitle｜配音/字幕',note:'生成语言表达'},{title:'Localization｜本地化',note:'目标市场语义复核'},{title:'Human Review｜人工审核',note:'检查事实、语言、权利和平台规则',exception:'发现事实偏移：阻断发布并返回源资产修正'}]}/></section>
  if(lesson.code==='T01-M09-L04')return <section className="workbench family-scene">{head}<ContentRemix/><AssetLineage/><EvidenceWall items={evidence}/></section>
