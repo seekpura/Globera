@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useCourseStore } from '../../store/courseStore'
 
 type EvidenceState='supported'|'unknown'|'conflicted'|'contradicted'
 type GateState='unchecked'|'pass'|'verify'|'stop'
