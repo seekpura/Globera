@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
-import { useCourseStore } from '../../store/courseStore'
+import { useMemo, useState } from 'react'
 
 type EvidenceState='supported'|'unknown'|'conflicted'|'contradicted'
 type GateState='unchecked'|'pass'|'verify'|'stop'
@@ -145,23 +144,5 @@ export function ProductOpportunityScene(){
    <div className="decision-main"><span>Portfolio Role｜组合角色</span><strong>{portfolioRole}</strong><p>{decisionNote}</p></div>
   </div>
 
-  <section className="test-contract">
-   <div className="section-mini-head">
-    <div><span>Small Test Contract｜小范围测试契约</span><strong>不是“试试看”，而是先定义预算、周期、指标和退出条件</strong></div>
-    <small>{decision==='SMALL TEST｜小范围测试'?'Ready to define｜可以定义测试':'Locked by evidence｜先解决前置判断'}</small>
-   </div>
-   <div className="test-contract-grid">
-    <label><span>Budget｜测试预算</span><input type="range" min="20" max="500" value={testBudget} onChange={e=>setTestBudget(Number(e.target.value))}/><strong>{testBudget}</strong></label>
-    <label><span>Period｜测试周期</span><input type="range" min="3" max="30" value={testDays} onChange={e=>setTestDays(Number(e.target.value))}/><strong>{testDays} 天</strong></label>
-    <label><span>Target Orders｜目标订单</span><input type="range" min="5" max="80" value={targetOrders} onChange={e=>setTargetOrders(Number(e.target.value))}/><strong>{targetOrders}</strong></label>
-    <label><span>Stop Loss｜停止损失</span><input type="range" min="20" max="300" value={stopLoss} onChange={e=>setStopLoss(Number(e.target.value))}/><strong>{stopLoss}</strong></label>
-   </div>
-   <div className="test-contract-output">
-    <article><span>Hypothesis｜假设</span><strong>商品机会值得用有限预算验证</strong><p>只有前置证据和硬闸门允许时才进入测试。</p></article>
-    <article><span>Success Signal｜成功信号</span><strong>{testDays} 天内获得 {targetOrders} 个有效订单</strong><p>订单还需结合退款、内容、单位经济和售后一起看。</p></article>
-    <article><span>Exit Condition｜退出条件</span><strong>累计测试损失达到 {stopLoss}</strong><p>触发停止条件后回到商品/市场假设，而不是继续用预算掩盖问题。</p></article>
-   </div>
-   <p className="component-callout">E5｜教学模拟。正式测试的预算、周期、样本量和停止条件应由真实商品、市场、利润和风险共同确定。</p>
-  </section>
  </section>
 }
