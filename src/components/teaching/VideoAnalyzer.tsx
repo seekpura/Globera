@@ -1,0 +1,3 @@
+import { useState } from 'react'
+export interface VideoBeat{start:number;end:number;label:string;purpose:string}
+export function VideoAnalyzer({duration,beats}:{duration:number;beats:VideoBeat[]}){const [time,setTime]=useState(0);const beat=beats.find(x=>time>=x.start&&time<x.end)??beats[beats.length-1];return <div className="video-analyzer-component"><div className="video-placeholder"><span>{time.toFixed(1)}s / {duration}s</span><strong>{beat?.label}</strong><p>{beat?.purpose}</p></div><input type="range" min="0" max={duration} step=".1" value={time} onChange={e=>setTime(Number(e.target.value))}/><div>{beats.map(x=><button key={x.label} className={beat===x?'selected':''} onClick={()=>setTime(x.start)}>{x.label}<small>{x.start}–{x.end}s</small></button>)}</div></div>}
