@@ -65,7 +65,7 @@ if(!platformScene.includes('instructorStep'))errors.push('platform benchmark is 
 if(!marketScene.includes('Research Sequence｜研究顺序'))errors.push('market benchmark missing progressive research sequence')
 if(!marketScene.includes('instructorStep'))errors.push('market benchmark is not synchronized with Presenter Step')
 if(!productScene.includes('Hard Gates｜硬风险闸门'))errors.push('product benchmark missing independent hard gates')
-if(!productScene.includes('Case Lens｜案例视角'))errors.push('product benchmark missing scenario switching')
+if(!productScene.includes('cases.map')||!productScene.includes('applyCase'))errors.push('product benchmark missing scenario switching')
 if(!productScene.includes('instructorStep'))errors.push('product benchmark is not synchronized with Presenter Step')
 
 if(errors.length){
