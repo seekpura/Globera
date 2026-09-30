@@ -64,7 +64,7 @@ export function MarketExplorerScene(){
     <svg viewBox="0 0 900 440" role="img" aria-label="商品条件化全球市场研究空间">
      <path className="market-contour" d="M70 95 C160 35 255 60 310 120 C360 170 410 130 460 80 C520 20 650 45 720 105 C800 175 835 290 780 350 C720 415 635 382 565 335 C500 292 445 315 385 355 C315 400 205 390 130 320 C60 255 25 150 70 95Z"/>
      <path className="market-route" d="M190 165 C310 95 360 105 455 130 S520 195 575 235 S665 285 735 310"/>
-     {markets.map(x=><g key={x.id} transform={'translate('+x.x+','+x.y+')'} className={x.id===market?'market-pin selected':'market-pin'} onClick={()=>setMarket(x.id)} role="button" tabIndex={0} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setMarket(x.id)}}><circle r={x.id===market?24:17}/><circle r="5" className="market-pin-core"/><text textAnchor="middle" y="-34">{x.name}</text><text textAnchor="middle" y="43" className="market-pin-region">{x.region}</text></g>)}
+     {markets.map(x=><g key={x.id} transform={'translate('+x.x+','+x.y+')'} className={x.id===market?'market-pin selected':'market-pin'} onClick={()=>setMarket(x.id)} role="button" tabIndex={0} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setMarket(x.id)}}}><circle r={x.id===market?24:17}/><circle r="5" className="market-pin-core"/><text textAnchor="middle" y="-34">{x.name}</text><text textAnchor="middle" y="43" className="market-pin-region">{x.region}</text></g>)}
     </svg>
     <div className="market-focus-card"><span>Current Question｜当前问题</span><strong>{activeMarket.name}</strong><p>{activeMarket.question}</p></div>
    </div>
