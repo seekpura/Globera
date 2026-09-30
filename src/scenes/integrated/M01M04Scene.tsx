@@ -9,7 +9,6 @@ import { DecisionBoard } from '../../components/teaching/DecisionBoard'
 import { CompareSpace } from '../../components/teaching/CompareSpace'
 import { ProductStructure } from '../../components/teaching/ProductStructure'
 import { DynamicGraph } from '../../components/teaching/DynamicGraph'
-import { componentsForLesson } from '../../data/motherComponentMap'
 const ev=[{title:'E1',source:'官方 / 监管 / 平台原始资料',summary:'动态平台、准入、规则与治理信息按开课时间核验。',initial:'support' as const},{title:'E4',source:'真实经营证据',summary:'真实成本、物流、内容与订单用于验证经营判断。',initial:'unknown' as const}]
 export function M01M04Scene({lesson}:{lesson:LessonContent}){
  const head=<div className="scene-heading"><div><div className="eyebrow">Interactive Teaching World｜交互教学世界 · {lesson.code}</div><h1>{lesson.title}</h1><p>{lesson.coreStatement}</p></div><div className="status-chip">Interactive Scene｜交互场景</div></div>
