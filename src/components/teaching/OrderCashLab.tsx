@@ -17,7 +17,7 @@ export function OrderCashLab(){
   <div className="order-cash-stages">{stages.map((x,i)=><button key={x} className={i<stage?'done':i===stage?'active':''} onClick={()=>setStage(i)}><span>{String(i+1).padStart(2,'0')}</span><strong>{x}</strong></button>)}</div>
   <div className="order-cash-grid">
    <div className="order-cash-controls">
-    {[
+    {([
      ['Order Amount｜订单金额',order,setOrder,40,240],
      ['Refund / Discount｜退款/折扣',refund,setRefund,0,60],
      ['Platform / Payment｜平台/支付',platform,setPlatform,0,40],
