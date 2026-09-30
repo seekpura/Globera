@@ -43,7 +43,7 @@ const core: Record<string,string> = {
 
 export const lessons: LessonContent[] = lessonSpecs.map(([module,title,sceneType],index)=>{
  const moduleNo=Number(module.slice(1)); const lessonNo=(index%4)+1; const code=`T01-M${String(moduleNo).padStart(2,'0')}-L${String(lessonNo).padStart(2,'0')}`
- return {code,module,lesson:`l0${lessonNo}`,title,goal:`掌握“${title}”的核心判断逻辑，并形成可保存、可解释、可复盘的课堂产出。`,highlights:['核心结构与关键变量','证据、边界与常见误判','从知识理解进入经营判断'],tool:`T01-K${String(Math.ceil((index+1)/2)).padStart(2,'0')} 核心教学工具`,output:`${title}课堂产出`,practice:['观察案例并标出关键变量','基于证据完成一次判断或操作','说明结论成立的条件与待核验信息'],homework:['整理本节课堂产出并补齐依据与日期'],completion:'形成一份可打开、可查看、关键判断有依据的课堂成果；动态规则与数据注明来源和日期。',boundary:'本课建立0–1基础经营能力；复杂专业问题进入对应专项课程或陪跑。',coreStatement:core[sceneType] ?? `理解“${title}”不是记住术语，而是看懂结构、证据、变量与经营结果之间的关系。`,sceneType,buildStatus:{research:'approved',content:'approved',assets:'ready',frontend:'ready'}} as LessonContent
+ return {code,module,lesson:`l0${lessonNo}`,title,goal:`掌握“${title}”的核心判断逻辑，并形成可保存、可解释、可复盘的课堂产出。`,highlights:['核心结构与关键变量','证据、边界与常见误判','从知识理解进入经营判断'],tool:`T01-K${String(Math.ceil((index+1)/2)).padStart(2,'0')} 核心教学工具`,output:`${title}课堂产出`,practice:['观察案例并标出关键变量','基于证据完成一次判断或操作','说明结论成立的条件与待核验信息'],homework:['整理本节课堂产出并补齐依据与日期'],completion:'形成一份可打开、可查看、关键判断有依据的课堂成果；动态规则与数据注明来源和日期。',boundary:'本课建立0–1基础经营能力；复杂专业问题进入对应专项课程或陪跑。',coreStatement:core[sceneType] ?? `理解“${title}”不是记住术语，而是看懂结构、证据、变量与经营结果之间的关系。`,sceneType,buildStatus:{research:'review',content:'review',assets:'researching',frontend:'review'}} as LessonContent
 })
 
 export const course: CourseContentData = { modules, lessons }
