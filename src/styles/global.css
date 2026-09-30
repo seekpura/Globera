@@ -333,3 +333,14 @@ button:hover,button.active{border-color:#4b8c91;background:#e8f2f1}
 .instructor-mode .presenter-step-3 .opportunity-benchmark>*,
 .instructor-mode .presenter-step-4 .opportunity-benchmark>*{opacity:1;filter:none;pointer-events:auto}
 .platform-benchmark>*,.market-benchmark>*,.opportunity-benchmark>*{transition:opacity .42s ease,filter .42s ease,transform .42s ease}
+
+
+/* Product Opportunity benchmark depth layers */
+.opportunity-casebar{display:grid;grid-template-columns:1fr minmax(260px,360px);gap:12px;align-items:center;margin:10px 0 14px;padding:14px;border:1px solid #d8d2c7;border-radius:16px;background:#f8f5ee}
+.opportunity-casebar span,.opportunity-casebar strong{display:block}.opportunity-casebar span{font-size:9px;color:#126d7a}.opportunity-casebar strong{font-size:13px;margin:3px 0}.opportunity-casebar p{margin:0;font-size:10px;color:#66757a}.opportunity-casebar select{width:100%}
+.evidence-class-row{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}.evidence-class-row button{padding:6px 9px;font-size:9px}
+.competition-cohort,.test-plan-lab{margin-top:14px;padding:16px;border:1px solid #d8d2c7;border-radius:22px;background:#fffdf8}
+.cohort-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:10px}.cohort-grid button{min-height:120px;text-align:left;padding:12px}.cohort-grid button strong,.cohort-grid button small,.cohort-grid button span{display:block}.cohort-grid button strong{font-size:10px}.cohort-grid button small{margin:7px 0;color:#6d7b80;font-size:9px;line-height:1.4}.cohort-grid button span{font-size:8px;color:#7b898e}.cohort-grid button.selected{background:#e8f2f0;border-color:#77a3a1}
+.test-plan-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}.test-plan-grid label,.test-plan-grid article{padding:12px;border:1px solid #ddd7cc;border-radius:13px;background:#f8f5ee}.test-plan-grid label{display:grid;grid-template-columns:1fr;gap:7px}.test-plan-grid label span,.test-plan-grid article span{font-size:9px;color:#126d7a}.test-plan-grid label strong,.test-plan-grid article strong{display:block;font-size:12px}.test-plan-grid article p{font-size:9px;color:#68767c}
+@media(max-width:1000px){.cohort-grid{grid-template-columns:1fr 1fr 1fr}.test-plan-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.opportunity-casebar{grid-template-columns:1fr}.cohort-grid,.test-plan-grid{grid-template-columns:1fr}}
