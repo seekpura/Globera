@@ -24,14 +24,19 @@ jobs:
       - run: npm run validate
       - run: npm run typecheck
       - run: npm run build
+      - name: Upload validated dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: t01-dist
+          path: dist
       - uses: actions/configure-pages@v5
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && vars.ENABLE_GITHUB_PAGES == 'true'
       - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && vars.ENABLE_GITHUB_PAGES == 'true'
         with:
           path: dist
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && vars.ENABLE_GITHUB_PAGES == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
