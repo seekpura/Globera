@@ -4,6 +4,7 @@ import { getLesson, getModule } from '../lib/course'
 import { JourneyRail } from './JourneyRail'
 import { LessonNavigator } from './LessonNavigator'
 import { TeachingControls } from './TeachingControls'
+import { PresenterController } from './PresenterController'
 import { useCourseStore } from '../store/courseStore'
 
 export function CourseShell({ children }: { children: ReactNode }) {
@@ -34,6 +35,7 @@ export function CourseShell({ children }: { children: ReactNode }) {
       <JourneyRail />
       {lesson && <LessonNavigator />}
       <main className="teaching-stage">{children}</main>
+      <PresenterController />
       <TeachingControls lesson={lesson} />
       <footer className="teaching-footer">
         <span>{lesson ? `核心结论：${lesson.coreStatement}` : 'T01｜从跨境认知到首轮经营复盘的完整教学闭环'}</span>
