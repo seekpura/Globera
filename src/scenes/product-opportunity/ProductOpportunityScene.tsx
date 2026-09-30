@@ -34,17 +34,29 @@ const gateLabels:Record<GateState,string>={
  stop:'STOP｜停止'
 }
 
+const cases=[
+ {id:'visual',name:'Visual Demo｜视觉演示型',note:'价值可被短视频直接展示，但仍要验证真实需求、退款与完整成本。',price:100,productCost:32,logistics:18,growth:15,refund:8,evidence:{demand:'supported',competition:'unknown',advantage:'supported',content:'supported',economics:'unknown',risk:'unknown'} as Record<string,EvidenceState>},
+ {id:'printer',name:'Label Printer｜标签打印机',note:'内容展示强，但无线/电气/耗材与运输等要求可能让硬风险先于商业吸引力。',price:88,productCost:31,logistics:14,growth:18,refund:7,evidence:{demand:'supported',competition:'conflicted',advantage:'supported',content:'supported',economics:'unknown',risk:'conflicted'} as Record<string,EvidenceState>},
+ {id:'scale',name:'Kitchen Scale｜厨房电子秤',note:'需求容易被“销量很多”误导；需要重新确认有效竞争、价格带、差异和单位经济。',price:35,productCost:11,logistics:10,growth:8,refund:4,evidence:{demand:'supported',competition:'conflicted',advantage:'unknown',content:'unknown',economics:'unknown',risk:'unknown'} as Record<string,EvidenceState>}
+]
+
 export function ProductOpportunityScene(){
+ const [caseId,setCaseId]=useState('visual')
+ const initialCase=cases[0]
  const [active,setActive]=useState(0)
- const [evidence,setEvidence]=useState<Record<string,EvidenceState>>({
-  demand:'supported',competition:'unknown',advantage:'supported',content:'supported',economics:'unknown',risk:'unknown'
- })
+ const [evidence,setEvidence]=useState<Record<string,EvidenceState>>(initialCase.evidence)
  const [gates,setGates]=useState<Record<string,GateState>>({})
- const [price,setPrice]=useState(100)
- const [productCost,setProductCost]=useState(32)
- const [logistics,setLogistics]=useState(18)
- const [growth,setGrowth]=useState(15)
- const [refund,setRefund]=useState(8)
+ const [price,setPrice]=useState(initialCase.price)
+ const [productCost,setProductCost]=useState(initialCase.productCost)
+ const [logistics,setLogistics]=useState(initialCase.logistics)
+ const [growth,setGrowth]=useState(initialCase.growth)
+ const [refund,setRefund]=useState(initialCase.refund)
+ const activeCase=cases.find(x=>x.id===caseId)??initialCase
+ function switchCase(id:string){
+  const next=cases.find(x=>x.id===id)??initialCase
+  setCaseId(id);setActive(0);setEvidence({...next.evidence});setGates({})
+  setPrice(next.price);setProductCost(next.productCost);setLogistics(next.logistics);setGrowth(next.growth);setRefund(next.refund)
+ }
  const activeQ=questions[active]
  const contribution=price-productCost-logistics-growth-refund
  const stopped=Object.values(gates).includes('stop')
@@ -61,6 +73,11 @@ export function ProductOpportunityScene(){
   <div className="scene-heading">
    <div><div className="eyebrow">Benchmark 03｜商品机会实验室</div><h1>商品机会不是雷达总分，而是一组可以被证据推翻的经营假设。</h1><p>六个问题分别判断；硬风险独立阻断；Unknown｜未知必须保留为未知。</p></div>
    <div className={stopped?'status-chip danger':'status-chip'}>{decision}</div>
+  </div>
+  <div className="opportunity-case-switch">
+   <div><span>Case Lens｜案例视角</span><strong>{activeCase.name}</strong><p>{activeCase.note}</p></div>
+   <div>{cases.map(x=><button key={x.id} className={caseId===x.id?'active':''} onClick={()=>switchCase(x.id)}>{x.name}</button>)}</div>
+   <small>E5｜教学模拟案例。案例用于训练证据、闸门与经济判断，不代表真实市场结论。</small>
   </div>
 
   <div className="opportunity-stage">
