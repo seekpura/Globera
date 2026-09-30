@@ -11,6 +11,7 @@ import { EconomicSimulatorScene } from './families/EconomicSimulatorScene'
 import { ProductWorkbenchScene } from './families/ProductWorkbenchScene'
 import { MediaLabScene } from './families/MediaLabScene'
 import { ProcessJourneyScene } from './families/ProcessJourneyScene'
+import { M01M04Scene } from './integrated/M01M04Scene'
 import { M05M08Scene } from './integrated/M05M08Scene'
 import { M09M12Scene } from './integrated/M09M12Scene'
 
@@ -20,6 +21,7 @@ const media = new Set(['content-match','ai-content','content-remix','creator-fit
 const process = new Set(['fulfillment-simulator','readiness-check','commerce-journey','health-simulator','order-timeline','customs-lab'])
 const decision = new Set(['market-localization','sea-atlas','region-explorer','route-configurator','kyc-map','evidence-lab','product-gate','portfolio-board','growth-mixer','signal-lab','funnel-diagnosis'])
 export function SceneRouter({lesson}:{lesson:LessonContent}){
+ if(['m01','m02','m03','m04'].includes(lesson.module) && !['platform-universe','market-explorer'].includes(lesson.sceneType)) return <M01M04Scene lesson={lesson}/>
  if(['m05','m06','m07','m08'].includes(lesson.module) && lesson.sceneType!=='product-opportunity') return <M05M08Scene lesson={lesson}/>
  if(['m09','m10','m11','m12'].includes(lesson.module) && !['video-analyzer','logistics-journey','decision-room'].includes(lesson.sceneType)) return <M09M12Scene lesson={lesson}/>
  switch(lesson.sceneType){
