@@ -18,6 +18,7 @@ export function PlatformUniverseScene() {
   const compareIds = useSceneStore((s) => s.compareIds)
   const productId = useSceneStore((s) => s.productId)
   const instructorMode = useCourseStore((s) => s.instructorMode)
+  const instructorStep = useCourseStore((s) => s.instructorStep)
   const resetToken = useCourseStore((s) => s.sceneResetToken)
   const showLabels = useSceneStore((s) => s.showLabels)
   const setSelected = useSceneStore((s) => s.setSelectedPlatformId)
@@ -45,6 +46,19 @@ export function PlatformUniverseScene() {
     setCompareMode(false)
     setActiveMechanism(null)
   }, [resetToken, reset])
+
+  useEffect(() => {
+    if (!instructorMode) return
+    if (instructorStep === 0) {
+      clearCompare(); setCompareMode(false); setActiveMechanism(null); setSelected(null)
+    } else if (instructorStep === 1) {
+      clearCompare(); setCompareMode(false); setActiveMechanism('content'); setSelected(null)
+    } else if (instructorStep === 2) {
+      clearCompare(); setCompareMode(false); setActiveMechanism('content'); setSelected('tiktok')
+    } else if (instructorStep === 3) {
+      clearCompare(); setSelected(null); setCompareMode(true); toggleCompare('amazon'); toggleCompare('tiktok')
+    }
+  }, [instructorMode, instructorStep, clearCompare, setSelected, toggleCompare])
 
   function choosePlatform(id:string, target:SVGGElement){
     pulseNode(target)
