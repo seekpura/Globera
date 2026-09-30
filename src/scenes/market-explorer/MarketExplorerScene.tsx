@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useCourseStore } from '../../store/courseStore'
 
 type EvidenceState='unknown'|'supported'|'conflicted'
 type ProductType='visual'|'search'|'regional'
@@ -29,6 +30,8 @@ const productTypes:{id:ProductType;label:string;priority:string[]}[]=[
 ]
 
 export function MarketExplorerScene(){
+ const instructorMode=useCourseStore(s=>s.instructorMode)
+ const instructorStep=useCourseStore(s=>s.instructorStep)
  const [market,setMarket]=useState<MarketId>('us')
  const [product,setProduct]=useState<ProductType>('visual')
  const [revealed,setRevealed]=useState(3)
@@ -40,6 +43,11 @@ export function MarketExplorerScene(){
  const supported=ordered.filter(d=>(states[key(d.id)]??'unknown')==='supported').length
  const conflicted=ordered.filter(d=>(states[key(d.id)]??'unknown')==='conflicted').length
  const visible=ordered.slice(0,revealed)
+ useEffect(()=>{
+  if(!instructorMode)return
+  const presenterReveal=[2,3,5,8,8]
+  setRevealed(presenterReveal[instructorStep]??8)
+ },[instructorMode,instructorStep])
 
  return <section className="workbench market-benchmark">
   <div className="scene-heading">
