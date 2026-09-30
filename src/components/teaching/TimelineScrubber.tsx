@@ -1,0 +1,3 @@
+import { useState } from 'react'
+export interface TimelineStep{time:string;title:string;note:string}
+export function TimelineScrubber({steps}:{steps:TimelineStep[]}){const [index,setIndex]=useState(0);const s=steps[index];return <div className="timeline-scrubber"><input type="range" min="0" max={steps.length-1} value={index} onChange={e=>setIndex(Number(e.target.value))}/><div className="timeline-points">{steps.map((x,i)=><button key={x.title} className={i===index?'selected':i<index?'done':''} onClick={()=>setIndex(i)}><span>{x.time}</span><strong>{x.title}</strong></button>)}</div><article><div className="eyebrow">Current State｜当前状态</div><h3>{s.title}</h3><p>{s.note}</p></article></div>}
