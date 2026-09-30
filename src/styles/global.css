@@ -64,3 +64,18 @@ button:hover,button.active{border-color:#4b8c91;background:#e8f2f1}
 .route-line:before{background:#c2cfcc}.route-line i{background:#fffdf8;border-color:#9bb2b0}.route-line .done i,.route-line .active i{background:#2b7c82;border-color:#2b7c82;box-shadow:none}
 .risk-note,.answer-overlay,.locked{background:#fff3db;border-color:#ddc18b;color:#6d5424}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+/* Presenter choreography */
+.presenter-controller{position:fixed;z-index:46;left:104px;right:360px;bottom:52px;display:grid;grid-template-columns:1fr auto;gap:8px 18px;align-items:center;padding:10px 14px;background:rgba(255,253,248,.96);border:1px solid #d5d0c5;border-radius:16px;box-shadow:0 16px 48px rgba(40,48,52,.12)}
+.presenter-progress{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.presenter-progress button{display:flex;align-items:center;gap:7px;padding:7px 9px;border:0;border-bottom:2px solid #d7d2c7;border-radius:8px;background:transparent;text-align:left}.presenter-progress button i{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#ebe7de;font-style:normal;font-size:9px}.presenter-progress button span{font-size:9px}.presenter-progress button.done{border-bottom-color:#9bb8b5}.presenter-progress button.active{border-bottom-color:#126d7a;background:#e8f2f1}.presenter-progress button.active i{background:#126d7a;color:white}.presenter-actions{display:flex;align-items:center;gap:7px}.presenter-actions button{padding:7px 9px;font-size:9px}.presenter-actions strong{font-size:9px;min-width:115px;text-align:center}.presenter-controller>small{grid-column:1/-1;color:#7a858a;font-size:8px}
+.instructor-mode .teaching-controls{bottom:128px}.instructor-mode .teaching-footer{padding-bottom:2px}
+.lesson-presentation .reveal-scene,.lesson-presentation .reveal-practice,.reveal-depth{transition:opacity .42s ease,transform .55s cubic-bezier(.2,.8,.2,1),filter .42s ease}
+.instructor-mode .lesson-presentation.step-0 .reveal-practice{opacity:.12;filter:grayscale(.8);pointer-events:none;transform:translateY(18px)}
+.instructor-mode .lesson-presentation.step-1 .reveal-practice{opacity:.28;pointer-events:none;transform:translateY(10px)}
+.instructor-mode .lesson-presentation.step-2 .reveal-practice{opacity:.7;transform:translateY(3px)}
+.instructor-mode .lesson-presentation.step-3 .reveal-practice,.instructor-mode .lesson-presentation.step-4 .reveal-practice{opacity:1;transform:none}
+.instructor-mode:has(.lesson-presentation.step-0) .reveal-depth,.instructor-mode:has(.lesson-presentation.step-1) .reveal-depth{opacity:.08;filter:blur(2px);pointer-events:none;transform:translateY(22px)}
+.instructor-mode:has(.lesson-presentation.step-2) .reveal-depth{opacity:.38;pointer-events:none;transform:translateY(10px)}
+.instructor-mode:has(.lesson-presentation.step-3) .reveal-depth{opacity:.76;transform:translateY(3px)}
+.instructor-mode:has(.lesson-presentation.step-4) .reveal-depth,.instructor-mode:has(.lesson-presentation.step-5) .reveal-depth{opacity:1;transform:none}
+@media(max-width:1000px){.presenter-controller{left:12px;right:12px;bottom:102px}.presenter-progress button span{display:none}.presenter-actions strong{display:none}.instructor-mode .teaching-controls{bottom:52px}.presenter-controller>small{display:none}}
