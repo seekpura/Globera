@@ -33,6 +33,7 @@ export function MarketExplorerScene(){
  const instructorMode=useCourseStore(s=>s.instructorMode)
  const instructorStep=useCourseStore(s=>s.instructorStep)
  const [market,setMarket]=useState<MarketId>('us')
+ const [level,setLevel]=useState<1|2|3|4>(1)
  const [product,setProduct]=useState<ProductType>('visual')
  const [revealed,setRevealed]=useState(3)
  const [states,setStates]=useState<Record<string,EvidenceState>>({})
@@ -55,9 +56,11 @@ export function MarketExplorerScene(){
    <div className="market-product-switch"><label>Product Lens｜商品视角</label><select value={product} onChange={e=>{setProduct(e.target.value as ProductType);setRevealed(3)}}>{productTypes.map(x=><option key={x.id} value={x.id}>{x.label}</option>)}</select></div>
   </div>
 
-  <div className="market-explorer-stage">
+  <div className="semantic-level-bar market-level-bar"><span>Semantic Zoom｜语义缩放</span><button className={level===1?'active':''} onClick={()=>setLevel(1)}>L1 Region｜区域</button><button className={level===2?'active':''} onClick={()=>setLevel(2)}>L2 Country｜国家</button><button className={level===3?'active':''} onClick={()=>setLevel(3)}>L3 Product｜商品</button><button className={level===4?'active':''} onClick={()=>setLevel(4)}>L4 Evidence｜证据</button></div>
+
+  <div className={'market-explorer-stage market-level-'+level}>
    <div className="market-space">
-    <div className="market-space-toolbar"><span>Country Focus｜国家焦点</span><div>{markets.map(x=><button key={x.id} className={x.id===market?'active':''} onClick={()=>setMarket(x.id)}>{x.name.split('｜')[1]}</button>)}</div></div>
+    <div className="market-space-toolbar"><span>{level===1?'Region View｜区域视图':level===2?'Country Focus｜国家焦点':level===3?'Product-conditioned Country｜商品条件化国家':'Evidence Drill｜证据钻取'}</span><div>{markets.map(x=><button key={x.id} className={x.id===market?'active':''} onClick={()=>setMarket(x.id)}>{x.name.split('｜')[1]}</button>)}</div></div>
     <svg viewBox="0 0 900 440" role="img" aria-label="商品条件化全球市场研究空间">
      <path className="market-contour" d="M70 95 C160 35 255 60 310 120 C360 170 410 130 460 80 C520 20 650 45 720 105 C800 175 835 290 780 350 C720 415 635 382 565 335 C500 292 445 315 385 355 C315 400 205 390 130 320 C60 255 25 150 70 95Z"/>
      <path className="market-route" d="M190 165 C310 95 360 105 455 130 S520 195 575 235 S665 285 735 310"/>
@@ -72,9 +75,10 @@ export function MarketExplorerScene(){
    </aside>
   </div>
 
-  <div className="market-evidence-strip">
+  <div className="market-evidence-strip four">
    <article><span>Visible Dimensions｜已展开</span><strong>{visible.length}/8</strong><p>逐步释放信息，避免一开始把所有维度变成表格噪音。</p></article>
    <article><span>Evidence State｜证据状态</span><strong>{supported} Supported · {conflicted} Conflicted</strong><p>未标记的维度保持 Unknown｜未知。</p></article>
+   <article><span>Freshness｜证据新鲜度</span><strong>COURSE BASELINE｜课程基线</strong><p>市场与平台动态事实必须在开课前更新来源与日期。</p></article>
    <article className="market-decision"><span>Current Decision｜当前判断</span><strong>{conflicted?'RESOLVE CONFLICT｜先解决冲突':supported>=5?'TEST HYPOTHESIS｜进入商品级测试':'CONTINUE RESEARCH｜继续研究'}</strong><p>这是研究进度判断，不是国家优劣排名，也不代表市场规模结论。</p></article>
   </div>
  </section>
