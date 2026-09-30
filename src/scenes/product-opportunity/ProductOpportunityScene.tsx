@@ -87,7 +87,7 @@ export function ProductOpportunityScene(){
   <div className="semantic-level-bar opportunity-level-bar"><span>Semantic Zoom｜语义缩放</span><button className={level===1?'active':''} onClick={()=>setLevel(1)}>L1 Hypothesis｜假设</button><button className={level===2?'active':''} onClick={()=>setLevel(2)}>L2 Evidence｜证据</button><button className={level===3?'active':''} onClick={()=>setLevel(3)}>L3 Gate & Economics｜闸门与经济</button><button className={level===4?'active':''} onClick={()=>setLevel(4)}>L4 Test Contract｜测试契约</button></div>
 
   <div className="opportunity-casebar">
-   <div><span>Teaching Case｜教学案例</span><strong>{activeCase.name}</strong><p>{activeCase.note}</p></div>
+   <div><span>Case Lens｜案例视角</span><strong>{activeCase.name}</strong><p>{activeCase.note}</p></div>
    <select value={caseId} onChange={e=>applyCase(e.target.value)}>{cases.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select>
   </div>
 
@@ -97,7 +97,7 @@ export function ProductOpportunityScene(){
      <defs><marker id="opp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>
      {positions.map((p,i)=><line key={'l'+i} x1="450" y1="230" x2={p.x} y2={p.y} className={i===active?'opp-line active':'opp-line'}/>)}
      <g transform="translate(450,230)" className="opp-core"><circle r="76"/><text textAnchor="middle" y="-8">Product Hypothesis</text><text textAnchor="middle" y="14">商品经营假设</text><text textAnchor="middle" y="38" className="opp-sub">{portfolioRole}</text></g>
-     {questions.map((q,i)=>{const p=positions[i];const state=evidence[q.id]??'unknown';return <g key={q.id} transform={'translate('+p.x+','+p.y+')'} className={'opp-node '+state+(i===active?' selected':'')} onClick={()=>setActive(i)} role="button" tabIndex={0} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setActive(i)}}><circle r={i===active?50:43}/><text textAnchor="middle" y="-3">{q.short}</text><text textAnchor="middle" y="17" className="opp-node-state">{state==='supported'?'SUPPORTED':state==='unknown'?'UNKNOWN':state==='conflicted'?'CONFLICT':'CONTRADICT'}</text></g>})}
+     {questions.map((q,i)=>{const p=positions[i];const state=evidence[q.id]??'unknown';return <g key={q.id} transform={'translate('+p.x+','+p.y+')'} className={'opp-node '+state+(i===active?' selected':'')} onClick={()=>setActive(i)} role="button" tabIndex={0} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setActive(i)}}}><circle r={i===active?50:43}/><text textAnchor="middle" y="-3">{q.short}</text><text textAnchor="middle" y="17" className="opp-node-state">{state==='supported'?'SUPPORTED':state==='unknown'?'UNKNOWN':state==='conflicted'?'CONFLICT':'CONTRADICT'}</text></g>})}
     </svg>
     <div className="opportunity-legend"><span className="supported">Supported｜有支持</span><span className="unknown">Unknown｜未知</span><span className="conflicted">Conflicted｜冲突</span><span className="contradicted">Contradicted｜反证</span></div>
    </div>
