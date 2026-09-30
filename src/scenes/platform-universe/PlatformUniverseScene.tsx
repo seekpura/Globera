@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { mechanisms, platforms, products } from '../../data/platforms'
 import { useSceneStore } from '../../store/sceneStore'
 import { useCourseStore } from '../../store/courseStore'
@@ -7,12 +7,6 @@ import type { MechanismId, Platform } from '../../types/platform'
 
 const mechanismColor: Record<MechanismId, string> = {
   search: 'var(--mech-search)', content: 'var(--mech-content)', mall: 'var(--mech-mall)', deal: 'var(--mech-deal)', direct: 'var(--mech-direct)'
-}
-
-function scorePlatform(platform: Platform, productId: string) {
-  const product = products.find((p) => p.id === productId)!
-  const sum = platform.mechanisms.reduce((acc, id) => acc + (product.strengths[id] ?? 0), 0)
-  return sum / platform.mechanisms.length
 }
 
 export function PlatformUniverseScene() {
@@ -33,7 +27,6 @@ export function PlatformUniverseScene() {
   const selected = platforms.find((p) => p.id === selectedId) ?? null
   const compared = platforms.filter((p) => compareIds.includes(p.id))
   const activeProduct = products.find((p) => p.id === productId)!
-  const ranked = useMemo(() => [...platforms].sort((a,b) => scorePlatform(b, productId) - scorePlatform(a, productId)), [productId])
 
   useEffect(() => {
     if (selected || compareIds.length) revealPanel(panelRef.current)
@@ -50,7 +43,7 @@ export function PlatformUniverseScene() {
             <select value={productId} onChange={(e) => setProductId(e.target.value)}>
               {products.map((p) => <option key={p.id} value={p.id}>{p.zh}｜{p.en}</option>)}
             </select>
-            <p>{activeProduct.descriptionZh}</p>
+            <p>{activeProduct.descriptionZh}</p><small>商品原型只改变课堂观察视角，不生成平台优劣分数。</small>
           </div>
         </div>
         <div className="universe-canvas">
@@ -69,12 +62,11 @@ export function PlatformUniverseScene() {
               <circle r="67" /><text textAnchor="middle" y="-8" className="product-title">商品</text><text textAnchor="middle" y="17" className="node-en">Product</text><text textAnchor="middle" y="39" className="product-sub">{activeProduct.zh}</text>
             </g>
             {platforms.map((p) => {
-              const score = scorePlatform(p, productId)
               const isSelected = selectedId === p.id || compareIds.includes(p.id)
               return (
                 <g key={p.id} className={`platform-node ${isSelected ? 'selected' : ''}`} transform={`translate(${p.x*10},${p.y*6.5})`} opacity={selectedId && !isSelected ? 0.22 : 1}
                   onClick={(e) => { pulseNode(e.currentTarget); if (compareIds.length) toggleCompare(p.id); else setSelected(p.id) }}>
-                  <circle r={32 + score*9} /><text textAnchor="middle" y="4" className="platform-label">{p.name}</text>
+                  <circle r={36} /><text textAnchor="middle" y="4" className="platform-label">{p.name}</text>
                   {showLabels && p.zh && <text textAnchor="middle" y="22" className="node-en">{p.zh}</text>}
                 </g>
               )
@@ -86,7 +78,7 @@ export function PlatformUniverseScene() {
           <button className={compareIds.length ? 'active' : ''} onClick={() => compareIds.length ? clearCompare() : toggleCompare('amazon')}>平台比较</button>
           <button onClick={() => { clearCompare(); toggleCompare('amazon'); toggleCompare('tiktok') }}>Amazon × TikTok Shop</button>
           <button onClick={() => { clearCompare(); toggleCompare('tiktok'); toggleCompare('noon') }}>TikTok Shop × Noon</button>
-          <button onClick={() => setSelected(ranked[0].id)}>按当前商品聚焦一个高匹配机制示例</button>
+          <button onClick={() => setShowLabels(!showLabels)}>Mechanism Labels｜机制辅助 {showLabels?'ON':'OFF'}</button>
         </div>
         {instructorMode && <div className="instructor-strip"><span>讲师控制</span><button onClick={() => setShowLabels(!showLabels)}>{showLabels ? '隐藏平台中文辅助' : '显示平台中文辅助'}</button><button onClick={() => setSelected(null)}>回到平台世界</button><button onClick={() => { clearCompare(); toggleCompare('amazon'); toggleCompare('tiktok') }}>步骤：打开 Amazon / TikTok 对比</button></div>}
       </section>
