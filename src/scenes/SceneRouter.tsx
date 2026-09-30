@@ -11,6 +11,7 @@ import { EconomicSimulatorScene } from './families/EconomicSimulatorScene'
 import { ProductWorkbenchScene } from './families/ProductWorkbenchScene'
 import { MediaLabScene } from './families/MediaLabScene'
 import { ProcessJourneyScene } from './families/ProcessJourneyScene'
+import { M05M08Scene } from './integrated/M05M08Scene'
 
 const economic = new Set(['economics-lab','cost-lab','inventory-cash','paid-growth','money-flow','pnl-lab'])
 const product = new Set(['supply-map','purchase-journey','product-structure','listing-builder','asset-lineage','publish-qa'])
@@ -18,6 +19,7 @@ const media = new Set(['content-match','ai-content','content-remix','creator-fit
 const process = new Set(['fulfillment-simulator','readiness-check','commerce-journey','health-simulator','order-timeline','customs-lab'])
 const decision = new Set(['market-localization','sea-atlas','region-explorer','route-configurator','kyc-map','evidence-lab','product-gate','portfolio-board','growth-mixer','signal-lab','funnel-diagnosis'])
 export function SceneRouter({lesson}:{lesson:LessonContent}){
+ if(['m05','m06','m07','m08'].includes(lesson.module) && lesson.sceneType!=='product-opportunity') return <M05M08Scene lesson={lesson}/>
  switch(lesson.sceneType){
   case 'platform-universe': return <PlatformUniverseScene/>
   case 'market-explorer': return <MarketExplorerScene/>
