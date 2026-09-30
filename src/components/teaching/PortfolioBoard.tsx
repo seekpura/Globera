@@ -1,0 +1,4 @@
+import { useState } from 'react'
+export interface PortfolioItem{id:string;title:string}
+const buckets=['Primary Test｜主测试','Backup｜备选','Exploration｜探索','Hold｜暂缓'] as const
+export function PortfolioBoard({items}:{items:PortfolioItem[]}){const [map,setMap]=useState<Record<string,string>>({});return <section className="mother-component"><header><span>Portfolio Board｜商品组合板</span><strong>组合优于单品冲动</strong></header><div className="portfolio-board">{buckets.map(b=><div key={b}><h4>{b}</h4>{items.filter(x=>(map[x.id]??buckets[2])===b).map(x=><article key={x.id}><strong>{x.title}</strong><select value={map[x.id]??buckets[2]} onChange={e=>setMap(m=>({...m,[x.id]:e.target.value}))}>{buckets.map(z=><option key={z}>{z}</option>)}</select></article>)}</div>)}</div></section>}
