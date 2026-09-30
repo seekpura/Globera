@@ -127,7 +127,7 @@ export function ProductOpportunityScene(){
    <section className="opportunity-economics">
     <div className="section-mini-head"><div><span>Unit Economics｜单位经济</span><strong>完整成本进入同一经营判断</strong></div><small>E5｜教学模拟</small></div>
     <div className="opp-econ-controls">
-     {[
+     {([
       ['Selling Price｜售价',price,setPrice,40,180],
       ['Product Cost｜商品成本',productCost,setProductCost,10,80],
       ['Logistics｜物流',logistics,setLogistics,5,60],
