@@ -5,4 +5,4 @@ import { IntegratedLessonScene } from '../scenes/IntegratedLessonScene'
 import { lessonSpecs } from '../data/lessonSpecs'
 import { FormalLessonLayer } from './FormalLessonLayer'
 import { PresenterController } from './PresenterController'
-export function LessonPage(){const {moduleId,lessonId}=useParams();const lesson=getLesson(moduleId,lessonId);if(!lesson)return <Navigate to="/course/t01" replace/>;const spec=lessonSpecs[lesson.code];return <><PresenterController/><IntegratedLessonScene lesson={lesson}><SceneRouter lesson={lesson}/></IntegratedLessonScene>{spec&&<FormalLessonLayer spec={spec}/>}</>}
+export function LessonPage(){const {moduleId,lessonId}=useParams();const lesson=getLesson(moduleId,lessonId);if(!lesson)return <Navigate to="/course/t01" replace/>;const spec=lessonSpecs[lesson.code];return <><PresenterController/><IntegratedLessonScene lesson={lesson}><SceneRouter lesson={lesson}/></IntegratedLessonScene>{spec&&<div className="reveal-depth"><FormalLessonLayer spec={spec}/></div>}</>}
