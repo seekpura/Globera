@@ -13,11 +13,12 @@ export function LessonPage(){
   const instructorMode=useCourseStore(s=>s.instructorMode)
   const instructorStep=useCourseStore(s=>s.instructorStep)
   const setInstructorStep=useCourseStore(s=>s.setInstructorStep)
+  const insightOpen=useCourseStore(s=>s.insightOpen)
   useEffect(()=>{ setInstructorStep(0) },[lesson?.code,setInstructorStep])
   if(!lesson)return <Navigate to="/course/t01" replace/>
   const spec=lessonSpecs[lesson.code]
   return <div className={`lesson-sequence ${instructorMode?`presenter-step-${instructorStep}`:'learner-sequence'}`}>
     <IntegratedLessonScene lesson={lesson}><SceneRouter lesson={lesson}/></IntegratedLessonScene>
-    {spec&&<div className="reveal-reflect"><FormalLessonLayer spec={spec}/></div>}
+    {spec&&insightOpen&&<div className="reveal-reflect"><FormalLessonLayer spec={spec}/></div>}
   </div>
 }
