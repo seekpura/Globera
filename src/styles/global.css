@@ -99,3 +99,35 @@ button:hover,button.active{border-color:#4b8c91;background:#e8f2f1}
 .graph-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;font-size:10px;color:#66747b}.graph-toolbar>div{display:flex;align-items:center;gap:5px}.graph-toolbar button{padding:5px 9px}.graph-toolbar strong{min-width:30px;text-align:center;color:#126d7a}
 .dynamic-graph svg g{cursor:pointer;transition:opacity .25s ease}.dynamic-graph svg line{transition:stroke .25s ease,opacity .25s ease;marker-end:url(#graph-arrow)}.dynamic-graph .edge-muted{opacity:.24}.dynamic-graph .edge-active{opacity:1}.dynamic-graph .edge-active line{stroke:#26747b;stroke-width:2.3}.dynamic-graph .inactive{opacity:.35}.dynamic-graph .related{opacity:.85}.dynamic-graph .related circle{stroke:#7ca8a9;fill:#eef5f3}.dynamic-graph .selected{opacity:1}.dynamic-graph .selected circle{fill:#d8ecea;stroke:#126d7a;stroke-width:2.4}.dynamic-graph svg text{fill:#25383e;font-size:10px;pointer-events:none}.dynamic-graph .graph-node-note{font-size:8px;fill:#6c7b80}.dynamic-graph marker path{fill:#26747b;stroke:none}.graph-focus-readout{display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:baseline;padding:10px 12px;border-top:1px solid #ded8cc}.graph-focus-readout span{font-size:9px;color:#68747d}.graph-focus-readout strong{font-size:12px}.graph-focus-readout p{margin:0;font-size:10px;color:#68747d}
 @media(max-width:900px){.presenter-controller{left:12px;right:12px;bottom:62px;transform:none;width:auto}.presenter-progress button span{display:none}.presenter-progress button{justify-content:center}.instructor-mode .teaching-controls{display:none}.graph-focus-readout{grid-template-columns:1fr}.dynamic-graph svg{min-height:300px}}
+
+
+/* V2 completeness: remove inherited dark panels from legacy scene-family CSS */
+.formal-lesson-layer,.teaching-panel,.knowledge-depth,.decision-evidence-grid>div,.economic-sim label,.world-core,.media-stage{
+  background:#fffdf8;border-color:#d8d2c7;color:#1c2a30;
+}
+.formal-lesson-layer{box-shadow:0 14px 46px rgba(41,49,52,.06)}
+.formal-grid>section,.formal-grid article{border-color:#ddd7cc;background:#f8f5ee}
+.knowledge-world{background:radial-gradient(circle at center,#e7f1ef,#fbf9f3 68%);border-color:#d8d2c7}
+.world-core{box-shadow:0 12px 34px rgba(41,49,52,.08)}
+.decision-evidence-grid article{border-color:#ddd7cc;background:#f8f5ee}
+.media-stage{background:linear-gradient(145deg,#f8f5ee,#eef3f1)}
+.media-stage p{color:#617077}
+.process-line button.selected{border-color:#6e9fa0;background:#e4efee}
+.dynamic-graph svg{background:radial-gradient(circle at 50% 45%,#edf5f3,#fffdf8 68%)}
+.video-placeholder{background:linear-gradient(135deg,#1b2c35,#27313d);color:#f4f7f7}
+.product-core circle{fill:#e2efed;stroke:#26747b}.svg-title,.product-title,.platform-label,.node-title{fill:#21353b}.svg-sub,.node-en,.product-sub{fill:#58747a}
+.platform-node circle{fill:#fffdf8;stroke:#9bb7b5}.platform-node:hover circle,.platform-node.selected circle{fill:#dceceb;stroke:#26747b}
+.relation-line{opacity:.38;fill:none}.universe-panel,.insight-panel{color:#1b2a30}
+.insight-panel,.universe-panel,.benchmark-layout>section,.benchmark-layout>aside{background:#fffdf8;border-color:#d8d2c7}
+.market-tabs button,.dimension-grid button,.priority-grid button,.plan-weeks article,.beat-track button,.logistics-line button{background:#f8f5ee;border-color:#ddd7cc;color:#25353b}
+.dimension-grid button.revealed,.priority-grid button.selected,.beat-track button.active,.logistics-line button.current{background:#e2efed;border-color:#79a5a5}
+.output-card{background:#f5f1e8;border-color:#d8d2c7;color:#35454b}
+
+/* Benchmark choreography under Presenter Step */
+.instructor-mode .presenter-step-0 .benchmark-layout>:nth-child(n+2),
+.instructor-mode .presenter-step-0 .workbench>:not(.scene-heading){opacity:.07;filter:blur(2px);pointer-events:none}
+.instructor-mode .presenter-step-1 .benchmark-layout>:nth-child(n+2){opacity:.12;filter:blur(1px);pointer-events:none}
+.instructor-mode .presenter-step-1 .workbench>:nth-child(n+3){opacity:.1;filter:blur(1px);pointer-events:none}
+.instructor-mode .presenter-step-2 .benchmark-layout>*,
+.instructor-mode .presenter-step-2 .workbench>*{opacity:1;filter:none;pointer-events:auto}
+.benchmark-layout>*,.workbench>*{transition:opacity .42s ease,filter .42s ease,transform .42s ease}
