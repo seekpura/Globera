@@ -51,11 +51,11 @@ export function ProductOpportunityScene(){
  const [evidenceClass,setEvidenceClass]=useState<Record<string,EvidenceClass>>({})
  const [gates,setGates]=useState<Record<string,GateState>>(cases[0].gates)
  const [cohort,setCohort]=useState<string[]>(['a','e'])
- const [price,setPrice]=useState(cases[0].price)
- const [productCost,setProductCost]=useState(cases[0].cost)
- const [logistics,setLogistics]=useState(cases[0].logistics)
- const [growth,setGrowth]=useState(cases[0].growth)
- const [refund,setRefund]=useState(cases[0].refund)
+ const [price,setPrice]=useState<number>(cases[0].price)
+ const [productCost,setProductCost]=useState<number>(cases[0].cost)
+ const [logistics,setLogistics]=useState<number>(cases[0].logistics)
+ const [growth,setGrowth]=useState<number>(cases[0].growth)
+ const [refund,setRefund]=useState<number>(cases[0].refund)
  const [testBudget,setTestBudget]=useState(180)
  const [testDays,setTestDays]=useState(14)
 
@@ -133,7 +133,7 @@ export function ProductOpportunityScene(){
       ['Logistics｜物流',logistics,setLogistics,5,60],
       ['Creator / Ads｜达人/广告',growth,setGrowth,0,60],
       ['Refund Shock｜退款冲击',refund,setRefund,0,40]
-     ].map(([name,value,setter,min,max])=><label key={String(name)}><span>{name}</span><input type="range" min={Number(min)} max={Number(max)} value={Number(value)} onChange={e=>(setter as (x:number)=>void)(Number(e.target.value))}/><strong>{String(value)}</strong></label>)}
+     ] as const).map(([name,value,setter,min,max])=><label key={String(name)}><span>{name}</span><input type="range" min={Number(min)} max={Number(max)} value={Number(value)} onChange={e=>(setter as (x:number)=>void)(Number(e.target.value))}/><strong>{String(value)}</strong></label>)}
     </div>
     <div className={contribution<0?'opp-contribution danger':'opp-contribution'}><span>Contribution｜贡献</span><strong>{contribution.toFixed(1)}</strong><p>用于观察变量关系，不把模拟结果当成真实利润。</p></div>
    </section>
