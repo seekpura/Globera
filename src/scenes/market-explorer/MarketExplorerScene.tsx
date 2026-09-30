@@ -1,0 +1,8 @@
+import { useState } from 'react'
+const markets=[
+ {name:'美国',facts:['市场容量较大','成熟电商基础','竞争与合规要求高','物流方案丰富'],risk:'不能把“大市场”直接等同于“最适合当前商品”。'},
+ {name:'德国',facts:['欧洲成熟市场','消费者重视信息完整','包装与合规要求需前置','本地化不能只翻译'],risk:'欧盟规则与具体商品类别必须按当前法规核验。'},
+ {name:'印尼',facts:['移动与内容电商活跃','本地价格带敏感','群岛物流差异明显','平台与商品准入动态变化'],risk:'市场开放、跨境路径和类目准入需要按开课日期确认。'},
+ {name:'阿联酋',facts:['区域消费能力较强','中东跨境与本地供给并存','语言与文化适配重要','Noon 等区域平台具有参考价值'],risk:'认证、税费、履约与商品分类需要逐品核验。'}
+]
+export function MarketExplorerScene(){const [m,setM]=useState(0),[depth,setDepth]=useState(1),[product,setProduct]=useState('视觉型消费品');return <section className="benchmark-scene"><header className="lesson-hero"><div><div className="eyebrow">M02-L01 · Market Exploration Lab｜市场探索实验</div><h1>判断海外市场的八个维度</h1><p className="core-statement">国家没有脱离商品的固定“好坏分数”。判断随商品、证据和经营条件变化。</p></div><select value={product} onChange={e=>setProduct(e.target.value)}><option>视觉型消费品</option><option>标准功能品</option><option>高合规敏感品</option></select></header><div className="market-lab"><div className="market-map">{markets.map((x,i)=><button onClick={()=>{setM(i);setDepth(1)}} className={m===i?'active':''} key={x.name}><b>{x.name}</b><span>{['NA','EU','SEA','GCC'][i]}</span></button>)}</div><aside className="market-evidence"><span className="panel-label">当前市场 × {product}</span><h2>{markets[m].name}</h2>{markets[m].facts.slice(0,depth).map((x,i)=><p key={x}><b>证据层 {i+1}</b>{x}</p>)}<button disabled={depth===4} onClick={()=>setDepth(Math.min(4,depth+1))}>释放下一层信息</button><div className="risk-note">{markets[m].risk}</div></aside></div><div className="dimension-ribbon">{['需求','竞争','价格','履约','合规','内容','支付','可复制性'].map(x=><span key={x}>{x}</span>)}</div></section>}
