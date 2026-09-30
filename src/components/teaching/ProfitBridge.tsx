@@ -1,0 +1,3 @@
+import { useMemo, useState } from 'react'
+const base=[['Net Sales｜净销售额',100],['COGS｜商品成本',-34],['Logistics｜物流',-16],['Platform｜平台费用',-8],['Creator/Ads｜达人/广告',-18],['After-sales｜售后',-5]] as const
+export function ProfitBridge(){const [shock,setShock]=useState(0);const contribution=useMemo(()=>base.reduce((s,x)=>s+x[1],0)-shock,[shock]);return <div className="profit-bridge"><div className="profit-bars">{base.map(([n,v])=><div key={n}><span>{n}</span><b>{v>0?'+':''}{v}</b></div>)}</div><label>Refund shock｜退款冲击<input type="range" min="0" max="35" value={shock} onChange={e=>setShock(Number(e.target.value))}/><strong>-{shock}</strong></label><div className={contribution<0?'danger':''}><h3>Contribution｜贡献：{contribution}</h3><p>GMV｜成交总额、平台结算、贡献利润与银行到账是不同经营对象。</p></div></div>}
