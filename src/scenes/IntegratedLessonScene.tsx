@@ -24,11 +24,21 @@ function Mother({name,lesson}:{name:string;lesson:LessonContent}){
  if(name==='EvidenceWall')return <EvidenceWall items={evidence(lesson)}/>
  return null
 }
+const learnerLabels:Record<string,string>={
+ GateJourney:'Risk Gate｜风险闸门',
+ ParameterLab:'Variable Simulator｜变量模拟',
+ ProductStructure:'Product Structure｜商品结构',
+ AssetLineage:'Asset Lineage｜素材来源链',
+ ProfitBridge:'Profit Bridge｜利润桥',
+ MoneyFlow:'Money Flow｜资金流',
+ PortfolioBoard:'Portfolio Board｜组合决策',
+ EvidenceWall:'Evidence Wall｜证据墙',
+}
 export function IntegratedLessonScene({lesson,children}:{lesson:LessonContent;children:React.ReactNode}){
  const presenterStep=useCourseStore(s=>s.instructorStep)
  const instructorMode=useCourseStore(s=>s.instructorMode)
  const names=componentsForLesson(lesson.code)
  const renderable=names.filter(x=>['GateJourney','ParameterLab','ProductStructure','AssetLineage','ProfitBridge','MoneyFlow','PortfolioBoard','EvidenceWall'].includes(x)).slice(0,2)
  if(!renderable.length)return <>{children}</>
- return <div className={`lesson-presentation step-${instructorMode?presenterStep:5}`} data-presenter-step={instructorMode?presenterStep:5}><div className="reveal-scene">{children}</div><section className="integrated-lab reveal-practice"><div className="section-title"><div className="eyebrow">Interactive Practice Layer｜交互实操层</div><h2>{lesson.code} · 把知识判断变成可操作实验</h2><p>这里调用课程母组件，不重复讲知识；操作结果用于观察变量、状态、证据和经营结果之间的关系。</p></div><div className="integrated-lab-grid">{renderable.map(name=><div key={name} className="integrated-lab-cell"><div className="component-label">{name}</div><Mother name={name} lesson={lesson}/></div>)}</div></section></div>
+ return <div className={`lesson-presentation step-${instructorMode?presenterStep:5}`} data-presenter-step={instructorMode?presenterStep:5}><div className="reveal-scene">{children}</div><section className="integrated-lab reveal-practice"><div className="section-title"><div className="eyebrow">Interactive Practice Layer｜交互实操层</div><h2>{lesson.code} · 把知识判断变成可操作实验</h2><p>这里调用课程母组件，不重复讲知识；操作结果用于观察变量、状态、证据和经营结果之间的关系。</p></div><div className="integrated-lab-grid">{renderable.map(name=><div key={name} className="integrated-lab-cell"><div className="component-label">{learnerLabels[name]??'Interactive Lab｜交互实验'}</div><Mother name={name} lesson={lesson}/></div>)}</div></section></div>
 }
