@@ -1,0 +1,3 @@
+import { useState } from 'react'
+export interface KnowledgeNode{title:string;summary:string;why:string;how:string;boundary:string}
+export function KnowledgeZoom({nodes}:{nodes:KnowledgeNode[]}){const [focus,setFocus]=useState(0);const n=nodes[focus];return <div className="knowledge-zoom"><div className="knowledge-node-list">{nodes.map((x,i)=><button key={x.title} className={i===focus?'selected':''} onClick={()=>setFocus(i)}><span>0{i+1}</span><strong>{x.title}</strong><small>{x.summary}</small></button>)}</div><article className="knowledge-depth"><div className="eyebrow">Knowledge Zoom｜知识钻取</div><h3>{n.title}</h3><p>{n.summary}</p><dl><dt>为什么重要</dt><dd>{n.why}</dd><dt>怎么判断</dt><dd>{n.how}</dd><dt>边界 / 反例</dt><dd>{n.boundary}</dd></dl></article></div>}
