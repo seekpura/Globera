@@ -28,7 +28,7 @@ export function CourseShell({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="context-badge">
-          <span>纯前端 · Offline-ready｜离线可运行</span>
+          <span>Static Frontend｜纯前端静态课程</span>
           {instructorMode && <strong>讲师模式</strong>}
         </div>
       </header>

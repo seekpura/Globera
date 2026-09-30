@@ -131,3 +131,18 @@ button:hover,button.active{border-color:#4b8c91;background:#e8f2f1}
 .instructor-mode .presenter-step-2 .benchmark-layout>*,
 .instructor-mode .presenter-step-2 .workbench>*{opacity:1;filter:none;pointer-events:auto}
 .benchmark-layout>*,.workbench>*{transition:opacity .42s ease,filter .42s ease,transform .42s ease}
+
+
+/* Growth incrementality + settlement teaching labs */
+.incrementality-lab,.settlement-bridge{margin-top:18px;padding:20px;border:1px solid #d8d2c7;border-radius:22px;background:#fffdf8;box-shadow:0 10px 34px rgba(40,48,52,.05)}
+.incrementality-lab>header,.settlement-bridge>header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #ddd7cc}
+.incrementality-lab>header span,.settlement-bridge>header span{font-size:10px;color:#126d7a;letter-spacing:.06em}.incrementality-lab>header strong,.settlement-bridge>header strong{font-size:13px}
+.incrementality-grid,.settlement-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.75fr);gap:18px;margin-top:16px}
+.incrementality-controls label,.settlement-controls label{display:grid;grid-template-columns:minmax(180px,1fr) 1.3fr 64px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #ebe6dc;font-size:10px}
+.incrementality-controls input,.settlement-controls input{width:100%}.incrementality-controls strong,.settlement-controls strong{text-align:right;color:#126d7a}
+.incrementality-stage{display:grid;grid-template-columns:1fr 1fr;gap:8px}.incrementality-stage article,.settlement-readout article{padding:14px;border:1px solid #ddd7cc;border-radius:14px;background:#f8f5ee}
+.incrementality-stage article span,.incrementality-stage article small,.settlement-readout article span,.settlement-readout article small{display:block;color:#68747d;font-size:9px}.incrementality-stage article strong,.settlement-readout article strong{display:block;margin:6px 0;font-size:24px;color:#126d7a}.incrementality-stage article.warning{border-color:#d8b97e;background:#fff4dc}.incrementality-stage article.warning strong{color:#8a5c13}
+.incrementality-verdict{margin-top:12px;padding:14px;border-left:3px solid #126d7a;background:#eef5f3;border-radius:10px}.incrementality-verdict p{margin:5px 0}.incrementality-verdict small{color:#66747b}
+.settlement-readout{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center}.settlement-readout>i{font-style:normal;color:#789091}.settlement-readout article{text-align:center;min-height:120px;display:grid;align-content:center}
+.settlement-timeline{position:relative;height:92px;margin-top:22px}.settlement-line{position:absolute;left:2%;right:2%;top:54px;height:2px;background:#b9c7c4}.settlement-timeline span{position:absolute;top:14px;transform:translateX(-12%);font-size:8px;color:#53666c;white-space:nowrap}.settlement-timeline span:after{content:"";position:absolute;left:10px;top:30px;width:10px;height:10px;border-radius:50%;background:#126d7a;border:3px solid #e6f0ef;z-index:2}
+@media(max-width:900px){.incrementality-grid,.settlement-layout{grid-template-columns:1fr}.incrementality-controls label,.settlement-controls label{grid-template-columns:1fr}.incrementality-controls strong,.settlement-controls strong{text-align:left}.incrementality-stage{grid-template-columns:1fr}.settlement-readout{grid-template-columns:1fr}.settlement-readout>i{transform:rotate(90deg);text-align:center}.settlement-timeline{overflow-x:auto}}
