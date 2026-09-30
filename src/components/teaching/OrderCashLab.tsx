@@ -24,7 +24,7 @@ export function OrderCashLab(){
      ['Affiliate / Ads｜达人/广告',growth,setGrowth,0,60],
      ['Tax Reserve｜税费准备',tax,setTax,0,40],
      ['FX / Collection｜换汇/收款',fx,setFx,0,20],
-    ].map(([name,value,setter,min,max])=><label key={String(name)}><span>{name}</span><input type="range" min={Number(min)} max={Number(max)} value={Number(value)} onChange={e=>(setter as (x:number)=>void)(Number(e.target.value))}/><strong>{String(value)}</strong></label>)}
+    ] as const).map(([name,value,setter,min,max])=><label key={String(name)}><span>{name}</span><input type="range" min={Number(min)} max={Number(max)} value={Number(value)} onChange={e=>(setter as (x:number)=>void)(Number(e.target.value))}/><strong>{String(value)}</strong></label>)}
    </div>
    <aside>
     <article><span>Settlement｜平台结算</span><strong>{settlement}</strong><p>订单金额扣除退款、平台/支付、增长与税费准备后的教学模拟。</p></article>
