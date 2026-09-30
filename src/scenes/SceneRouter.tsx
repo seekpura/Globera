@@ -12,6 +12,7 @@ import { ProductWorkbenchScene } from './families/ProductWorkbenchScene'
 import { MediaLabScene } from './families/MediaLabScene'
 import { ProcessJourneyScene } from './families/ProcessJourneyScene'
 import { M05M08Scene } from './integrated/M05M08Scene'
+import { M09M12Scene } from './integrated/M09M12Scene'
 
 const economic = new Set(['economics-lab','cost-lab','inventory-cash','paid-growth','money-flow','pnl-lab'])
 const product = new Set(['supply-map','purchase-journey','product-structure','listing-builder','asset-lineage','publish-qa'])
@@ -20,6 +21,7 @@ const process = new Set(['fulfillment-simulator','readiness-check','commerce-jou
 const decision = new Set(['market-localization','sea-atlas','region-explorer','route-configurator','kyc-map','evidence-lab','product-gate','portfolio-board','growth-mixer','signal-lab','funnel-diagnosis'])
 export function SceneRouter({lesson}:{lesson:LessonContent}){
  if(['m05','m06','m07','m08'].includes(lesson.module) && lesson.sceneType!=='product-opportunity') return <M05M08Scene lesson={lesson}/>
+ if(['m09','m10','m11','m12'].includes(lesson.module) && !['video-analyzer','logistics-journey','decision-room'].includes(lesson.sceneType)) return <M09M12Scene lesson={lesson}/>
  switch(lesson.sceneType){
   case 'platform-universe': return <PlatformUniverseScene/>
   case 'market-explorer': return <MarketExplorerScene/>
