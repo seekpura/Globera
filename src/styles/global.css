@@ -344,3 +344,15 @@ button:hover,button.active{border-color:#4b8c91;background:#e8f2f1}
 .test-plan-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}.test-plan-grid label,.test-plan-grid article{padding:12px;border:1px solid #ddd7cc;border-radius:13px;background:#f8f5ee}.test-plan-grid label{display:grid;grid-template-columns:1fr;gap:7px}.test-plan-grid label span,.test-plan-grid article span{font-size:9px;color:#126d7a}.test-plan-grid label strong,.test-plan-grid article strong{display:block;font-size:12px}.test-plan-grid article p{font-size:9px;color:#68767c}
 @media(max-width:1000px){.cohort-grid{grid-template-columns:1fr 1fr 1fr}.test-plan-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.opportunity-casebar{grid-template-columns:1fr}.cohort-grid,.test-plan-grid{grid-template-columns:1fr}}
+
+
+/* Semantic zoom states for market and product benchmarks */
+.market-evidence-strip.four{grid-template-columns:1fr 1fr 1fr 1.2fr}
+.market-level-1 .market-research-queue{opacity:.28;filter:saturate(.4)}.market-level-1 .market-focus-card{opacity:.72}
+.market-level-2 .market-research-queue{opacity:.55}.market-level-3 .market-research-queue,.market-level-4 .market-research-queue{opacity:1}
+.market-level-4 .market-space{opacity:.72}.market-level-4 .market-research-queue{box-shadow:0 12px 34px rgba(41,49,52,.08)}
+.opportunity-layer{transition:opacity .35s ease,filter .35s ease,transform .35s ease}.opportunity-layer.is-muted{opacity:.16;filter:saturate(.35);pointer-events:none;transform:translateY(8px)}.opportunity-layer.is-visible{opacity:1;filter:none;pointer-events:auto;transform:none}
+.opportunity-level-1 .opportunity-inspector{opacity:.55}.opportunity-level-2 .opportunity-inspector{opacity:1}.opportunity-level-3 .opportunity-space{opacity:.78}.opportunity-level-4 .opportunity-space{opacity:.62}
+.opportunity-level-bar button,.market-level-bar button{white-space:nowrap}
+@media(max-width:1100px){.market-evidence-strip.four{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.market-evidence-strip.four{grid-template-columns:1fr}}
