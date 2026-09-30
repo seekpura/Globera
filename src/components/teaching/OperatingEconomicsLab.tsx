@@ -30,7 +30,7 @@ export function OperatingEconomicsLab(){
   </div>
   <div className="economics-controls">{[
    ['GMV｜成交总额',gmv,setGmv,60,260],['Refund｜退款',refund,setRefund,0,60],['COGS｜商品成本',cogs,setCogs,10,90],['Logistics｜物流',logistics,setLogistics,5,60],['Platform｜平台/支付',platform,setPlatform,0,40],['Growth｜增长成本',growth,setGrowth,0,80],['After-sales｜售后',afterSales,setAfterSales,0,30],['Tax Reserve｜税费准备',tax,setTax,0,30]
-  ].map(([name,value,setter,min,max])=><label key={String(name)}><span>{name}</span><input type="range" min={Number(min)} max={Number(max)} value={Number(value)} onChange={e=>(setter as (x:number)=>void)(Number(e.target.value))}/><strong>{String(value)}</strong></label>)}</div>
+  ] as const).map(([name,value,setter,min,max])=><label key={String(name)}><span>{name}</span><input type="range" min={Number(min)} max={Number(max)} value={Number(value)} onChange={e=>(setter as (x:number)=>void)(Number(e.target.value))}/><strong>{String(value)}</strong></label>)}</div>
   <div className="cash-shadow"><span>D0｜采购付款</span><i>→</i><span>D20｜形成可售库存</span><i>→</i><span>D35｜产生订单/利润</span><i>→</i><span>D50｜平台结算</span><i>→</i><span>D55｜银行到账</span></div>
  </section>
 }
