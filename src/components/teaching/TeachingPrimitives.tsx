@@ -1,0 +1,4 @@
+import type { ReactNode } from 'react'
+export function SceneFrame({eyebrow,title,summary,aside,children}:{eyebrow:string;title:string;summary?:string;aside?:ReactNode;children:ReactNode}){return <section className="workbench scene-frame"><div className="scene-heading"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1>{summary&&<p>{summary}</p>}</div>{aside}</div>{children}</section>}
+export function StateBadge({children,tone='neutral'}:{children:ReactNode;tone?:'neutral'|'good'|'warn'|'danger'|'unknown'}){return <span className={`state-badge ${tone}`}>{children}</span>}
+export function TeachingPanel({title,kicker,children}:{title:string;kicker?:string;children:ReactNode}){return <section className="teaching-panel">{kicker&&<div className="eyebrow">{kicker}</div>}<h2>{title}</h2>{children}</section>}
