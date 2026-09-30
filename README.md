@@ -13,7 +13,7 @@
   - M09-L01 视频成交解剖
   - M11-L02 国际物流旅程
   - M12-L04 经营决策室
-- 其余 42 节使用统一、可复用的教学实验组件，并依据课程类型切换为判断、证据、结构、过程或经营经济实验。
+- 48 节课程都已进入专属或综合交互 Scene；6 个标杆课保留独立场景，其余课程按模块进入 M01–M04 / M05–M08 / M09–M12 综合教学世界，并复用 18 个教学母组件。
 - Learner Mode｜学员模式与 Instructor Mode｜讲师模式共用同一静态前端；不需要账号、数据库或后台。
 - 所有关键动态事实都保留“来源 / 日期 / 待核验”概念；模拟结果不得当作真实经营结果。
 - 中文是第一阅读语言；可见英文专业术语均作为中文辅助而不是替代中文。
@@ -65,7 +65,7 @@ npm run preview
 课程正式数据位于：
 
 ```text
-src/data/courseContent.json
+src/data/courseContent.ts
 ```
 
 交互程序位于：
@@ -89,3 +89,17 @@ src/scenes/
 - 支付、积分、排行榜
 
 真实平台页面、实时规则和最新费率仅作为外部核验资料；课程主路径应在断网状态下仍可完整教学。
+
+
+## 工程校验
+
+Pull Request｜拉取请求会执行完整前端校验链：
+
+```bash
+npm install --no-audit --no-fund
+npm run validate
+npm run typecheck
+npm run build
+```
+
+只有 main｜主分支构建会进入 GitHub Pages 部署；PR 只做 validate / typecheck / build，不执行部署。
