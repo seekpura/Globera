@@ -1,0 +1,78 @@
+name: Migrate T01 2.8 Source and Validate
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: t01-migrate-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  migrate-validate-commit:
+    if: contains(github.event.head_commit.message, '[t01-2.8-migrate]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct and verify T01 2.8 package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .t01-upload/chunk_*.txt | base64 -d > /tmp/t01.zip
+          echo "002880c5da8fc93b6b9200a1d160bdb6c0a408c61305e06bac49327b86416221  /tmp/t01.zip" | sha256sum -c -
+          mkdir -p /tmp/t01-src
+          unzip -q /tmp/t01.zip -d /tmp/t01-src
+          cp LICENSE /tmp/T01_LICENSE
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a /tmp/t01-src/. .
+          cp /tmp/T01_LICENSE LICENSE
+          test -f package.json
+          test -f src/domain/dataFlow.ts
+          test -f .github/workflows/deploy-pages.yml
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.2
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Validate data and dataflow
+        run: pnpm validate
+      - name: TypeScript
+        run: pnpm typecheck
+      - name: Unit tests
+        run: pnpm test:unit
+      - name: Production build
+        run: pnpm build
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Browser E2E
+        run: pnpm test:e2e
+      - name: Commit validated source to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "feat: rebuild T01 TikTok 0-1 training system 2.8"
+          git push origin HEAD:main
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: t01-2.8-dist
+          path: dist
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: t01-2.8-playwright-report
+          path: playwright-report
+          if-no-files-found: ignore
