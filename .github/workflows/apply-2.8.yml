@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Reassemble source
+      - name: Reassemble and patch source
         shell: bash
         run: |
           cat .source/part_* > /tmp/t01-source.b64
@@ -32,6 +32,15 @@ jobs:
           rsync -a --delete --exclude '.git/' --exclude 'LICENSE' /tmp/t01-source/app/ ./
           sed -i 's/pnpm@10\.9\.2/pnpm@10.34.6/g' package.json
           sed -i 's/version: 10\.9\.2/version: 10.34.6/g' .github/workflows/validate.yml
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('src/components/visual/LessonSceneLab.tsx')
+          s=p.read_text()
+          s=s.replace("const gaps=[!returns&&'缺少稳定退货方案',!language&&'缺少目标市场内容/客服语言能力'].filter(Boolean);", "const gaps=[!returns&&'缺少稳定退货方案',!language&&'缺少目标市场内容/客服语言能力'].filter((x):x is string=>Boolean(x));")
+          p.write_text(s)
+          p=Path('tsconfig.node.json')
+          p.write_text(p.read_text().replace(',"allowImportingTsExtensions":true',''))
+          PY
 
       - uses: pnpm/action-setup@v4
         with:
