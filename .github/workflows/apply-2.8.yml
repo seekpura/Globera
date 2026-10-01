@@ -30,10 +30,12 @@ jobs:
           mkdir -p /tmp/t01-source
           tar -xJf /tmp/t01-source.tar.xz -C /tmp/t01-source
           rsync -a --delete --exclude '.git/' --exclude 'LICENSE' /tmp/t01-source/app/ ./
+          sed -i 's/pnpm@10\.9\.2/pnpm@10.34.6/g' package.json
+          sed -i 's/version: 10\.9\.2/version: 10.34.6/g' .github/workflows/validate.yml
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 10.9.2
+          version: 10.34.6
           run_install: false
 
       - uses: actions/setup-node@v4
