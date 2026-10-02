@@ -1,0 +1,17 @@
+{
+  "version": "2.8",
+  "principle": "workshop_and_coaching_are_sources_tools_and_results_are_derived_views",
+  "edges": [
+    {"from":["T01-W01"],"to":["T01-K01","T01-R01"],"kind":"derive"},
+    {"from":["T01-W02","T01-P01"],"to":["T01-K02","T01-R02"],"kind":"derive"},
+    {"from":["T01-W03"],"to":["T01-K03","T01-K04","T01-K05","T01-R03","T01-W04","T01-W05","T01-W08","T01-W09"],"kind":"derive_and_prefill"},
+    {"from":["T01-W04","T01-P02"],"to":["T01-K06","T01-R04"],"kind":"derive"},
+    {"from":["T01-W05"],"to":["T01-K07","T01-K08","T01-W06"],"kind":"derive_and_prefill"},
+    {"from":["T01-W06","T01-P03"],"to":["T01-K09","T01-R05","T01-W11"],"kind":"derive_and_context"},
+    {"from":["T01-W07","T01-P04"],"to":["T01-K10","T01-K11","T01-R06","T01-W11"],"kind":"derive_and_context"},
+    {"from":["T01-W08"],"to":["T01-K12","T01-R07","T01-W11"],"kind":"derive_and_context"},
+    {"from":["T01-W09"],"to":["T01-K13","T01-R07","T01-W11"],"kind":"derive_and_context"},
+    {"from":["T01-W10","T01-P05"],"to":["T01-K14","T01-R08","T01-W11"],"kind":"derive_and_context"},
+    {"from":["T01-W06","T01-P04","T01-W08","T01-W09","T01-W10","T01-P05","T01-W11"],"to":["T01-K15","T01-R09","T01-R10"],"kind":"aggregate"}
+  ]
+}
