@@ -1,6 +1,7 @@
 name: T01 React 2.8 CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [main, t01-react-2.8-bootstrap]
   pull_request:
