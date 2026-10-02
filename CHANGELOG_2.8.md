@@ -14,3 +14,10 @@
 - 全部运行版本归一为 2.8。
 - 新增 dataFlow.ts 与数据流单元测试。
 - 新增 GitHub Actions：Node 22 + pnpm 10，执行静态契约、单元测试和生产构建。
+
+## 最终归一补强
+
+- 补齐 K03 / K04 / K07 自动同步，K01–K15 全部存在明确数据来源。
+- W11 经营复盘新增 LIVE、P04 真实达人推进、P05 真实订单信号。
+- 新增 `src/data/t01/dataflow.json` 与 `scripts/validate-dataflow.mjs`，CI 可审计关键经营数据血缘。
+- CI 增加 `test:dataflow`，Node 22 + pnpm 10 执行静态契约、单元测试和 production build。
