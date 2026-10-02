@@ -1,3 +1,0 @@
-import { useState } from 'react'
-export interface DecisionOption{id:string;title:string;evidence:string;risk:string}
-export function DecisionBoard({options,max=3}:{options:DecisionOption[];max?:number}){const [picked,setPicked]=useState<string[]>([]);const toggle=(id:string)=>setPicked(v=>v.includes(id)?v.filter(x=>x!==id):v.length<max?[...v,id]:v);return <div className="decision-board">{options.map(x=><button key={x.id} className={picked.includes(x.id)?'selected':''} onClick={()=>toggle(x.id)}><strong>{x.title}</strong><small>证据：{x.evidence}</small><small>风险：{x.risk}</small></button>)}<p>已选择 {picked.length}/{max}。选择必须能解释证据与风险。</p></div>}

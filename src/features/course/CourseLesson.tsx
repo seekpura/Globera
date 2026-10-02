@@ -1,0 +1,13 @@
+import {Link,useParams} from 'react-router-dom';
+import {getLesson,routeStages} from '../../data/t01';
+import {KnowledgeTree} from '../../components/learning/KnowledgeTree';
+import {DeepDiveDrawer} from '../../components/learning/DeepDiveDrawer';
+import {CaseCompare} from '../../components/learning/CaseCompare';
+import {AssessmentGate} from '../../components/learning/AssessmentGate';
+import {GlossaryRow} from '../../components/common/GlossaryRow';
+import {RepresentativeScene} from './RepresentativeScene';
+import {useAppState} from '../../state/AppState';
+export default function CourseLesson(){
+  const{id=''}=useParams();const c=getLesson(id);const{state}=useAppState();if(!c)return <div className="card">课程不存在：{id}</div>;const all=JSON.stringify(c);const stage=routeStages.find(s=>s.course_ids.includes(c.code));const stageIndex=stage?routeStages.indexOf(stage):-1;const status=state.lessonStatus[c.code];
+  return <div><div className="lessonHero"><div className="lessonHeroTop"><div><div className="eyebrow">{c.code} · {c.duration}{stageIndex>=0?` · STAGE ${String(stageIndex+1).padStart(2,'0')}`:''}</div><h1>{c.title}</h1><p>{c.objective}</p></div><div className="lessonStatusBlock"><span>课程状态</span><b>{status==='submitted'||status==='passed'?'已提交验收':'进行中'}</b>{stage&&<Link to={`/t01/${stage.id}`}>← 返回阶段</Link>}</div></div><GlossaryRow text={all}/></div><section className="lessonSceneSection section"><div className="sectionHeading"><div><span className="eyebrow">OPERATING SCENE｜经营交互场景</span><h2>先动手，再回到知识解释</h2></div><span className="subtle">所有数字为教学模拟，真实经营数据需明确标识</span></div><RepresentativeScene id={c.code} interaction={c.interaction}/></section><div className="lessonKnowledgeGrid section"><main className="grid"><KnowledgeTree items={c.tree}/><div className="card"><div className="eyebrow">DEFAULT LAYER｜默认可见层</div><h3>课堂先看到什么</h3><ul className="list">{c.visible.map(x=><li key={x}>{x}</li>)}</ul></div><CaseCompare cases={c.cases}/><div className="card demoCard"><div className="eyebrow">LIVE DEMO｜讲师演示</div><h3>演示必须贯穿同一经营对象</h3><p>{c.demo}</p></div><AssessmentGate id={c.code} text={c.assessment}/></main><aside className="grid lessonAside"><DeepDiveDrawer items={c.deep}/><div className="card"><div className="eyebrow">VARIABLES｜可操作变量</div><h3>这一课真正能改变什么</h3><div className="termRow">{c.variables.map(x=><span className="chip" key={x}>{x}</span>)}</div></div><div className="card"><div className="eyebrow">MATERIAL GAPS｜素材缺口</div><h3>开课前必须补齐</h3><ul className="list compactList">{c.gaps.map(x=><li key={x}>{x}</li>)}</ul></div><div className="card teachingRule"><b>教学原则</b><p>平台菜单、阈值、审核时限等动态规则不写死；课堂必须记录站点、来源与最近核验日期。</p></div></aside></div></div>
+}

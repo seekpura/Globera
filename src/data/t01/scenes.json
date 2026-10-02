@@ -1,0 +1,564 @@
+{
+  "version": "2.8",
+  "scenes": [
+    {
+      "id": "scene-c01",
+      "owner": "T01-C01",
+      "type": "svg-flow",
+      "purpose": "SVG经营闭环图。点击任一节点高亮上下游；拖动“流量来源”到商品节点，系统显示下一步经营动作。动效只用于表达流向，不做装饰性粒子。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备1套真实或脱敏的Seller Center全链路截图/录屏。",
+        "每期开课前核验Seller Center当前一级导航。"
+      ]
+    },
+    {
+      "id": "scene-c02",
+      "owner": "T01-C02",
+      "type": "interactive-canvas",
+      "purpose": "路线决策器。用户选择条件后，前端只显示“可执行/需补条件/不建议当前启动”三种状态，并展示缺口，不给政治/市场主观排名。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课确认当前开店市场、店型、主体与物流规则。"
+      ]
+    },
+    {
+      "id": "scene-c03",
+      "owner": "T01-C03",
+      "type": "drag-path",
+      "purpose": "权限矩阵拖拽：把“商品运营/客服/广告/财务”拖到对应权限，错误配置即时提示“权限过大/不足”。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备当前Seller Center成员权限截图；避免写死可能调整的角色名称。"
+      ]
+    },
+    {
+      "id": "scene-c04",
+      "owner": "T01-C04",
+      "type": "interactive-canvas",
+      "purpose": "资料差异高亮：前端模拟比对多个字段，不做OCR依赖；人工点选发现不一致后生成缺口清单。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课核验目标站点Seller Identity Verification（卖家身份验证）要求。"
+      ]
+    },
+    {
+      "id": "scene-c05",
+      "owner": "T01-C05",
+      "type": "interactive-canvas",
+      "purpose": "后台热区模拟：使用当前截图做可点击热点，点击错误区域不给“红叉羞辱”，而是提示当前任务应该寻找哪类模块。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课前更新导航截图；2026-09官方已发布Seller Center Navigation Update，应纳入核验。"
+      ],
+      "implementation_component": "SellerCenterSimulator"
+    },
+    {
+      "id": "scene-c06",
+      "owner": "T01-C06",
+      "type": "interactive-canvas",
+      "purpose": "六维开关面板；调整售价/物流/佣金预留后，适配判断同步变化。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备至少6个跨品类正反例，避免只教美妆/小商品。"
+      ]
+    },
+    {
+      "id": "scene-c07",
+      "owner": "T01-C07",
+      "type": "drag-path",
+      "purpose": "证据卡片拖到“支持/反对/未知”三栏，系统自动生成待验证问题。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备可公开演示的商品/视频/Creator案例；真实数据涉及隐私时使用脱敏样本。"
+      ]
+    },
+    {
+      "id": "scene-c08",
+      "owner": "T01-C08",
+      "type": "interactive-canvas",
+      "purpose": "风险情景选择：给出商品+标题+图片+宣称，学员点击风险点，系统展开原因与官方证据入口。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课核验Restricted/Prohibited Products、Product Listing、Content Policy。"
+      ]
+    },
+    {
+      "id": "scene-c09",
+      "owner": "T01-C09",
+      "type": "interactive-canvas",
+      "purpose": "SKU树编辑器：增加/删除变体，前端实时预览消费者端选择逻辑。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备单SKU、多颜色、多尺寸、多套装四种样例。"
+      ],
+      "implementation_component": "ListingStudio"
+    },
+    {
+      "id": "scene-c10",
+      "owner": "T01-C10",
+      "type": "interactive-canvas",
+      "purpose": "事实锁定器：左侧勾选已确认事实，右侧生成文案；使用未确认事实时提示“需证据”。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备多语言本地化对照案例；每期开课核验当前Listing文本政策。"
+      ],
+      "implementation_component": "ListingStudio"
+    },
+    {
+      "id": "scene-c11",
+      "owner": "T01-C11",
+      "type": "drag-path",
+      "purpose": "素材排序器+真实性对比滑块；学员拖图排序，前端模拟移动端首屏和滑动体验。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备真实商品原图、优化图和AI误导反例；美国站Listing政策当前建议至少5张高分辨率图片，其他站点按当期规则核验。"
+      ],
+      "implementation_component": "ListingStudio"
+    },
+    {
+      "id": "scene-c12",
+      "owner": "T01-C12",
+      "type": "interactive-canvas",
+      "purpose": "滑杆模拟价格/佣金/物流变化，显示单位贡献与“是否适合继续测试”。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备标准成本数据；站点配送选项和SLA每期开课核验。"
+      ],
+      "implementation_component": "ListingStudio"
+    },
+    {
+      "id": "scene-c13",
+      "owner": "T01-C13",
+      "type": "drag-path",
+      "purpose": "漏斗断点诊断：拖动各层数据，系统高亮“内容问题/PDP问题/价格问题/证据不足”。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "使用Seller Center Video Analytics当前默认指标作为演示口径。"
+      ]
+    },
+    {
+      "id": "scene-c14",
+      "owner": "T01-C14",
+      "type": "interactive-canvas",
+      "purpose": "案例筛选器：按“可比性”而非“播放量”排序，学员选择理由会影响推荐。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备Video Analytics与Affiliate Performance脱敏截图；注意销售指标归因口径在2026年有调整。"
+      ],
+      "implementation_component": "VideoCommerceStudio"
+    },
+    {
+      "id": "scene-c15",
+      "owner": "T01-C15",
+      "type": "drag-path",
+      "purpose": "组合矩阵：拖动卖点与场景自动形成“内容假设卡”，用户再人工修改。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备不同类目选题案例，避免全部用美妆/服装。"
+      ]
+    },
+    {
+      "id": "scene-c16",
+      "owner": "T01-C16",
+      "type": "drag-path",
+      "purpose": "时间轴编辑器：镜头块拖拽重排，显示累计时长和每个镜头承担的转化任务。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备真实样品/道具或标准商品素材。"
+      ],
+      "implementation_component": "VideoCommerceStudio"
+    },
+    {
+      "id": "scene-c17",
+      "owner": "T01-C17",
+      "type": "interactive-canvas",
+      "purpose": "制作检查清单+AI前后对比；发布前必须通过“商品事实一致性”闸门。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备当前Content Policy、Creator/Content Policy Guide和Video Analytics截图。"
+      ],
+      "implementation_component": "VideoCommerceStudio"
+    },
+    {
+      "id": "scene-c18",
+      "owner": "T01-C18",
+      "type": "interactive-canvas",
+      "purpose": "合作模式切换器：切Open/Target后，界面显示谁能看到、谁主动发起、佣金/样品如何配置。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "当前美国站Open/Target佣金、保护期与样品规则较动态，每期开课核验。"
+      ],
+      "implementation_component": "CreatorWorkbench"
+    },
+    {
+      "id": "scene-c19",
+      "owner": "T01-C19",
+      "type": "drag-path",
+      "purpose": "A/B/C分层看板；拖Creator卡到层级后必须填写一条证据，否则不能保存。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备Affiliate Center Find/Manage Creators当前截图与脱敏Creator样本。"
+      ],
+      "implementation_component": "CreatorWorkbench"
+    },
+    {
+      "id": "scene-c20",
+      "owner": "T01-C20",
+      "type": "interactive-canvas",
+      "purpose": "合作成本模拟器+样品状态流。调整佣金后即时显示单位贡献变化。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课核验佣金生效/保护期、样品审批与发布时限。"
+      ],
+      "implementation_component": "CreatorWorkbench"
+    },
+    {
+      "id": "scene-c21",
+      "owner": "T01-C21",
+      "type": "node-canvas",
+      "purpose": "广告就绪诊断卡；缺关键条件时不显示“启动”按钮，只显示先修动作。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备正反投放前状态案例。"
+      ]
+    },
+    {
+      "id": "scene-c22",
+      "owner": "T01-C22",
+      "type": "interactive-canvas",
+      "purpose": "归因沙盘：开启/关闭GMV Max前后加入“自然订单/广告订单/Affiliate订单”，让学员判断哪些会进入当前面板。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "当前官方GMV Max归因和Primary Ad Account规则每期开课核验；准备Product/LIVE两套截图。"
+      ],
+      "implementation_component": "GmvAttributionLab"
+    },
+    {
+      "id": "scene-c23",
+      "owner": "T01-C23",
+      "type": "node-canvas",
+      "purpose": "直播控制台模拟：点击Pin、切品、触发互动卡，旁边实时生成CTR/CTOR示意数据。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备当前LIVE后台/Analytics截图；AI直播规则作为扩展资料动态维护。"
+      ],
+      "implementation_component": "LiveDirector"
+    },
+    {
+      "id": "scene-c24",
+      "owner": "T01-C24",
+      "type": "timeline",
+      "purpose": "订单状态机沙盘；时间推进会触发SLA预警，学员选择动作影响各指标。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课核验目标站点Fulfillment Policy与指标阈值。"
+      ],
+      "implementation_component": "OrderConsole"
+    },
+    {
+      "id": "scene-c25",
+      "owner": "T01-C25",
+      "type": "interactive-canvas",
+      "purpose": "分支情景：每一步选择会改变后续可用动作与店铺影响。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "每期开课核验Customer Order Cancellation, Return, and Refund Policy。"
+      ],
+      "implementation_component": "OrderConsole"
+    },
+    {
+      "id": "scene-c26",
+      "owner": "T01-C26",
+      "type": "drag-path",
+      "purpose": "健康度诊断面板：把问题拖到AHR/SPS/履约指标下，系统显示可能影响链。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "美国站AHR/SPS及履约指标在2026年持续更新，每期开课核验。"
+      ],
+      "implementation_component": "ShopHealthConsole"
+    },
+    {
+      "id": "scene-c27",
+      "owner": "T01-C27",
+      "type": "interactive-canvas",
+      "purpose": "故障诊断图：点击某一指标异常，前端只展开下一层最相关的2–3个检查方向。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备Shop Analytics、Product Traffic、Video Analytics、Affiliate Performance、GMV Max等当前截图。"
+      ],
+      "implementation_component": "FunnelDiagnoser"
+    },
+    {
+      "id": "scene-c28",
+      "owner": "T01-C28",
+      "type": "interactive-canvas",
+      "purpose": "瀑布图可调变量，学员改佣金/广告/退款后即时看到Settlement和单位贡献变化。",
+      "motion": {
+        "principle": "只表达因果、路径、状态变化；禁止无教学意义的装饰性粒子/自动循环。",
+        "reduced_motion": "必须支持 prefers-reduced-motion"
+      },
+      "assets_needed": [
+        "准备Finance/Settlement脱敏样本；各站点税费/平台费动态核验，主课只教核对方法。"
+      ]
+    },
+    {
+      "id": "scene-w01",
+      "owner": "T01-W01",
+      "type": "workshop-stepper",
+      "purpose": "横向路线构建器：站点→主体/店型→履约→商品→缺口。每个节点只有通过/需补/阻断三种教学状态；点击节点展开依据。",
+      "motion": {
+        "principle": "选择条件后仅高亮可行路径和阻断点；不做装饰性动效。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "学员主体/团队/商品/库存位置等真实条件",
+        "当期站点规则卡",
+        "标准路线案例"
+      ]
+    },
+    {
+      "id": "scene-w02",
+      "owner": "T01-W02",
+      "type": "workshop-stepper",
+      "purpose": "任务式后台导航模拟器。左侧不固定Seller Center菜单，而显示经营任务；右侧显示当前站点入口映射。",
+      "motion": {
+        "principle": "完成一个经营任务后点亮对应能力节点。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "账号/角色权限",
+        "仓库与退货地址",
+        "结算与通知信息",
+        "当期导航迁移备忘"
+      ]
+    },
+    {
+      "id": "scene-w03",
+      "owner": "T01-W03",
+      "type": "workshop-stepper",
+      "purpose": "SKU决策看板：证据列→经济账→风险闸门→主测/备选/淘汰。",
+      "motion": {
+        "principle": "拖动成本/佣金/广告预留滑块时单位贡献即时变化。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "TikTok商品/内容/Creator信号",
+        "价格和成本",
+        "履约成本",
+        "基础合规结论"
+      ]
+    },
+    {
+      "id": "scene-w04",
+      "owner": "T01-W04",
+      "type": "workshop-stepper",
+      "purpose": "仿真实Listing编辑器+右侧实时PDP预览；提交后进入可配置审核状态，而不是直接显示Live。",
+      "motion": {
+        "principle": "错误字段只做局部高亮；提交后状态芯片切换。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "SKU事实真源",
+        "类目/资格要求",
+        "标题/描述/属性",
+        "素材",
+        "价格/库存/配送"
+      ]
+    },
+    {
+      "id": "scene-w05",
+      "owner": "T01-W05",
+      "type": "workshop-stepper",
+      "purpose": "三栏工作台：案例拆解→脚本画布→成片检查。每个字段可点击回溯商品事实来源。",
+      "motion": {
+        "principle": "从案例结构拖拽到脚本卡片时显示“借结构，不复制素材/表达”。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "可比案例池",
+        "商品事实/卖点/证明",
+        "目标人群/场景",
+        "素材与品牌资产"
+      ]
+    },
+    {
+      "id": "scene-w06",
+      "owner": "T01-W06",
+      "type": "workshop-stepper",
+      "purpose": "漏斗仪表：Views→Product Impressions→Product Clicks→Orders→GMV。点击断点显示可检查项。",
+      "motion": {
+        "principle": "仅对漏斗断点做聚焦和上下游联动。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "成片",
+        "挂载商品",
+        "发布设置",
+        "测试变量"
+      ]
+    },
+    {
+      "id": "scene-w07",
+      "owner": "T01-W07",
+      "type": "workshop-stepper",
+      "purpose": "Creator CRM看板：Prospect→Contacted→Accepted/Sample→Content→Result；每张卡显示下一动作和截止日期。",
+      "motion": {
+        "principle": "状态迁移采用卡片滑动；逾期只做风险提示，不做游戏化惩罚。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "SKU定位",
+        "Creator筛选条件",
+        "标准佣金/Shop Ads佣金边界",
+        "样品成本和库存"
+      ]
+    },
+    {
+      "id": "scene-w08",
+      "owner": "T01-W08",
+      "type": "workshop-stepper",
+      "purpose": "广告启动向导；归因口径必须先勾选理解后才能进入结果页。结果页把Total ROI与“纯付费增量不可直接得出”并列展示。",
+      "motion": {
+        "principle": "不同归因场景切换时，用流量合流图说明Paid+Organic。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "Shop/Primary Ad Account关系",
+        "商品或LIVE对象",
+        "预算",
+        "目标ROI/模式",
+        "Creative Supply",
+        "单位贡献边界"
+      ]
+    },
+    {
+      "id": "scene-w09",
+      "owner": "T01-W09",
+      "type": "workshop-stepper",
+      "purpose": "直播导演台模拟：视频区+商品Pin区+销售循环计时器+简化商业漏斗。",
+      "motion": {
+        "principle": "销售循环各阶段按时间轴推进；不做炫技3D。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "商品顺序",
+        "直播脚本",
+        "商品链接/Shopping Bag条件",
+        "Offer/价格信息"
+      ]
+    },
+    {
+      "id": "scene-w10",
+      "owner": "T01-W10",
+      "type": "workshop-stepper",
+      "purpose": "订单事件时间线+SLA倒计时+指标影响面板。",
+      "motion": {
+        "principle": "事件推进驱动订单状态和指标风险变化。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "6类订单情景",
+        "当前SLA/Shipping规则",
+        "售后规则",
+        "健康度指标"
+      ]
+    },
+    {
+      "id": "scene-w11",
+      "owner": "T01-W11",
+      "type": "workshop-stepper",
+      "purpose": "经营驾驶舱：商品/内容/达人/广告/LIVE/履约/财务七块只显示关键指标；点击才深入。",
+      "motion": {
+        "principle": "点击瓶颈时只展开相关上游/下游，不把所有图同时展开。",
+        "reduced_motion": "保留状态变化，取消空间位移"
+      },
+      "assets_needed": [
+        "商品/内容/Affiliate/Ads/LIVE/订单/Finance数据",
+        "单位经济账",
+        "健康度记录"
+      ]
+    }
+  ]
+}

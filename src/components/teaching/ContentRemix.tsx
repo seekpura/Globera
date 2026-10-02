@@ -1,3 +1,0 @@
-import { useState } from 'react'
-const layers=['结构','事实','视觉表达','声音/语言','权利']
-export function ContentRemix(){const [active,setActive]=useState('结构');return <div className="content-remix">{layers.map(x=><button key={x} className={active===x?'selected':''} onClick={()=>setActive(x)}><strong>{x}</strong><small>{['事实','权利'].includes(x)?'Truth / Rights Lock｜不可篡改':'可重新设计表达'}</small></button>)}<p>当前层：{active}。复刻可学习成交结构，但商品事实、版权与授权边界必须保持锁定。</p></div>}

@@ -1,3 +1,0 @@
-import { useState } from 'react'
-import type { LessonContent } from '../../types/content'
-export function ProcessJourneyScene({lesson}:{lesson:LessonContent}){const [step,setStep]=useState(0);const stages=['输入','核验','执行','状态变化','异常/恢复','输出'];return <section className="workbench family-scene"><div className="scene-heading"><div><div className="eyebrow">Process Journey｜过程旅程 · {lesson.code}</div><h1>{lesson.title}</h1><p>{lesson.coreStatement}</p></div></div><div className="process-line">{stages.map((s,i)=><button key={s} className={i<step?'done':i===step?'selected':''} onClick={()=>setStep(i)}><span>{i+1}</span><strong>{s}</strong></button>)}</div><div className="output-card"><h2>{stages[step]}</h2><p>拖动/点击时间过程，观察前一状态怎样约束下一状态；异常会改变后续动作，而不是作为旁注存在。</p></div></section>}

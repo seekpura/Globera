@@ -1,0 +1,67 @@
+{
+  "version": "2.8",
+  "theme": "light-default",
+  "colors": {
+    "bg": "#F7F9FB",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#EEF3F5",
+    "text": "#17212B",
+    "textMuted": "#5F6B76",
+    "primary": "#0B7F86",
+    "primarySoft": "#DDF2F2",
+    "accent": "#2F6FED",
+    "border": "#D7E0E5",
+    "success": "#1F8A5B",
+    "warning": "#A66A00",
+    "danger": "#B33A3A",
+    "info": "#356AA0"
+  },
+  "typography": {
+    "zh": "system-ui, \"Microsoft YaHei\", sans-serif",
+    "latin": "Inter, system-ui, sans-serif",
+    "scale": [
+      12,
+      14,
+      16,
+      18,
+      22,
+      28,
+      36
+    ]
+  },
+  "radius": {
+    "sm": 6,
+    "md": 10,
+    "lg": 16
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "shadow": {
+    "card": "0 8px 28px rgba(23,33,43,.08)"
+  },
+  "motion": {
+    "fast": 140,
+    "normal": 220,
+    "slow": 360,
+    "easing": "cubic-bezier(.2,.8,.2,1)"
+  },
+  "rules": [
+    "默认明亮浅色，不用大面积纯黑背景",
+    "强调色用于状态与主操作，不做高饱和度满屏渐变",
+    "动效表达因果/路径/状态，不做装饰性粒子"
+  ],
+  "workbench_rules": [
+    "复杂经营能力优先使用工作台、控制台、时间轴、状态流和移动端预览，而不是普通卡片堆叠。",
+    "桌面端允许三栏专业工作区；移动端按任务顺序折叠为单列，核心动作保持可达。",
+    "模拟后台必须标明训练/模拟语义，不冒充真实TikTok Seller Center界面。",
+    "指标变化必须能回到经营判断和下一动作，禁止只做装饰图表。"
+  ]
+}

@@ -1,3 +1,0 @@
-import { useState } from 'react'
-export interface FlowStep{title:string;note:string;exception?:string}
-export function FlowJourney({steps}:{steps:FlowStep[]}){const [active,setActive]=useState(0);const [exception,setException]=useState(false);return <div className="flow-journey"><div className="flow-steps">{steps.map((s,i)=><button key={s.title} className={i<active?'done':i===active?'selected':''} onClick={()=>setActive(i)}><span>{i+1}</span><strong>{s.title}</strong></button>)}</div><div className="flow-detail"><h3>{steps[active]?.title}</h3><p>{exception&&steps[active]?.exception?steps[active].exception:steps[active]?.note}</p>{steps[active]?.exception&&<button onClick={()=>setException(!exception)}>{exception?'恢复正常路径':'触发异常'}</button>}</div></div>}

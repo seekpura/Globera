@@ -1,0 +1,265 @@
+{
+  "version": "2.8",
+  "rules": [
+    {
+      "id": "rule-01",
+      "market": "US/example",
+      "topic": "Seller Center Navigation Update",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=8599840045483796&lang=en",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-09",
+      "payload": {}
+    },
+    {
+      "id": "rule-02",
+      "market": "US/example",
+      "topic": "Product Listing Policy",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?from=policy&identity=1&knowledge_id=3196690250417921&role=1",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-09-01",
+      "payload": {}
+    },
+    {
+      "id": "rule-03",
+      "market": "US/example",
+      "topic": "Content Policy",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?anchor_link=EB6900D1&from=policy&identity=1&knowledge_id=6837891779151617&role=2",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-09",
+      "payload": {}
+    },
+    {
+      "id": "rule-04",
+      "market": "US/example",
+      "topic": "Video Analytics",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=7464845487671082",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026",
+      "payload": {}
+    },
+    {
+      "id": "rule-05",
+      "market": "US/example",
+      "topic": "Affiliate Collaborations",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=6837873164896001",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-07-16",
+      "payload": {}
+    },
+    {
+      "id": "rule-06",
+      "market": "US/example",
+      "topic": "Sample Management",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=5694209038927617&role=1",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-07-16",
+      "payload": {}
+    },
+    {
+      "id": "rule-07",
+      "market": "US/example",
+      "topic": "Affiliate Seller Analytics v3",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=6115786490283790&lang=en",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-07-13",
+      "payload": {}
+    },
+    {
+      "id": "rule-08",
+      "market": "US/example",
+      "topic": "GMV Max Guidelines",
+      "sourceUrl": "https://ads.tiktok.com/help/article/gmv-max-guidelines?lang=en",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok for Business, updated 2026-06",
+      "payload": {}
+    },
+    {
+      "id": "rule-09",
+      "market": "US/example",
+      "topic": "GMV Max Attribution",
+      "sourceUrl": "https://ads.tiktok.com/resources/help/article/about-attribution-for-gmv-max?lang=en",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok for Business, updated 2026-06",
+      "payload": {}
+    },
+    {
+      "id": "rule-10",
+      "market": "US/example",
+      "topic": "Valid Tracking Rate Requirements",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=1274968588748558&role=1",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026",
+      "payload": {}
+    },
+    {
+      "id": "rule-11",
+      "market": "US/example",
+      "topic": "On-Time Delivery Rate Requirements",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=7671875816589099&role=1",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-09-16",
+      "payload": {}
+    },
+    {
+      "id": "rule-12",
+      "market": "US/example",
+      "topic": "Managing Shop Health & Violations",
+      "sourceUrl": "https://seller-us.tiktok.com/university/course?content_id=6750828276418350&learning_id=6206800991225631",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026",
+      "payload": {}
+    },
+    {
+      "id": "rule-13",
+      "market": "US/example",
+      "topic": "Seller Enforcement Policy",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=2380042836166443&role=1",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-07-31",
+      "payload": {}
+    },
+    {
+      "id": "rule-14",
+      "market": "US/example",
+      "topic": "Shop Tab & Search Analytics",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=6276577063585582",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-05-22",
+      "payload": {}
+    },
+    {
+      "id": "rule-15",
+      "market": "US/example",
+      "topic": "Sales Metrics Breakdown Logic Upgrade",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=6494954580231950",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "TikTok Shop Academy, 2026-04-28",
+      "payload": {}
+    },
+    {
+      "id": "rule-16",
+      "market": "US/example",
+      "topic": "Requirements for Seller Identity Verification",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=3309659860764430",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-06-30",
+      "payload": {}
+    },
+    {
+      "id": "rule-17",
+      "market": "US/example",
+      "topic": "How to Add Products to Your Shop",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=6581713858676522",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-07-24",
+      "payload": {}
+    },
+    {
+      "id": "rule-18",
+      "market": "US/example",
+      "topic": "Manage Products - Redesigned!",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=2310197693695786",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2025",
+      "payload": {}
+    },
+    {
+      "id": "rule-19",
+      "market": "US/example",
+      "topic": "How to Use the Product Link Status Review Tool",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=1939311827912494",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2025-11-21",
+      "payload": {}
+    },
+    {
+      "id": "rule-20",
+      "market": "US/example",
+      "topic": "How to set up and manage samples",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=5694209038927617",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-07-16",
+      "payload": {}
+    },
+    {
+      "id": "rule-21",
+      "market": "US/example",
+      "topic": "Guide to Samples: Free and Refundable",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=5764641632306946",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-09-01",
+      "payload": {}
+    },
+    {
+      "id": "rule-22",
+      "market": "US/example",
+      "topic": "GMV Max guidelines",
+      "sourceUrl": "https://ads.tiktok.com/resources/help/article/gmv-max-guidelines?lang=en",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-06",
+      "payload": {}
+    },
+    {
+      "id": "rule-23",
+      "market": "US/example",
+      "topic": "Fulfillment Policy",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-09-17",
+      "payload": {}
+    },
+    {
+      "id": "rule-24",
+      "market": "US/example",
+      "topic": "Late Dispatch Rate Requirements",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-09-16",
+      "payload": {}
+    },
+    {
+      "id": "rule-25",
+      "market": "US/example",
+      "topic": "Account Health Rating (AHR) Requirements",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-06-29",
+      "payload": {}
+    },
+    {
+      "id": "rule-26",
+      "market": "US/example",
+      "topic": "Shop Performance Score New Version Trial-run Guide",
+      "sourceUrl": "https://seller-us.tiktok.com/university/essay?knowledge_id=7105568016090887",
+      "verifiedAt": "",
+      "status": "needs_verification",
+      "summary": "2026-09-22",
+      "payload": {}
+    }
+  ]
+}

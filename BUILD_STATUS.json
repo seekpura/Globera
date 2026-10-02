@@ -1,0 +1,12 @@
+{
+  "version": "2.8",
+  "node": "22.16.0",
+  "local_static_contracts": "PASS",
+  "local_ts_tsx_syntax_transpile": "PASS",
+  "local_relative_import_scan": "PASS",
+  "local_version_normalization": "PASS",
+  "local_dependency_install": "BLOCKED_BY_ENV_DNS_EAI_AGAIN",
+  "local_production_build": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+  "local_playwright_e2e": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+  "github_ci": "CONFIGURED_FOR_NODE22_PNPM10"
+}

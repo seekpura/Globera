@@ -1,0 +1,137 @@
+{
+  "version": "2.8",
+  "events": [
+    {
+      "type": "NAVIGATE",
+      "meaning": "导航到阶段/课程/工作坊/陪跑",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "STAGE_ENTER",
+      "meaning": "进入经营阶段",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "LESSON_START",
+      "meaning": "开始核心课",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "TREE_NODE_FOCUS",
+      "meaning": "聚焦知识节点",
+      "payload": "typed by event type",
+      "persist": false
+    },
+    {
+      "type": "DEEP_DIVE_OPEN",
+      "meaning": "打开点击深入",
+      "payload": "typed by event type",
+      "persist": false
+    },
+    {
+      "type": "VARIABLE_CHANGE",
+      "meaning": "修改可操作变量",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "CASE_TOGGLE",
+      "meaning": "切换正例/反例",
+      "payload": "typed by event type",
+      "persist": false
+    },
+    {
+      "type": "DEMO_HOTSPOT_OPEN",
+      "meaning": "打开后台演示热点",
+      "payload": "typed by event type",
+      "persist": false
+    },
+    {
+      "type": "ASSESS_SUBMIT",
+      "meaning": "提交课程验收",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "WORKSHOP_START",
+      "meaning": "启动工作坊",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "WORKSHOP_STEP_COMPLETE",
+      "meaning": "完成工作坊步骤",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "WORKSHOP_BRANCH",
+      "meaning": "触发异常/回退分支",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "EVIDENCE_ADD",
+      "meaning": "添加证据",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "EVIDENCE_REMOVE",
+      "meaning": "移除证据",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "SIMULATION_MODE_CHANGE",
+      "meaning": "真实/模拟模式切换",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "COACHING_TRANSITION",
+      "meaning": "陪跑状态迁移",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "RULE_VERIFY",
+      "meaning": "动态规则完成核验",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "RULE_STALE",
+      "meaning": "动态规则过期",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "TOOL_UPDATE",
+      "meaning": "更新K工具",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "RESULT_SUBMIT",
+      "meaning": "提交R成果",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "RESULT_REVIEW",
+      "meaning": "讲师通过/返工",
+      "payload": "typed by event type",
+      "persist": true
+    },
+    {
+      "type": "PROGRESS_EXPORT",
+      "meaning": "导出学习数据",
+      "payload": "typed by event type",
+      "persist": true
+    }
+  ]
+}

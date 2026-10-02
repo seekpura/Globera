@@ -1,0 +1,12 @@
+{
+  "version": "2.8",
+  "course": "T01 TikTok跨境电商0–1实战班",
+  "stages": 9,
+  "courses": 28,
+  "workshops": 11,
+  "coaching": 5,
+  "core_tools": 15,
+  "results": 10,
+  "routing": "hash",
+  "persistence": "browser-local"
+}

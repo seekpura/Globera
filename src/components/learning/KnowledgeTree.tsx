@@ -1,0 +1,1 @@
+import {useState} from 'react'; export function KnowledgeTree({items}:{items:string[]}){const[a,setA]=useState(0);return <div className="card tree"><div className="eyebrow">KNOWLEDGE TREE｜知识树</div><h3>这节课真正要掌握什么</h3>{items.map((x,i)=><button key={x} className={a===i?'active':''} onClick={()=>setA(i)}><b>{String(i+1).padStart(2,'0')}</b>　{x}</button>)}</div>}

@@ -1,3 +1,0 @@
-import { useState } from 'react'
-const nodes=['真实商品资产','事实锚点','场景生成','视觉加工','字幕/语言','人工审核','发布资产']
-export function AssetLineage(){const [focus,setFocus]=useState(0);return <div className="asset-lineage">{nodes.map((n,i)=><button key={n} className={i===focus?'selected':''} onClick={()=>setFocus(i)}><span>{i+1}</span><strong>{n}</strong>{i<nodes.length-1&&<b>→</b>}</button>)}<p>{focus<=1?'商品颜色、结构、规格、功能等事实在生成链路中保持锁定。':focus===5?'人工审核检查事实、版权、文字、语言和平台风险。':'所有派生资产都应能追溯到事实锚点与素材来源。'}</p></div>}

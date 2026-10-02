@@ -1,0 +1,658 @@
+{
+  "version": "2.8",
+  "recipes": [
+    {
+      "owner": "T01-C01",
+      "route": "/t01/course/t01-c01",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "FlowGraph",
+        "CaseCompare",
+        "DemoDeck",
+        "VariableLab",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c01"
+    },
+    {
+      "owner": "T01-C02",
+      "route": "/t01/course/t01-c02",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c02"
+    },
+    {
+      "owner": "T01-C03",
+      "route": "/t01/course/t01-c03",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c03"
+    },
+    {
+      "owner": "T01-C04",
+      "route": "/t01/course/t01-c04",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c04"
+    },
+    {
+      "owner": "T01-C05",
+      "route": "/t01/course/t01-c05",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "SellerCenterSimulator",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c05",
+      "workbench": "SellerCenterSimulator"
+    },
+    {
+      "owner": "T01-C06",
+      "route": "/t01/course/t01-c06",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c06"
+    },
+    {
+      "owner": "T01-C07",
+      "route": "/t01/course/t01-c07",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c07"
+    },
+    {
+      "owner": "T01-C08",
+      "route": "/t01/course/t01-c08",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c08"
+    },
+    {
+      "owner": "T01-C09",
+      "route": "/t01/course/t01-c09",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "ListingStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c09",
+      "workbench": "ListingStudio"
+    },
+    {
+      "owner": "T01-C10",
+      "route": "/t01/course/t01-c10",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "ListingStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c10",
+      "workbench": "ListingStudio"
+    },
+    {
+      "owner": "T01-C11",
+      "route": "/t01/course/t01-c11",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "ListingStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c11",
+      "workbench": "ListingStudio"
+    },
+    {
+      "owner": "T01-C12",
+      "route": "/t01/course/t01-c12",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "ListingStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c12",
+      "workbench": "ListingStudio"
+    },
+    {
+      "owner": "T01-C13",
+      "route": "/t01/course/t01-c13",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c13"
+    },
+    {
+      "owner": "T01-C14",
+      "route": "/t01/course/t01-c14",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VideoCommerceStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c14",
+      "workbench": "VideoCommerceStudio"
+    },
+    {
+      "owner": "T01-C15",
+      "route": "/t01/course/t01-c15",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c15"
+    },
+    {
+      "owner": "T01-C16",
+      "route": "/t01/course/t01-c16",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VideoCommerceStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c16",
+      "workbench": "VideoCommerceStudio"
+    },
+    {
+      "owner": "T01-C17",
+      "route": "/t01/course/t01-c17",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VideoCommerceStudio",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c17",
+      "workbench": "VideoCommerceStudio"
+    },
+    {
+      "owner": "T01-C18",
+      "route": "/t01/course/t01-c18",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "CreatorWorkbench",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c18",
+      "workbench": "CreatorWorkbench"
+    },
+    {
+      "owner": "T01-C19",
+      "route": "/t01/course/t01-c19",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "CreatorWorkbench",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c19",
+      "workbench": "CreatorWorkbench"
+    },
+    {
+      "owner": "T01-C20",
+      "route": "/t01/course/t01-c20",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "CreatorWorkbench",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c20",
+      "workbench": "CreatorWorkbench"
+    },
+    {
+      "owner": "T01-C21",
+      "route": "/t01/course/t01-c21",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c21"
+    },
+    {
+      "owner": "T01-C22",
+      "route": "/t01/course/t01-c22",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "GmvAttributionLab",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c22",
+      "workbench": "GmvAttributionLab"
+    },
+    {
+      "owner": "T01-C23",
+      "route": "/t01/course/t01-c23",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "LiveDirector",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c23",
+      "workbench": "LiveDirector"
+    },
+    {
+      "owner": "T01-C24",
+      "route": "/t01/course/t01-c24",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "OrderConsole",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c24",
+      "workbench": "OrderConsole"
+    },
+    {
+      "owner": "T01-C25",
+      "route": "/t01/course/t01-c25",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "OrderConsole",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c25",
+      "workbench": "OrderConsole"
+    },
+    {
+      "owner": "T01-C26",
+      "route": "/t01/course/t01-c26",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "ShopHealthConsole",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c26",
+      "workbench": "ShopHealthConsole"
+    },
+    {
+      "owner": "T01-C27",
+      "route": "/t01/course/t01-c27",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "FunnelDiagnoser",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c27",
+      "workbench": "FunnelDiagnoser"
+    },
+    {
+      "owner": "T01-C28",
+      "route": "/t01/course/t01-c28",
+      "components": [
+        "LessonHeader",
+        "KnowledgeTree",
+        "VariableLab",
+        "CaseCompare",
+        "DemoDeck",
+        "DeepDiveDrawer",
+        "RuleCard",
+        "AssessmentGate"
+      ],
+      "scene": "scene-c28"
+    },
+    {
+      "owner": "T01-W01",
+      "route": "/t01/workshop/t01-w01",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w01"
+    },
+    {
+      "owner": "T01-W02",
+      "route": "/t01/workshop/t01-w02",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w02"
+    },
+    {
+      "owner": "T01-W03",
+      "route": "/t01/workshop/t01-w03",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w03"
+    },
+    {
+      "owner": "T01-W04",
+      "route": "/t01/workshop/t01-w04",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w04"
+    },
+    {
+      "owner": "T01-W05",
+      "route": "/t01/workshop/t01-w05",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w05"
+    },
+    {
+      "owner": "T01-W06",
+      "route": "/t01/workshop/t01-w06",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w06"
+    },
+    {
+      "owner": "T01-W07",
+      "route": "/t01/workshop/t01-w07",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w07"
+    },
+    {
+      "owner": "T01-W08",
+      "route": "/t01/workshop/t01-w08",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w08"
+    },
+    {
+      "owner": "T01-W09",
+      "route": "/t01/workshop/t01-w09",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w09"
+    },
+    {
+      "owner": "T01-W10",
+      "route": "/t01/workshop/t01-w10",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w10"
+    },
+    {
+      "owner": "T01-W11",
+      "route": "/t01/workshop/t01-w11",
+      "components": [
+        "WorkshopStepper",
+        "EvidenceCollector",
+        "StatusGate",
+        "SimulationBadge",
+        "ToolWorkspace",
+        "ResultChecklist"
+      ],
+      "scene": "scene-w11"
+    },
+    {
+      "owner": "T01-P01",
+      "route": "/t01/coaching/t01-p01",
+      "components": [
+        "CoachingTimeline",
+        "TransitionPanel",
+        "EvidenceCollector",
+        "StaleRuleAlert",
+        "SimulationBadge"
+      ]
+    },
+    {
+      "owner": "T01-P02",
+      "route": "/t01/coaching/t01-p02",
+      "components": [
+        "CoachingTimeline",
+        "TransitionPanel",
+        "EvidenceCollector",
+        "StaleRuleAlert",
+        "SimulationBadge"
+      ]
+    },
+    {
+      "owner": "T01-P03",
+      "route": "/t01/coaching/t01-p03",
+      "components": [
+        "CoachingTimeline",
+        "TransitionPanel",
+        "EvidenceCollector",
+        "StaleRuleAlert",
+        "SimulationBadge"
+      ]
+    },
+    {
+      "owner": "T01-P04",
+      "route": "/t01/coaching/t01-p04",
+      "components": [
+        "CoachingTimeline",
+        "TransitionPanel",
+        "EvidenceCollector",
+        "StaleRuleAlert",
+        "SimulationBadge"
+      ]
+    },
+    {
+      "owner": "T01-P05",
+      "route": "/t01/coaching/t01-p05",
+      "components": [
+        "CoachingTimeline",
+        "TransitionPanel",
+        "EvidenceCollector",
+        "StaleRuleAlert",
+        "SimulationBadge"
+      ]
+    }
+  ]
+}

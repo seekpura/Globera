@@ -1,0 +1,134 @@
+{
+  "version": "2.8",
+  "tests": [
+    {
+      "id": "STRUCT-001",
+      "level": "static",
+      "area": "ids",
+      "expectation": "C01-C28、W01-W11、P01-P05路由唯一且均可解析"
+    },
+    {
+      "id": "STRUCT-002",
+      "level": "static",
+      "area": "references",
+      "expectation": "每个工作坊tools/results引用存在；每个阶段引用对象存在"
+    },
+    {
+      "id": "STRUCT-003",
+      "level": "static",
+      "area": "glossary",
+      "expectation": "所有面向学员的英文关键术语首次出现有中文释义"
+    },
+    {
+      "id": "RULE-001",
+      "level": "unit",
+      "area": "dynamic-rules",
+      "expectation": "动态站点规则不写死在页面组件；来自ruleStore"
+    },
+    {
+      "id": "RULE-002",
+      "level": "ui",
+      "area": "dynamic-rules",
+      "expectation": "preview/expired规则显示显著状态和最近核验日期"
+    },
+    {
+      "id": "SIM-001",
+      "level": "ui",
+      "area": "simulation",
+      "expectation": "模拟环境/数据在页面、证据、成果三处均有明确标识"
+    },
+    {
+      "id": "COURSE-001",
+      "level": "e2e",
+      "area": "course",
+      "expectation": "课程默认层→点击深入→案例→变量→演示→验收完整可走"
+    },
+    {
+      "id": "WORKSHOP-001",
+      "level": "e2e",
+      "area": "workshop",
+      "expectation": "每个W可按steps前进；branches可回退/阻断；通过后产生result链接"
+    },
+    {
+      "id": "COACH-001",
+      "level": "e2e",
+      "area": "coaching",
+      "expectation": "P状态机只允许声明的transition；历史记录不可静默删除"
+    },
+    {
+      "id": "EVID-001",
+      "level": "e2e",
+      "area": "evidence",
+      "expectation": "添加证据必须记录时间、来源、真实/模拟；缺关键字段不能验收通过"
+    },
+    {
+      "id": "PROG-001",
+      "level": "integration",
+      "area": "progress",
+      "expectation": "刷新页面后课程/工作坊/陪跑进度仍存在"
+    },
+    {
+      "id": "EXPORT-001",
+      "level": "integration",
+      "area": "export",
+      "expectation": "导出→清空→导入后状态、证据元数据、工具记录一致"
+    },
+    {
+      "id": "A11Y-001",
+      "level": "ui",
+      "area": "accessibility",
+      "expectation": "所有交互可键盘操作；焦点可见；SVG节点有aria-label和文本替代"
+    },
+    {
+      "id": "A11Y-002",
+      "level": "ui",
+      "area": "accessibility",
+      "expectation": "prefers-reduced-motion时取消非必要位移动画"
+    },
+    {
+      "id": "RESP-001",
+      "level": "ui",
+      "area": "responsive",
+      "expectation": "360px、768px、1440px不横向溢出；表格在小屏转卡片/横向滚动"
+    },
+    {
+      "id": "PERF-001",
+      "level": "performance",
+      "area": "route",
+      "expectation": "主路由代码分割；非当前课重资产延迟加载"
+    },
+    {
+      "id": "DATA-001",
+      "level": "unit",
+      "area": "metrics",
+      "expectation": "CTR/CTOR/GPM/ROI等计算遇到0分母不产生NaN/Infinity"
+    },
+    {
+      "id": "CONTENT-001",
+      "level": "static",
+      "area": "focus",
+      "expectation": "默认页面不展示非TikTok平台长篇内容；扩展只在DeepDiveDrawer"
+    },
+    {
+      "id": "INSTR-001",
+      "level": "e2e",
+      "area": "instructor",
+      "expectation": "讲师可查看待核规则、待验收成果、阻断节点并完成审核"
+    }
+  ],
+  "release_gate": {
+    "must_pass": [
+      "STRUCT-*",
+      "RULE-*",
+      "SIM-*",
+      "COURSE-*",
+      "WORKSHOP-*",
+      "COACH-*",
+      "EVID-*",
+      "PROG-*",
+      "A11Y-*",
+      "CONTENT-*"
+    ],
+    "no_known_p0": true
+  }
+}

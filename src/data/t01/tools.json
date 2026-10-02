@@ -1,0 +1,288 @@
+{
+  "version": "2.8",
+  "tools": [
+    {
+      "code": "T01-K01",
+      "title": "TikTok 0–1启动路线工具",
+      "stage": "01",
+      "fields": [
+        "目标市场/站点",
+        "主体与店型",
+        "履约方式",
+        "语言",
+        "首批商品方向",
+        "当前缺口",
+        "规则来源/核验日期",
+        "下一步"
+      ]
+    },
+    {
+      "code": "T01-K02",
+      "title": "开店资料与经营就绪检查工具",
+      "stage": "02",
+      "fields": [
+        "检查域",
+        "检查项",
+        "当前状态",
+        "后台路径/证据",
+        "当期规则/来源",
+        "问题",
+        "下一步",
+        "完成日期"
+      ]
+    },
+    {
+      "code": "T01-K03",
+      "title": "商品候选与TikTok信号验证工具",
+      "stage": "03",
+      "fields": [
+        "候选SKU",
+        "信号时间窗",
+        "商品/Shop信号",
+        "Video信号",
+        "Creator信号",
+        "价格/竞争",
+        "证据链接/日期",
+        "反向信号/风险",
+        "结论"
+      ]
+    },
+    {
+      "code": "T01-K04",
+      "title": "SKU利润快速核算工具",
+      "stage": "03",
+      "fields": [
+        "SKU",
+        "标价",
+        "卖家折扣",
+        "预计销售实收",
+        "商品成本",
+        "包装",
+        "履约/物流",
+        "平台/支付费用",
+        "Affiliate佣金",
+        "广告成本分摊",
+        "售后/损耗",
+        "单位贡献",
+        "贡献率"
+      ],
+      "formula": "profit"
+    },
+    {
+      "code": "T01-K05",
+      "title": "首批测试SKU决策工具",
+      "stage": "03",
+      "fields": [
+        "候选SKU",
+        "需求",
+        "展示性",
+        "利润",
+        "履约",
+        "风险",
+        "TikTok信号",
+        "决策",
+        "测试假设",
+        "停止条件"
+      ]
+    },
+    {
+      "code": "T01-K06",
+      "title": "TikTok Listing发布检查工具",
+      "stage": "04",
+      "fields": [
+        "检查域",
+        "检查项",
+        "当期要求/来源",
+        "当前值/证据",
+        "结果",
+        "问题",
+        "修正动作",
+        "复查"
+      ]
+    },
+    {
+      "code": "T01-K07",
+      "title": "TikTok内容案例拆解工具",
+      "stage": "05",
+      "fields": [
+        "案例链接/编号",
+        "发布日期/抓取日",
+        "商品/人群",
+        "内容形式/Creator",
+        "Hook",
+        "Problem/Desire",
+        "Demo",
+        "Proof",
+        "Offer",
+        "CTA",
+        "商品链接/购物动作",
+        "商业表现",
+        "可迁移结构",
+        "风险/不可复制项"
+      ]
+    },
+    {
+      "code": "T01-K08",
+      "title": "TikTok内容选题与脚本工具",
+      "stage": "05",
+      "fields": [
+        "SKU",
+        "商品卖点",
+        "用户/场景",
+        "内容角度",
+        "Hook",
+        "主体/Proof",
+        "Demo",
+        "Offer",
+        "CTA",
+        "商品链接",
+        "镜头表",
+        "事实/合规检查",
+        "版本变量"
+      ]
+    },
+    {
+      "code": "T01-K09",
+      "title": "TikTok内容发布测试记录",
+      "stage": "05",
+      "fields": [
+        "视频编号",
+        "发布时间",
+        "核心变量",
+        "挂载商品",
+        "Video Views",
+        "Product Impressions",
+        "Product Clicks",
+        "CTR",
+        "SKU Orders",
+        "CTOR",
+        "GMV",
+        "GPM",
+        "诊断",
+        "下一版动作"
+      ],
+      "formula": "content"
+    },
+    {
+      "code": "T01-K10",
+      "title": "Creator搜索与筛选工具",
+      "stage": "06",
+      "fields": [
+        "Creator",
+        "账号链接/ID",
+        "类目匹配",
+        "受众匹配",
+        "购物内容质量",
+        "内容稳定性",
+        "商业信号",
+        "样品/合作历史",
+        "优先级",
+        "理由"
+      ]
+    },
+    {
+      "code": "T01-K11",
+      "title": "Affiliate合作与跟进工具",
+      "stage": "06",
+      "fields": [
+        "Creator",
+        "合作方式",
+        "标准佣金",
+        "Shop Ads佣金",
+        "样品类型",
+        "样品成本",
+        "邀约日期",
+        "接受/审批",
+        "发货/发布截止",
+        "当前状态",
+        "内容链接",
+        "订单/GMV",
+        "下一步"
+      ]
+    },
+    {
+      "code": "T01-K12",
+      "title": "GMV Max基础启动与判断工具",
+      "stage": "07",
+      "fields": [
+        "Campaign Type",
+        "Shop / Primary Ad Account",
+        "对象",
+        "模式/Target ROI",
+        "预算",
+        "Creative Supply",
+        "Total GMV",
+        "Spend",
+        "Total ROI",
+        "Orders",
+        "归因说明",
+        "经济边界",
+        "判断",
+        "下一步"
+      ],
+      "formula": "gmvmax"
+    },
+    {
+      "code": "T01-K13",
+      "title": "LIVE基础脚本与演练工具",
+      "stage": "07",
+      "fields": [
+        "LIVE/场次",
+        "商品顺序/Pin",
+        "开场",
+        "Demo",
+        "Proof",
+        "Offer",
+        "互动",
+        "CTA",
+        "Impressions/Views",
+        "Product Clicks",
+        "CTR",
+        "SKU Orders",
+        "CTOR",
+        "GMV",
+        "Show/Watch GPM",
+        "问题/下一步"
+      ],
+      "formula": "live"
+    },
+    {
+      "code": "T01-K14",
+      "title": "订单、售后与Shop Health工具",
+      "stage": "08",
+      "fields": [
+        "订单/情景",
+        "Shipping Type",
+        "当前状态",
+        "SLA/截止",
+        "Tracking/LSP",
+        "指标影响",
+        "问题",
+        "处理动作",
+        "客户沟通",
+        "退款/损失",
+        "AHR/SPS影响",
+        "结果/证据"
+      ]
+    },
+    {
+      "code": "T01-K15",
+      "title": "TikTok经营复盘与30天行动工具",
+      "stage": "09",
+      "fields": [
+        "数据来源",
+        "经营环节",
+        "指标",
+        "当前值",
+        "对比/基准",
+        "判断",
+        "优先级",
+        "下一步动作",
+        "负责人",
+        "完成日期",
+        "预期信号",
+        "复盘日期"
+      ]
+    }
+  ]
+}

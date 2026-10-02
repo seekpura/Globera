@@ -1,107 +1,65 @@
-# T01 TikTok 跨境电商 0–1｜高级交互教学前端
+# T01 TikTok 跨境电商 0–1｜React 交互教学系统
 
-这是 T01《TikTok 跨境电商 0–1 实战班》的 React + TypeScript 静态交互教学工程。它不是 LMS、SaaS 或卖家后台，而是一套用于现场教学、线上连线教学与线上/线下陪跑的数字课程前端。
+版本：2.8
 
-## 当前范围
+T01 是以 TikTok / TikTok Shop 为唯一主经营场景的 0–1 实战教学前端。主路线不是跨境百科，而是让学员把第一轮真实经营闭环跑出来：
 
-- 12 个模块 / 48 节正式课程全部进入 React 路由、结构化内容层与正式 Lesson Spec。
-- 6 个标杆课程使用独立高级交互 Scene：
-  - M01-L02 Platform Universe｜全球跨境平台世界
-  - M02-L01 Global Market Explorer｜全球市场判断
-  - M06-L01 Product Opportunity Lab｜商品机会实验室
-  - M09-L01 Video Commerce Analyzer｜视频成交解剖
-  - M11-L02 Logistics Journey｜国际物流旅程
-  - M12-L04 Operating Decision Room｜经营决策室
-- 其余课程按 M01–M04、M05–M08、M09–M12 三组综合教学世界进入专属交互场景，并复用教学母组件。
-- Presenter Step｜讲师演示步骤已接入课程壳：Scene｜场景 → Observe｜观察 → Explore｜探索 → Decide｜判断 → Reflect｜结论。
-- Learner Mode｜学员模式与 Instructor Mode｜讲师模式共用同一静态前端；不依赖登录、数据库或业务后台。
-- 中文是第一阅读语言；可见英文专业表达配中文说明。
-- E1–E5 证据等级、Unknown｜未知、反证、硬风险闸门与教学模拟边界进入课程交互。
+**经营路线 → Shop 就绪 → 首测 SKU → Listing → TikTok 内容 → Creator/Affiliate → GMV Max → LIVE → 订单/Shop Health → 数据/P&L → 下一轮 30 天。**
 
-## 已验证工程 Gate
+## 当前结构
 
-GitHub Actions 使用 Node.js 22 执行：
+- 9 个经营阶段
+- 28 门核心课
+- 11 个实操工作坊
+- 5 个真实经营陪跑案件
+- 15 个可填写/计算/保存/导出的核心工具
+- 10 个毕业经营里程碑
+- 纯静态 React + TypeScript，可部署到 CDN / GitHub Pages / 对象存储
 
-```bash
-npm install --no-audit --no-fund
-npm run validate
-npm run typecheck
-npm run build
-```
+## 2.8 数据流
 
-Run 181 已真实通过 validate、TypeScript typecheck 与 Vite build，并成功生成 `t01-dist` 构建产物。GitHub Pages 部署作为可选步骤，当前仓库未启用 Pages 时不会阻断工程校验。
+课程系统不再是互相独立的页面。关键经营结果会沿业务链自动流动：
 
-## 技术栈
+- W03 首测 SKU → W04 Listing / W05 内容 / W08 GMV Max / W09 LIVE
+- 工作坊完成 → K01–K15 工具自动生成带来源的记录
+- W05 成片 → W06 发布测试
+- P01–P05 的审核、内容、达人、订单状态 → R01–R10 经营档案自动汇总
+- 人工验收仍独立存在，自动汇总不会冒充“通过”
 
-- React + TypeScript + Vite
-- React Router（Hash Router，适配静态托管）
-- GSAP（高级动效接口）
-- Zustand（本地课程 / 场景状态）
-- SVG 为关系图、流程、地图与时间轴的主要图形技术
-- 纯静态构建，无业务后端
+## 技术
+
+- React 19 + TypeScript + Vite
+- React Router HashRouter
+- Framer Motion
+- 浏览器本地持久化；Repository 接口可替换为未来 SaaS 后端
+- Node >= 22
+- pnpm >= 10
 
 ## 本地运行
 
 ```bash
-npm install
-npm run validate
-npm run typecheck
-npm run dev
+corepack enable
+pnpm install
+pnpm test:static
+pnpm test:ui-contracts
+pnpm test
+pnpm build
+pnpm dev
 ```
 
-正式构建：
-
-```bash
-npm run build
-npm run preview
-```
-
-输出目录为 `dist/`，可部署到支持静态前端的托管环境。
-
-## 路由
-
-课程全景：
+## 关键目录
 
 ```text
-#/course/t01
+src/data/t01/              课程、工作坊、陪跑、工具与动态规则真源
+src/domain/dataFlow.ts     跨阶段经营数据流
+src/features/course/       核心课与阶段
+src/features/workshop/     W01–W11 实操工作台
+src/features/coaching/     P01–P05 真实案件中心
+src/features/tools/        K01–K15 工具工作区
+src/features/results/      R01–R10 经营档案
+src/components/visual/     高保真教学工作台
 ```
 
-任意课程：
+## 教学边界
 
-```text
-#/course/t01/m06/l01
-```
-
-所有 48 节均可直接深链打开。
-
-## 内容与程序分离
-
-课程正式数据位于：
-
-```text
-src/data/courseContent.ts
-src/data/lessonSpecs*.ts
-```
-
-交互场景位于：
-
-```text
-src/scenes/
-src/components/teaching/
-```
-
-动态规则、案例、素材与证据应继续与组件实现解耦。
-
-## 设计边界
-
-本项目当前不包含：
-
-- 登录 / 注册
-- 云端作业提交
-- 数据库
-- 后台 CMS
-- 商家真实自动操作
-- 实时 AI 作为课程主路径
-- 支付、积分、排行榜
-
-真实平台页面、实时规则、费率、准入、税务与物流 SLA｜服务时效需要在开课前按官方或直接证据刷新。离线优先是工程目标，完整离线资产验收仍作为独立 Gate 执行。
+真实平台规则、入口、费率、资格、税务和履约阈值均属于动态信息。系统通过动态规则核验台记录当前站点、官方来源与核验日期，不把历史界面或阈值硬编码成永久事实。

@@ -1,0 +1,86 @@
+{
+  "version": "2.8",
+  "entities": {
+    "CourseProgress": {
+      "fields": {
+        "courseId": "string",
+        "status": "locked|available|in_progress|submitted|passed|needs_revision",
+        "percent": "0..100",
+        "lastVisitedAt": "ISODate"
+      }
+    },
+    "WorkshopProgress": {
+      "fields": {
+        "workshopId": "string",
+        "currentStepId": "string",
+        "stepStates": "Record<stepId,status>",
+        "branchFlags": "string[]",
+        "mode": "real|simulated|mixed",
+        "submittedAt": "ISODate|null"
+      }
+    },
+    "CoachingInstance": {
+      "fields": {
+        "coachingId": "string",
+        "stableState": "string",
+        "platformAlias": "string|null",
+        "evidenceIds": "string[]",
+        "nextAction": "string",
+        "updatedAt": "ISODate",
+        "history": "TransitionRecord[]"
+      }
+    },
+    "Evidence": {
+      "fields": {
+        "id": "string",
+        "evidenceType": "screenshot|url|text|file|metric|note",
+        "source": "string",
+        "capturedAt": "ISODate",
+        "market": "string|null",
+        "mode": "real|simulated",
+        "fileOrUrl": "string|null",
+        "notes": "string"
+      }
+    },
+    "DynamicRule": {
+      "fields": {
+        "id": "string",
+        "market": "string",
+        "topic": "string",
+        "sourceUrl": "string",
+        "verifiedAt": "ISODate",
+        "status": "effective|preview|expired|needs_verification",
+        "summary": "string",
+        "payload": "Record<string,unknown>"
+      }
+    },
+    "ToolRecord": {
+      "fields": {
+        "toolId": "string",
+        "rows": "unknown[]",
+        "updatedAt": "ISODate",
+        "mode": "real|simulated|mixed"
+      }
+    },
+    "ResultRecord": {
+      "fields": {
+        "resultId": "string",
+        "status": "not_started|submitted|passed|needs_revision",
+        "evidenceIds": "string[]",
+        "reviewNotes": "string"
+      }
+    }
+  },
+  "stores": {
+    "contentStore": "只读课程/工作坊/状态机/术语数据",
+    "progressStore": "课程、工作坊、成果进度",
+    "evidenceStore": "证据元数据；文件Blob可存IndexedDB",
+    "ruleStore": "动态规则配置与新鲜度",
+    "uiStore": "当前模式、drawer、selectedNode、motionReduced"
+  },
+  "persistence": {
+    "default": "IndexedDB + localStorage small settings",
+    "export_import": "一键导出/导入JSON；不包含无法序列化的Blob时改为ZIP证据包",
+    "repository_interface": "LocalRepository默认；未来可替换RemoteRepository，不修改教学组件"
+  }
+}

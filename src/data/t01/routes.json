@@ -1,0 +1,225 @@
+{
+  "version": "2.8",
+  "base": "/t01",
+  "public_routes": [
+    {
+      "id": "home",
+      "path": "/t01",
+      "screen": "CourseHome"
+    },
+    {
+      "id": "stage",
+      "path": "/t01/:stageId",
+      "screen": "StageOverview"
+    },
+    {
+      "id": "course",
+      "path": "/t01/course/:courseId",
+      "screen": "CourseLesson"
+    },
+    {
+      "id": "workshop",
+      "path": "/t01/workshop/:workshopId",
+      "screen": "WorkshopRunner"
+    },
+    {
+      "id": "coaching",
+      "path": "/t01/coaching/:coachingId",
+      "screen": "CoachingTimeline"
+    },
+    {
+      "id": "tools",
+      "path": "/t01/tools",
+      "screen": "ToolLibrary"
+    },
+    {
+      "id": "tool",
+      "path": "/t01/tools/:toolId",
+      "screen": "ToolWorkspace"
+    },
+    {
+      "id": "results",
+      "path": "/t01/results",
+      "screen": "ResultsPortfolio"
+    },
+    {
+      "id": "knowledge",
+      "path": "/t01/knowledge/:topicId",
+      "screen": "DeepKnowledgePanel"
+    },
+    {
+      "id": "progress",
+      "path": "/t01/progress",
+      "screen": "ProgressMap"
+    }
+  ],
+  "instructor_routes": [
+    {
+      "id": "instructor-dashboard",
+      "path": "/t01/instructor",
+      "screen": "InstructorDashboard"
+    },
+    {
+      "id": "instructor-lesson",
+      "path": "/t01/instructor/course/:courseId",
+      "screen": "InstructorLesson"
+    },
+    {
+      "id": "instructor-workshop",
+      "path": "/t01/instructor/workshop/:workshopId",
+      "screen": "InstructorWorkshop"
+    },
+    {
+      "id": "instructor-rules",
+      "path": "/t01/instructor/rules",
+      "screen": "RuleVerificationDesk"
+    }
+  ],
+  "stages": [
+    {
+      "id": "stage-01",
+      "label": "确定 TikTok 经营路线",
+      "route": "/t01/stage-01",
+      "course_ids": [
+        "T01-C01",
+        "T01-C02"
+      ],
+      "workshop_ids": [
+        "T01-W01"
+      ],
+      "coaching_ids": []
+    },
+    {
+      "id": "stage-02",
+      "label": "TikTok Shop达到经营就绪",
+      "route": "/t01/stage-02",
+      "course_ids": [
+        "T01-C03",
+        "T01-C04",
+        "T01-C05"
+      ],
+      "workshop_ids": [
+        "T01-W02"
+      ],
+      "coaching_ids": [
+        "T01-P01"
+      ]
+    },
+    {
+      "id": "stage-03",
+      "label": "确定首批测试SKU",
+      "route": "/t01/stage-03",
+      "course_ids": [
+        "T01-C06",
+        "T01-C07",
+        "T01-C08"
+      ],
+      "workshop_ids": [
+        "T01-W03"
+      ],
+      "coaching_ids": []
+    },
+    {
+      "id": "stage-04",
+      "label": "商品真正进入 TikTok Shop",
+      "route": "/t01/stage-04",
+      "course_ids": [
+        "T01-C09",
+        "T01-C10",
+        "T01-C11",
+        "T01-C12"
+      ],
+      "workshop_ids": [
+        "T01-W04"
+      ],
+      "coaching_ids": [
+        "T01-P02"
+      ]
+    },
+    {
+      "id": "stage-05",
+      "label": "TikTok内容成交与短视频实战",
+      "route": "/t01/stage-05",
+      "course_ids": [
+        "T01-C13",
+        "T01-C14",
+        "T01-C15",
+        "T01-C16",
+        "T01-C17"
+      ],
+      "workshop_ids": [
+        "T01-W05",
+        "T01-W06"
+      ],
+      "coaching_ids": [
+        "T01-P03"
+      ]
+    },
+    {
+      "id": "stage-06",
+      "label": "Creator与Affiliate第一轮经营",
+      "route": "/t01/stage-06",
+      "course_ids": [
+        "T01-C18",
+        "T01-C19",
+        "T01-C20"
+      ],
+      "workshop_ids": [
+        "T01-W07"
+      ],
+      "coaching_ids": [
+        "T01-P04"
+      ]
+    },
+    {
+      "id": "stage-07",
+      "label": "广告与LIVE基础启动",
+      "route": "/t01/stage-07",
+      "course_ids": [
+        "T01-C21",
+        "T01-C22",
+        "T01-C23"
+      ],
+      "workshop_ids": [
+        "T01-W08",
+        "T01-W09"
+      ],
+      "coaching_ids": []
+    },
+    {
+      "id": "stage-08",
+      "label": "订单、售后与店铺经营健康",
+      "route": "/t01/stage-08",
+      "course_ids": [
+        "T01-C24",
+        "T01-C25",
+        "T01-C26"
+      ],
+      "workshop_ids": [
+        "T01-W10"
+      ],
+      "coaching_ids": [
+        "T01-P05"
+      ]
+    },
+    {
+      "id": "stage-09",
+      "label": "第一次经营复盘与第二轮30天",
+      "route": "/t01/stage-09",
+      "course_ids": [
+        "T01-C27",
+        "T01-C28"
+      ],
+      "workshop_ids": [
+        "T01-W11"
+      ],
+      "coaching_ids": []
+    }
+  ],
+  "redirects": [
+    {
+      "from": "/",
+      "to": "/t01"
+    }
+  ]
+}

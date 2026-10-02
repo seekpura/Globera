@@ -1,0 +1,1410 @@
+{
+  "version": "2.8",
+  "machines": [
+    {
+      "code": "T01-W01",
+      "stage": "阶段01",
+      "title": "我的 TikTok 0–1启动路线",
+      "duration": "45分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W01-S01",
+          "label_zh": "选择首站",
+          "instruction": "学员选择1个首站并写出理由；系统不提供“全球最佳市场”排名。",
+          "completion": "首站已选；规则来源和核验日期存在。",
+          "kind": "step"
+        },
+        {
+          "key": "W01-S02",
+          "label_zh": "匹配主体与店型",
+          "instruction": "根据当前主体条件映射可执行、需补条件、当前不可执行三种结果。",
+          "completion": "主体/店型状态确定。",
+          "kind": "step"
+        },
+        {
+          "key": "W01-S03",
+          "label_zh": "选择履约路径",
+          "instruction": "按库存位置、体积重量、时效、退货能力选择当前首发履约。",
+          "completion": "履约路径有可执行证据。",
+          "kind": "step"
+        },
+        {
+          "key": "W01-S04",
+          "label_zh": "形成启动缺口",
+          "instruction": "把开店资料、商品合规、素材、物流、人员能力拆成缺口。",
+          "completion": "每个缺口有下一步。",
+          "kind": "step"
+        },
+        {
+          "key": "W01-S05",
+          "label_zh": "锁定第一动作",
+          "instruction": "选择未来7天最先完成的3个动作。",
+          "completion": "T01-R01可验收。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W01-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W01-S01"
+        },
+        {
+          "id": "T01-W01-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W01-S01",
+          "to": "W01-S02"
+        },
+        {
+          "id": "T01-W01-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W01-S02",
+          "to": "W01-S03"
+        },
+        {
+          "id": "T01-W01-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W01-S03",
+          "to": "W01-S04"
+        },
+        {
+          "id": "T01-W01-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W01-S04",
+          "to": "W01-S05"
+        },
+        {
+          "id": "T01-W01-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W01-S05",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W01-B01",
+          "policy": "站点准入不成立→返回首站选择，不继续伪造后续流程。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W01-B02",
+          "policy": "主体/店型资料不足→标记需核验并进入P01前置准备，不自动判定失败。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W01-B03",
+          "policy": "商品存在明显禁限售→允许完成经营路线，但SKU不得进入后续上架。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K01"
+      ],
+      "results": [
+        "T01-R01"
+      ],
+      "evidence": [
+        "路线卡",
+        "规则来源+核验日期",
+        "3个下一步动作"
+      ],
+      "fallback": "没有真实主体/商品的学员使用标准案例，但成果必须标注“模拟”。",
+      "completion": "路线不存在未解释的关键缺口；任何动态规则都有站点+来源+核验日期。"
+    },
+    {
+      "code": "T01-W02",
+      "stage": "阶段02",
+      "title": "TikTok Shop配置与经营就绪",
+      "duration": "45分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W02-S01",
+          "label_zh": "任务定位",
+          "instruction": "按“上商品/看订单/找达人/看广告/看数据/看健康/看财务”逐项定位，不背旧菜单。",
+          "completion": "至少7类任务能找到当前入口。",
+          "kind": "step"
+        },
+        {
+          "key": "W02-S02",
+          "label_zh": "基础配置",
+          "instruction": "完成可执行的仓库、配送、退货、通知、权限等设置。",
+          "completion": "已执行项有截图/状态证据。",
+          "kind": "step"
+        },
+        {
+          "key": "W02-S03",
+          "label_zh": "关键联动检查",
+          "instruction": "检查官方账号/经营账号、商品、订单、Affiliate/Ads等后续能力所需联动条件。",
+          "completion": "缺口可追踪。",
+          "kind": "step"
+        },
+        {
+          "key": "W02-S04",
+          "label_zh": "经营就绪闸门",
+          "instruction": "系统按“已就绪/待审核/需补资料/阻断”给状态。",
+          "completion": "T01-R02可验收。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W02-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W02-S01"
+        },
+        {
+          "id": "T01-W02-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W02-S01",
+          "to": "W02-S02"
+        },
+        {
+          "id": "T01-W02-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W02-S02",
+          "to": "W02-S03"
+        },
+        {
+          "id": "T01-W02-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W02-S03",
+          "to": "W02-S04"
+        },
+        {
+          "id": "T01-W02-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W02-S04",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W02-B01",
+          "policy": "后台菜单与教材不同→启动“任务搜索模式”，记录当前路径，教材不判错。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W02-B02",
+          "policy": "权限不足→记录所需角色/管理员动作，不要求学员绕过权限。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W02-B03",
+          "policy": "KYC未完成→允许完成非受限配置，后续真实发布由P01继续。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K02"
+      ],
+      "results": [
+        "T01-R02"
+      ],
+      "evidence": [
+        "经营任务入口清单",
+        "配置截图/状态",
+        "未完成项责任人与下一步"
+      ],
+      "fallback": "使用脱敏截图/视频+点击热区模拟，不伪造“已配置成功”。",
+      "completion": "至少能独立完成任务定位；真实不可执行项均有后续动作。"
+    },
+    {
+      "code": "T01-W03",
+      "stage": "阶段03",
+      "title": "首批SKU验证与利润决策",
+      "duration": "75分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W03-S01",
+          "label_zh": "采集信号",
+          "instruction": "按统一时间窗记录Shop/Video/Creator/价格竞争证据。",
+          "completion": "每个候选SKU至少2类有效信号。",
+          "kind": "step"
+        },
+        {
+          "key": "W03-S02",
+          "label_zh": "做单位经济账",
+          "instruction": "计算预计销售实收、商品/包装/履约/佣金/广告/售后预留和单位贡献。",
+          "completion": "不把GMV当利润。",
+          "kind": "step"
+        },
+        {
+          "key": "W03-S03",
+          "label_zh": "风险筛选",
+          "instruction": "合规、IP、履约、素材真实性逐项过闸门。",
+          "completion": "阻断项不会被高销量信号覆盖。",
+          "kind": "step"
+        },
+        {
+          "key": "W03-S04",
+          "label_zh": "设测试假设",
+          "instruction": "为每个主测SKU写清要验证的内容/价格/人群假设和停止条件。",
+          "completion": "测试目的明确。",
+          "kind": "step"
+        },
+        {
+          "key": "W03-S05",
+          "label_zh": "首批决策",
+          "instruction": "分类为主测/备选/淘汰。",
+          "completion": "T01-R03可验收。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W03-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W03-S01"
+        },
+        {
+          "id": "T01-W03-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W03-S01",
+          "to": "W03-S02"
+        },
+        {
+          "id": "T01-W03-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W03-S02",
+          "to": "W03-S03"
+        },
+        {
+          "id": "T01-W03-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W03-S03",
+          "to": "W03-S04"
+        },
+        {
+          "id": "T01-W03-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W03-S04",
+          "to": "W03-S05"
+        },
+        {
+          "id": "T01-W03-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W03-S05",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W03-B01",
+          "policy": "成本信息缺失→允许区间估算，但必须标记假设；不得填0掩盖未知。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W03-B02",
+          "policy": "信号强但风险高→转“需专业核验”，不进入主测。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W03-B03",
+          "policy": "无明显强信号→允许小额验证，但必须降低测试资源。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K03",
+        "T01-K04",
+        "T01-K05"
+      ],
+      "results": [
+        "T01-R03"
+      ],
+      "evidence": [
+        "信号链接/截图+日期",
+        "单位贡献计算",
+        "测试假设和停止条件"
+      ],
+      "fallback": "使用课程标准成本数据；必须显示“模拟成本”。",
+      "completion": "每个主测SKU同时具备证据、经济账、风险结论、测试假设。"
+    },
+    {
+      "code": "T01-W04",
+      "stage": "阶段04",
+      "title": "TikTok Listing完整上架工作坊",
+      "duration": "75分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W04-S01",
+          "label_zh": "建立商品结构",
+          "instruction": "选择最具体真实类目，配置属性、SKU和变体。",
+          "completion": "结构一致。",
+          "kind": "step"
+        },
+        {
+          "key": "W04-S02",
+          "label_zh": "完成文案",
+          "instruction": "标题、卖点、描述、本地化与事实真源核对。",
+          "completion": "无虚构/堆词/站外导流。",
+          "kind": "step"
+        },
+        {
+          "key": "W04-S03",
+          "label_zh": "完成PDP素材",
+          "instruction": "主图、辅助图、视频通过政策QA与转化QA。",
+          "completion": "AI编辑未改变商品事实。",
+          "kind": "step"
+        },
+        {
+          "key": "W04-S04",
+          "label_zh": "配置经营参数",
+          "instruction": "价格、卖家折扣、库存、仓库/配送与单位贡献一致。",
+          "completion": "可履约。",
+          "kind": "step"
+        },
+        {
+          "key": "W04-S05",
+          "label_zh": "预览与提交",
+          "instruction": "预览前台后保存Draft或Submit for review；记录当前状态。",
+          "completion": "有提交/草稿证据。",
+          "kind": "step"
+        },
+        {
+          "key": "W04-S06",
+          "label_zh": "发布前QA",
+          "instruction": "逐项复核类目、资格、文案、素材、库存、配送、前台。",
+          "completion": "T01-R04可验收。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W04-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W04-S01"
+        },
+        {
+          "id": "T01-W04-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W04-S01",
+          "to": "W04-S02"
+        },
+        {
+          "id": "T01-W04-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W04-S02",
+          "to": "W04-S03"
+        },
+        {
+          "id": "T01-W04-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W04-S03",
+          "to": "W04-S04"
+        },
+        {
+          "id": "T01-W04-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W04-S04",
+          "to": "W04-S05"
+        },
+        {
+          "id": "T01-W04-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W04-S05",
+          "to": "W04-S06"
+        },
+        {
+          "id": "T01-W04-T07",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W04-S06",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W04-B01",
+          "policy": "资格缺失→保持Draft/Needs attention，不伪造通过。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W04-B02",
+          "policy": "提交后Pending review/Reviewing→进入P02。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W04-B03",
+          "policy": "审核问题→根据原因修改后重新提交。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W04-B04",
+          "policy": "真实账号不可用→完整模拟到Submit动作前，并标“模拟”。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K06"
+      ],
+      "results": [
+        "T01-R04"
+      ],
+      "evidence": [
+        "Listing草稿/提交截图",
+        "前台预览",
+        "QA记录",
+        "审核状态"
+      ],
+      "fallback": "标准模拟环境保留Draft→Submit→Reviewing状态演练。",
+      "completion": "Listing信息与商品事实一致；真实发布则状态已提交，模拟则全字段QA通过。"
+    },
+    {
+      "code": "T01-W05",
+      "stage": "阶段05",
+      "title": "TikTok内容创作实验室",
+      "duration": "150分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W05-S01",
+          "label_zh": "建案例池",
+          "instruction": "搜索并记录同品/同人群/同内容形态案例，保留日期和来源。",
+          "completion": "案例可追溯。",
+          "kind": "step"
+        },
+        {
+          "key": "W05-S02",
+          "label_zh": "拆商业结构",
+          "instruction": "拆Hook、Problem/Desire、Demo、Proof、Offer、CTA和购物动作。",
+          "completion": "不是只拆剪辑节奏。",
+          "kind": "step"
+        },
+        {
+          "key": "W05-S03",
+          "label_zh": "生成选题",
+          "instruction": "把商品卖点转为至少3个不同验证角度。",
+          "completion": "变量清楚。",
+          "kind": "step"
+        },
+        {
+          "key": "W05-S04",
+          "label_zh": "写脚本与镜头",
+          "instruction": "完成可执行脚本、Shot List、商品挂载位置。",
+          "completion": "能直接制作。",
+          "kind": "step"
+        },
+        {
+          "key": "W05-S05",
+          "label_zh": "制作初稿",
+          "instruction": "拍摄/剪辑/字幕/本地化/AI辅助。",
+          "completion": "事实与素材合规检查通过。",
+          "kind": "step"
+        },
+        {
+          "key": "W05-S06",
+          "label_zh": "创作评审",
+          "instruction": "讲师按可理解性、证明、购物路径、事实一致性给反馈。",
+          "completion": "进入W06的成片名单确定。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W05-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W05-S01"
+        },
+        {
+          "id": "T01-W05-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W05-S01",
+          "to": "W05-S02"
+        },
+        {
+          "id": "T01-W05-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W05-S02",
+          "to": "W05-S03"
+        },
+        {
+          "id": "T01-W05-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W05-S03",
+          "to": "W05-S04"
+        },
+        {
+          "id": "T01-W05-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W05-S04",
+          "to": "W05-S05"
+        },
+        {
+          "id": "T01-W05-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W05-S05",
+          "to": "W05-S06"
+        },
+        {
+          "id": "T01-W05-T07",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W05-S06",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W05-B01",
+          "policy": "没有真实商品→用统一商品完成技能训练，禁止生成不存在的产品细节。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W05-B02",
+          "policy": "案例不可复现/依赖名人或特殊资源→标不可复制，不作为主模板。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W05-B03",
+          "policy": "AI生成改变商品颜色/数量/尺寸/材质→退回重做。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K07",
+        "T01-K08"
+      ],
+      "results": [
+        "T01-R05"
+      ],
+      "evidence": [
+        "案例链接",
+        "选题池",
+        "脚本/镜头表",
+        "成片/初稿",
+        "事实核对"
+      ],
+      "fallback": "使用标准商品素材包；所有输出标记为训练内容。",
+      "completion": "至少形成一组可发布成片/练习成片，且每条有明确测试变量。"
+    },
+    {
+      "code": "T01-W06",
+      "stage": "阶段05",
+      "title": "TikTok内容发布与迭代",
+      "duration": "75分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W06-S01",
+          "label_zh": "发布前检查",
+          "instruction": "文案、商业披露、商品链接、可见性、事实一致性。",
+          "completion": "可发布。",
+          "kind": "step"
+        },
+        {
+          "key": "W06-S02",
+          "label_zh": "发布/模拟发布",
+          "instruction": "完成真实发布；无条件时走完整模拟。",
+          "completion": "状态记录。",
+          "kind": "step"
+        },
+        {
+          "key": "W06-S03",
+          "label_zh": "商品链接状态",
+          "instruction": "检查商品链接approved/in review/need attention等结果。",
+          "completion": "异常有下一步。",
+          "kind": "step"
+        },
+        {
+          "key": "W06-S04",
+          "label_zh": "定义观察窗",
+          "instruction": "记录发布时间和首轮复盘时间，不在数据不足时过早下结论。",
+          "completion": "观察窗确定。",
+          "kind": "step"
+        },
+        {
+          "key": "W06-S05",
+          "label_zh": "商业指标诊断",
+          "instruction": "记录Views、Product Impressions、Clicks、CTR、SKU Orders、CTOR、GMV/GPM等可用数据。",
+          "completion": "定位断点。",
+          "kind": "step"
+        },
+        {
+          "key": "W06-S06",
+          "label_zh": "生成下一版",
+          "instruction": "只修改主要变量，形成V2。",
+          "completion": "进入P03。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W06-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W06-S01"
+        },
+        {
+          "id": "T01-W06-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W06-S01",
+          "to": "W06-S02"
+        },
+        {
+          "id": "T01-W06-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W06-S02",
+          "to": "W06-S03"
+        },
+        {
+          "id": "T01-W06-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W06-S03",
+          "to": "W06-S04"
+        },
+        {
+          "id": "T01-W06-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W06-S04",
+          "to": "W06-S05"
+        },
+        {
+          "id": "T01-W06-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W06-S05",
+          "to": "W06-S06"
+        },
+        {
+          "id": "T01-W06-T07",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W06-S06",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W06-B01",
+          "policy": "商品链接in review→等待，不把0点击解释成内容失败。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W06-B02",
+          "policy": "Need attention→先处理链接/库存/邀请等问题，再诊断内容。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W06-B03",
+          "policy": "有播放无商品曝光→先检查购物挂载/展示条件。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W06-B04",
+          "policy": "商品曝光有、CTR低→优先改商品呈现/CTA；CTR高、CTOR低→检查PDP/价格/信任/履约。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K09"
+      ],
+      "results": [
+        "T01-R05"
+      ],
+      "evidence": [
+        "发布链接/模拟记录",
+        "商品链接状态",
+        "指标快照",
+        "V2修改动作"
+      ],
+      "fallback": "使用标准数据集，但必须让学员自己诊断，不直接给答案。",
+      "completion": "至少形成一次“发布→状态→数据→诊断→下一版”的闭环。"
+    },
+    {
+      "code": "T01-W07",
+      "stage": "阶段06",
+      "title": "第一次TikTok达人开发",
+      "duration": "150分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W07-S01",
+          "label_zh": "建立Creator池",
+          "instruction": "按类目/人群/内容能力搜达人并保存证据。",
+          "completion": "候选池形成。",
+          "kind": "step"
+        },
+        {
+          "key": "W07-S02",
+          "label_zh": "分层筛选",
+          "instruction": "对A/B/C级达人写清保留理由。",
+          "completion": "优先级可解释。",
+          "kind": "step"
+        },
+        {
+          "key": "W07-S03",
+          "label_zh": "设计合作",
+          "instruction": "选择Open/Target，设置佣金与样品类型/条件。",
+          "completion": "不突破SKU经济边界。",
+          "kind": "step"
+        },
+        {
+          "key": "W07-S04",
+          "label_zh": "准备邀约",
+          "instruction": "生成针对Creator内容风格的邀约，不批量复制同一句。",
+          "completion": "邀约可发送。",
+          "kind": "step"
+        },
+        {
+          "key": "W07-S05",
+          "label_zh": "执行触达",
+          "instruction": "真实发送或标准模拟，记录日期、状态和下一步。",
+          "completion": "CRM状态存在。",
+          "kind": "step"
+        },
+        {
+          "key": "W07-S06",
+          "label_zh": "样品/内容节点",
+          "instruction": "对进入样品或合作的Creator设置审批、发货、交付、内容截止和结果节点。",
+          "completion": "进入P04。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W07-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W07-S01"
+        },
+        {
+          "id": "T01-W07-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W07-S01",
+          "to": "W07-S02"
+        },
+        {
+          "id": "T01-W07-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W07-S02",
+          "to": "W07-S03"
+        },
+        {
+          "id": "T01-W07-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W07-S03",
+          "to": "W07-S04"
+        },
+        {
+          "id": "T01-W07-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W07-S04",
+          "to": "W07-S05"
+        },
+        {
+          "id": "T01-W07-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W07-S05",
+          "to": "W07-S06"
+        },
+        {
+          "id": "T01-W07-T07",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W07-S06",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W07-B01",
+          "policy": "Creator不匹配→移出优先池而不是提高佣金强推。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W07-B02",
+          "policy": "样品请求→按当前资格、库存、成本和规则审批。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W07-B03",
+          "policy": "Target未接受/邀请失效→回到触达或更换Creator。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W07-B04",
+          "policy": "Free/Refundable Sample规则变化→由动态规则卡覆盖，不写死在流程引擎。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K10",
+        "T01-K11"
+      ],
+      "results": [
+        "T01-R06"
+      ],
+      "evidence": [
+        "Creator链接/ID",
+        "筛选依据",
+        "合作参数",
+        "邀约记录",
+        "样品/内容状态"
+      ],
+      "fallback": "无Affiliate权限时使用当前界面截图/标准Creator数据完成全流程模拟。",
+      "completion": "至少完成一批候选池和第一轮真实/模拟触达；合作状态可继续追踪。"
+    },
+    {
+      "code": "T01-W08",
+      "stage": "阶段07",
+      "title": "GMV Max启动与结果判断",
+      "duration": "60分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W08-S01",
+          "label_zh": "广告就绪闸门",
+          "instruction": "核对商品、PDP、库存、素材、经济账和Primary Ad Account。",
+          "completion": "通过/需补/阻断。",
+          "kind": "step"
+        },
+        {
+          "key": "W08-S02",
+          "label_zh": "选择Campaign Type",
+          "instruction": "Product或LIVE；明确被优化对象。",
+          "completion": "对象清楚。",
+          "kind": "step"
+        },
+        {
+          "key": "W08-S03",
+          "label_zh": "配置模式和预算",
+          "instruction": "按当期可用模式配置Target ROI/Max Delivery等。",
+          "completion": "配置有理由。",
+          "kind": "step"
+        },
+        {
+          "key": "W08-S04",
+          "label_zh": "确认归因口径",
+          "instruction": "界面强制提示Total GMV/Total ROI包含运行期间相关自然与付费成交的可能归因。",
+          "completion": "不会误读纯付费增量。",
+          "kind": "step"
+        },
+        {
+          "key": "W08-S05",
+          "label_zh": "结果情景判断",
+          "instruction": "使用标准情景判断继续、暂停、补素材、调目标、换商品。",
+          "completion": "动作与证据一致。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W08-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W08-S01"
+        },
+        {
+          "id": "T01-W08-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W08-S01",
+          "to": "W08-S02"
+        },
+        {
+          "id": "T01-W08-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W08-S02",
+          "to": "W08-S03"
+        },
+        {
+          "id": "T01-W08-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W08-S03",
+          "to": "W08-S04"
+        },
+        {
+          "id": "T01-W08-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W08-S04",
+          "to": "W08-S05"
+        },
+        {
+          "id": "T01-W08-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W08-S05",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W08-B01",
+          "policy": "Primary Ad Account不满足→停止启动，先解决账户关系。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W08-B02",
+          "policy": "已有冲突购物广告→提示可能被暂停/影响，先做迁移检查。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W08-B03",
+          "policy": "ROI看似高但自然成交占比不可辨→不得声称广告增量高。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W08-B04",
+          "policy": "数据不足→延长观察而非立即放量。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K12"
+      ],
+      "results": [
+        "T01-R07"
+      ],
+      "evidence": [
+        "广告就绪检查",
+        "配置截图/模拟",
+        "总渠道归因说明",
+        "经济边界和行动判断"
+      ],
+      "fallback": "标准GMV Max模拟后台；不伪造实际广告花费。",
+      "completion": "能独立解释为什么启动、如何配置、Total ROI代表什么/不代表什么。"
+    },
+    {
+      "code": "T01-W09",
+      "stage": "阶段07",
+      "title": "第一次TikTok LIVE成交演练",
+      "duration": "60分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W09-S01",
+          "label_zh": "配置直播商品",
+          "instruction": "确认Regular Listing已可用或按当期功能使用允许的临时Listing。",
+          "completion": "商品可进入Shopping Bag/模拟。",
+          "kind": "step"
+        },
+        {
+          "key": "W09-S02",
+          "label_zh": "设计销售循环",
+          "instruction": "开场→痛点/场景→Demo→Proof→Offer→互动→CTA。",
+          "completion": "脚本完整。",
+          "kind": "step"
+        },
+        {
+          "key": "W09-S03",
+          "label_zh": "实际演练",
+          "instruction": "讲师计时，学员完成10–15分钟商品销售段落。",
+          "completion": "录像/评分。",
+          "kind": "step"
+        },
+        {
+          "key": "W09-S04",
+          "label_zh": "数据化复盘",
+          "instruction": "用Impressions/Views→Product Clicks→SKU Orders→GMV的结构找问题。",
+          "completion": "形成下一次改动。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W09-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W09-S01"
+        },
+        {
+          "id": "T01-W09-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W09-S01",
+          "to": "W09-S02"
+        },
+        {
+          "id": "T01-W09-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W09-S02",
+          "to": "W09-S03"
+        },
+        {
+          "id": "T01-W09-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W09-S03",
+          "to": "W09-S04"
+        },
+        {
+          "id": "T01-W09-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W09-S04",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W09-B01",
+          "policy": "商品未获批→不假装能挂载，使用模拟Shopping Bag。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W09-B02",
+          "policy": "点击弱→先改Pin时机/商品表达/CTA。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W09-B03",
+          "policy": "点击强订单弱→回看Offer/PDP/价格/信任。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K13"
+      ],
+      "results": [
+        "T01-R07"
+      ],
+      "evidence": [
+        "直播脚本",
+        "商品挂载状态",
+        "演练录像/记录",
+        "复盘动作"
+      ],
+      "fallback": "无LIVE权限时使用直播导演台模拟器。",
+      "completion": "完成至少一个完整销售循环并给出数据假设。"
+    },
+    {
+      "code": "T01-W10",
+      "stage": "阶段08",
+      "title": "订单与异常处理沙盘",
+      "duration": "45分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W10-S01",
+          "label_zh": "识别订单类型与状态",
+          "instruction": "先识别Shipping Type、当前状态和截止，而不是直接点发货。",
+          "completion": "状态判断正确。",
+          "kind": "step"
+        },
+        {
+          "key": "W10-S02",
+          "label_zh": "选择履约动作",
+          "instruction": "生成/录入Tracking、交接LSP、处理扫描/状态异常。",
+          "completion": "动作符合当前Shipping方式。",
+          "kind": "step"
+        },
+        {
+          "key": "W10-S03",
+          "label_zh": "处理售后",
+          "instruction": "区分取消、退款、退货、物流问题和卖家责任。",
+          "completion": "后台动作与客户沟通一致。",
+          "kind": "step"
+        },
+        {
+          "key": "W10-S04",
+          "label_zh": "映射健康度影响",
+          "instruction": "判断可能影响VTR/LDR/OTDR/SFCR、AHR/SPS的环节。",
+          "completion": "不混淆政策与体验指标。",
+          "kind": "step"
+        },
+        {
+          "key": "W10-S05",
+          "label_zh": "形成预防动作",
+          "instruction": "库存、容量、物流商、处理时间、客服等形成改进。",
+          "completion": "T01-R08可验收。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W10-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W10-S01"
+        },
+        {
+          "id": "T01-W10-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W10-S01",
+          "to": "W10-S02"
+        },
+        {
+          "id": "T01-W10-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W10-S02",
+          "to": "W10-S03"
+        },
+        {
+          "id": "T01-W10-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W10-S03",
+          "to": "W10-S04"
+        },
+        {
+          "id": "T01-W10-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W10-S04",
+          "to": "W10-S05"
+        },
+        {
+          "id": "T01-W10-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W10-S05",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W10-B01",
+          "policy": "Tracking已填但未被有效扫描→不能等同已按时dispatch。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W10-B02",
+          "policy": "SLA规则变化→由课程配置中心更新，不改工作坊结构。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W10-B03",
+          "policy": "SPS版本过渡期→前端同时标“当前生效/预览”，不把预览分数当正式权益依据。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K14"
+      ],
+      "results": [
+        "T01-R08"
+      ],
+      "evidence": [
+        "订单状态判断",
+        "动作记录",
+        "客户沟通",
+        "健康度影响",
+        "预防动作"
+      ],
+      "fallback": "全部使用脱敏沙盘订单数据。",
+      "completion": "不同情景中能先识别状态/规则，再执行动作，并知道影响。"
+    },
+    {
+      "code": "T01-W11",
+      "stage": "阶段09",
+      "title": "第一次经营复盘与30天经营计划",
+      "duration": "90分钟",
+      "initial_state": "START",
+      "states": [
+        {
+          "key": "START",
+          "label_zh": "开始",
+          "kind": "start"
+        },
+        {
+          "key": "W11-S01",
+          "label_zh": "统一数据口径",
+          "instruction": "标注数据来源、时间窗和真实/模拟属性。",
+          "completion": "口径可比。",
+          "kind": "step"
+        },
+        {
+          "key": "W11-S02",
+          "label_zh": "定位漏斗断点",
+          "instruction": "按曝光→点击→订单→履约→结算逐层找最大瓶颈。",
+          "completion": "不把所有问题归因内容。",
+          "kind": "step"
+        },
+        {
+          "key": "W11-S03",
+          "label_zh": "对齐经济结果",
+          "instruction": "GMV→Settlement→费用/佣金/广告/退款→单位贡献。",
+          "completion": "经营结果清楚。",
+          "kind": "step"
+        },
+        {
+          "key": "W11-S04",
+          "label_zh": "做去留决策",
+          "instruction": "SKU、内容、Creator、广告、LIVE分别继续/修改/停止。",
+          "completion": "有证据。",
+          "kind": "step"
+        },
+        {
+          "key": "W11-S05",
+          "label_zh": "排30天优先级",
+          "instruction": "P0/P1/P2动作、负责人、完成日、预期信号、复盘日。",
+          "completion": "R09/R10可验收。",
+          "kind": "step"
+        },
+        {
+          "key": "COMPLETE",
+          "label_zh": "工作坊完成",
+          "kind": "terminal"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-W11-T01",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "START",
+          "to": "W11-S01"
+        },
+        {
+          "id": "T01-W11-T02",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W11-S01",
+          "to": "W11-S02"
+        },
+        {
+          "id": "T01-W11-T03",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W11-S02",
+          "to": "W11-S03"
+        },
+        {
+          "id": "T01-W11-T04",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W11-S03",
+          "to": "W11-S04"
+        },
+        {
+          "id": "T01-W11-T05",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W11-S04",
+          "to": "W11-S05"
+        },
+        {
+          "id": "T01-W11-T06",
+          "event": "NEXT_WHEN_COMPLETE",
+          "from": "W11-S05",
+          "to": "COMPLETE"
+        }
+      ],
+      "branches": [
+        {
+          "id": "T01-W11-B01",
+          "policy": "数据量不足→输出“下一轮需要验证什么”，不强行得出确定结论。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W11-B02",
+          "policy": "GMV增长但单位贡献恶化→不能判为增长成功。",
+          "resolver": "explicit_ui_action"
+        },
+        {
+          "id": "T01-W11-B03",
+          "policy": "GMV Max Total ROI高→单独标总渠道归因限制。",
+          "resolver": "explicit_ui_action"
+        }
+      ],
+      "tools": [
+        "T01-K15"
+      ],
+      "results": [
+        "T01-R09",
+        "T01-R10"
+      ],
+      "evidence": [
+        "数据来源/时间窗",
+        "经营漏斗诊断",
+        "单位贡献",
+        "去留决策",
+        "30天计划"
+      ],
+      "fallback": "使用完整标准经营数据包完成一次真实决策训练。",
+      "completion": "学员能说清当前最大1–2个瓶颈，以及未来30天为何先做这些动作。"
+    }
+  ]
+}

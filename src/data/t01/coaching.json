@@ -1,0 +1,828 @@
+{
+  "version": "2.8",
+  "machines": [
+    {
+      "code": "T01-P01",
+      "stage": "阶段02",
+      "title": "KYC / 店铺审核跟进",
+      "entry": "W02发现KYC/注册/资质仍需真实审核或补充。",
+      "initial_state": "P01-S0",
+      "states": [
+        {
+          "key": "P01-S0",
+          "label_en": "NOT_STARTED",
+          "label_zh": "未发起",
+          "description": "资料尚未准备齐。",
+          "terminal": false
+        },
+        {
+          "key": "P01-S1",
+          "label_en": "READY",
+          "label_zh": "可提交",
+          "description": "资料一致性检查通过。",
+          "terminal": false
+        },
+        {
+          "key": "P01-S2",
+          "label_en": "SUBMITTED",
+          "label_zh": "已提交",
+          "description": "已进入平台验证流程。",
+          "terminal": false
+        },
+        {
+          "key": "P01-S3",
+          "label_en": "WAITING_REVIEW",
+          "label_zh": "等待审核",
+          "description": "平台处理，禁止重复无意义提交。",
+          "terminal": false
+        },
+        {
+          "key": "P01-S4",
+          "label_en": "ACTION_REQUIRED",
+          "label_zh": "需处理",
+          "description": "收到补资料/重验/信息不一致等要求。",
+          "terminal": false
+        },
+        {
+          "key": "P01-S5",
+          "label_en": "RESUBMITTED",
+          "label_zh": "已重提",
+          "description": "按要求修改后重新提交。",
+          "terminal": false
+        },
+        {
+          "key": "P01-S6",
+          "label_en": "APPROVED",
+          "label_zh": "通过",
+          "description": "可继续受限能力。",
+          "terminal": true
+        },
+        {
+          "key": "P01-S7",
+          "label_en": "BLOCKED",
+          "label_zh": "阻断",
+          "description": "当前条件无法继续；记录原因和可选后续。",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-P01-T01",
+          "event": "MATERIALS_READY",
+          "from": [
+            "P01-S0"
+          ],
+          "to": "P01-S1"
+        },
+        {
+          "id": "T01-P01-T02",
+          "event": "SUBMIT_WITH_EVIDENCE",
+          "from": [
+            "P01-S1"
+          ],
+          "to": "P01-S2"
+        },
+        {
+          "id": "T01-P01-T03",
+          "event": "REVIEW_STARTED",
+          "from": [
+            "P01-S2"
+          ],
+          "to": "P01-S3"
+        },
+        {
+          "id": "T01-P01-T04",
+          "event": "ACTION_REQUIRED",
+          "from": [
+            "P01-S3"
+          ],
+          "to": "P01-S4"
+        },
+        {
+          "id": "T01-P01-T05",
+          "event": "RESUBMIT",
+          "from": [
+            "P01-S4"
+          ],
+          "to": "P01-S5"
+        },
+        {
+          "id": "T01-P01-T06",
+          "event": "REVIEW_RESTARTED",
+          "from": [
+            "P01-S5"
+          ],
+          "to": "P01-S3"
+        },
+        {
+          "id": "T01-P01-T07",
+          "event": "APPROVED",
+          "from": [
+            "P01-S3",
+            "P01-S5"
+          ],
+          "to": "P01-S6"
+        },
+        {
+          "id": "T01-P01-T08",
+          "event": "BLOCK",
+          "from": [
+            "*"
+          ],
+          "to": "P01-S7"
+        }
+      ],
+      "evidence_required": [
+        "平台通知/页面截图",
+        "提交日期",
+        "资料版本",
+        "问题原因",
+        "下一次检查日期"
+      ],
+      "notify_policy": "只在ACTION_REQUIRED、APPROVED、BLOCKED时主动提醒；WAITING_REVIEW不反复打扰。",
+      "dynamic_rule_note": "身份/KYC资料要求按站点和业务类型变化。美国站2026年身份核验要求来自官方文档，仅作当期开课参考。",
+      "exit": "APPROVED后解锁真实发布/受限经营动作；BLOCKED转路线调整。",
+      "source_event_descriptions": [
+        "资料齐备：S0→S1",
+        "点击提交并有证据：S1→S2→S3",
+        "收到平台补充要求：S3→S4",
+        "修正并重提：S4→S5→S3",
+        "审核通过：S3/S5→S6",
+        "明确无法满足当前要求：任意未通过状态→S7"
+      ]
+    },
+    {
+      "code": "T01-P02",
+      "stage": "阶段04",
+      "title": "商品审核与上架修正",
+      "entry": "W04保存草稿或提交商品审核。",
+      "initial_state": "P02-S0",
+      "states": [
+        {
+          "key": "P02-S0",
+          "label_en": "DRAFT",
+          "label_zh": "草稿",
+          "description": "信息仍在编辑。",
+          "terminal": false
+        },
+        {
+          "key": "P02-S1",
+          "label_en": "READY_TO_SUBMIT",
+          "label_zh": "可提交",
+          "description": "发布前QA通过。",
+          "terminal": false
+        },
+        {
+          "key": "P02-S2",
+          "label_en": "SUBMITTED",
+          "label_zh": "已提交",
+          "description": "已提交审核。",
+          "terminal": false
+        },
+        {
+          "key": "P02-S3",
+          "label_en": "REVIEWING",
+          "label_zh": "审核中",
+          "description": "等待平台结果。",
+          "terminal": false
+        },
+        {
+          "key": "P02-S4",
+          "label_en": "NEEDS_ATTENTION",
+          "label_zh": "需处理",
+          "description": "资料/类目/资格/内容等存在问题。",
+          "terminal": false
+        },
+        {
+          "key": "P02-S5",
+          "label_en": "RESUBMITTED",
+          "label_zh": "已修正重提",
+          "description": "完成修订。",
+          "terminal": false
+        },
+        {
+          "key": "P02-S6",
+          "label_en": "LIVE",
+          "label_zh": "已上线",
+          "description": "商品可经营/按当期平台状态确认。",
+          "terminal": true
+        },
+        {
+          "key": "P02-S7",
+          "label_en": "BLOCKED",
+          "label_zh": "阻断",
+          "description": "当前SKU/资格无法继续。",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-P02-T01",
+          "event": "QA_PASSED",
+          "from": [
+            "P02-S0"
+          ],
+          "to": "P02-S1"
+        },
+        {
+          "id": "T01-P02-T02",
+          "event": "SUBMIT",
+          "from": [
+            "P02-S1"
+          ],
+          "to": "P02-S2"
+        },
+        {
+          "id": "T01-P02-T03",
+          "event": "REVIEW_STARTED",
+          "from": [
+            "P02-S2"
+          ],
+          "to": "P02-S3"
+        },
+        {
+          "id": "T01-P02-T04",
+          "event": "NEEDS_ATTENTION",
+          "from": [
+            "P02-S3"
+          ],
+          "to": "P02-S4"
+        },
+        {
+          "id": "T01-P02-T05",
+          "event": "FIX_AND_RESUBMIT",
+          "from": [
+            "P02-S4"
+          ],
+          "to": "P02-S5"
+        },
+        {
+          "id": "T01-P02-T06",
+          "event": "REVIEW_RESTARTED",
+          "from": [
+            "P02-S5"
+          ],
+          "to": "P02-S3"
+        },
+        {
+          "id": "T01-P02-T07",
+          "event": "APPROVED",
+          "from": [
+            "P02-S3",
+            "P02-S5"
+          ],
+          "to": "P02-S6"
+        },
+        {
+          "id": "T01-P02-T08",
+          "event": "BLOCK",
+          "from": [
+            "*"
+          ],
+          "to": "P02-S7"
+        }
+      ],
+      "evidence_required": [
+        "Draft/Submit/Reviewing/Live等页面状态",
+        "问题详情",
+        "修订前后字段",
+        "前台PDP"
+      ],
+      "notify_policy": "NEEDS_ATTENTION与LIVE主动提醒；REVIEWING按检查节奏更新。",
+      "dynamic_rule_note": "2026-07美国官方新增商品指南显示可Save as draft、Submit for review，并在Manage Products看到pending review/live；具体命名和入口以当期页面为准。",
+      "exit": "LIVE进入内容/达人/广告/LIVE运营；BLOCKED回到W03换SKU或补资质。",
+      "source_event_descriptions": [
+        "QA通过：S0→S1",
+        "Submit：S1→S2→S3",
+        "审核问题：S3→S4",
+        "修正：S4→S5→S3",
+        "审核通过：S3/S5→S6",
+        "确认禁限售/无法补资格：→S7"
+      ]
+    },
+    {
+      "code": "T01-P03",
+      "stage": "阶段05",
+      "title": "第一轮内容数据复盘",
+      "entry": "W06完成真实发布或标准模拟发布。",
+      "initial_state": "P03-S0",
+      "states": [
+        {
+          "key": "P03-S0",
+          "label_en": "PUBLISHED",
+          "label_zh": "已发布",
+          "description": "内容已发布/模拟发布。",
+          "terminal": false
+        },
+        {
+          "key": "P03-S1",
+          "label_en": "LINK_CHECK",
+          "label_zh": "商品链接检查",
+          "description": "确认approved/in review/need attention等。",
+          "terminal": false
+        },
+        {
+          "key": "P03-S2",
+          "label_en": "ACCUMULATING",
+          "label_zh": "数据积累",
+          "description": "等待预设观察窗或最小数据。",
+          "terminal": false
+        },
+        {
+          "key": "P03-S3",
+          "label_en": "READY_TO_DIAGNOSE",
+          "label_zh": "可诊断",
+          "description": "商业指标可用。",
+          "terminal": false
+        },
+        {
+          "key": "P03-S4",
+          "label_en": "DIAGNOSED",
+          "label_zh": "已诊断",
+          "description": "已定位主要断点。",
+          "terminal": false
+        },
+        {
+          "key": "P03-S5",
+          "label_en": "ITERATION_QUEUED",
+          "label_zh": "已排迭代",
+          "description": "V2变量已确定。",
+          "terminal": false
+        },
+        {
+          "key": "P03-S6",
+          "label_en": "ITERATION_PUBLISHED",
+          "label_zh": "新版已发布",
+          "description": "进入下一轮观测。",
+          "terminal": false
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-P03-T01",
+          "event": "PUBLISH",
+          "from": [
+            "*"
+          ],
+          "to": "P03-S0"
+        },
+        {
+          "id": "T01-P03-T02",
+          "event": "CHECK_LINK",
+          "from": [
+            "P03-S0"
+          ],
+          "to": "P03-S1"
+        },
+        {
+          "id": "T01-P03-T03",
+          "event": "LINK_OK",
+          "from": [
+            "P03-S1"
+          ],
+          "to": "P03-S2"
+        },
+        {
+          "id": "T01-P03-T04",
+          "event": "OBSERVATION_READY",
+          "from": [
+            "P03-S2"
+          ],
+          "to": "P03-S3"
+        },
+        {
+          "id": "T01-P03-T05",
+          "event": "DIAGNOSE",
+          "from": [
+            "P03-S3"
+          ],
+          "to": "P03-S4"
+        },
+        {
+          "id": "T01-P03-T06",
+          "event": "QUEUE_V2",
+          "from": [
+            "P03-S4"
+          ],
+          "to": "P03-S5"
+        },
+        {
+          "id": "T01-P03-T07",
+          "event": "PUBLISH_V2",
+          "from": [
+            "P03-S5"
+          ],
+          "to": "P03-S6"
+        },
+        {
+          "id": "T01-P03-T08",
+          "event": "RECHECK_LINK",
+          "from": [
+            "P03-S6"
+          ],
+          "to": "P03-S1"
+        }
+      ],
+      "evidence_required": [
+        "视频链接",
+        "Product Link状态",
+        "Views/Product Impressions/Clicks/CTR/Orders/CTOR/GMV等可用快照",
+        "V2变更变量"
+      ],
+      "notify_policy": "商品链接Need attention立即提醒；数据尚不足不提醒“内容失败”。",
+      "dynamic_rule_note": "具体指标入口与字段随Analytics调整；Product Link Review的状态名称可映射为教学状态，不写死前端结构。",
+      "exit": "完成至少一次诊断和V2动作后，R05通过；持续优化转S01。",
+      "source_event_descriptions": [
+        "发布：→S0→S1",
+        "链接正常：S1→S2",
+        "链接需处理：停留S1并生成修复动作",
+        "达到观察条件：S2→S3",
+        "完成漏斗诊断：S3→S4",
+        "确定V2：S4→S5",
+        "发布V2：S5→S6→S1"
+      ]
+    },
+    {
+      "code": "T01-P04",
+      "stage": "阶段06",
+      "title": "达人回复、样品与发布跟踪",
+      "entry": "W07已建立Creator候选池并完成第一轮触达。",
+      "initial_state": "P04-S0",
+      "states": [
+        {
+          "key": "P04-S0",
+          "label_en": "PROSPECT",
+          "label_zh": "候选",
+          "description": "尚未触达。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S1",
+          "label_en": "CONTACTED",
+          "label_zh": "已触达",
+          "description": "邀约/合作已发送。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S2",
+          "label_en": "WAITING_RESPONSE",
+          "label_zh": "等待回复",
+          "description": "等待Creator动作。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S3",
+          "label_en": "COLLAB_ACCEPTED",
+          "label_zh": "合作接受",
+          "description": "进入佣金/样品/内容安排。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S4",
+          "label_en": "SAMPLE_PENDING",
+          "label_zh": "样品待处理",
+          "description": "申请/审批/购买等进行中。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S5",
+          "label_en": "SAMPLE_SHIPPED",
+          "label_zh": "样品已发出",
+          "description": "已产生物流/交付节点。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S6",
+          "label_en": "SAMPLE_DELIVERED",
+          "label_zh": "已签收",
+          "description": "开始内容截止跟踪。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S7",
+          "label_en": "CONTENT_DUE",
+          "label_zh": "待发布",
+          "description": "内容义务/约定尚未完成。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S8",
+          "label_en": "CONTENT_PUBLISHED",
+          "label_zh": "已发布",
+          "description": "记录内容链接。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S9",
+          "label_en": "RESULT_REVIEW",
+          "label_zh": "结果复盘",
+          "description": "记录内容/订单/GMV。",
+          "terminal": false
+        },
+        {
+          "key": "P04-S10",
+          "label_en": "CONTINUE_OR_CLOSE",
+          "label_zh": "继续/结束",
+          "description": "续合作、调整或关闭。",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-P04-T01",
+          "event": "CONTACT",
+          "from": [
+            "P04-S0"
+          ],
+          "to": "P04-S1"
+        },
+        {
+          "id": "T01-P04-T02",
+          "event": "WAIT_RESPONSE",
+          "from": [
+            "P04-S1"
+          ],
+          "to": "P04-S2"
+        },
+        {
+          "id": "T01-P04-T03",
+          "event": "ACCEPT_COLLAB",
+          "from": [
+            "P04-S2"
+          ],
+          "to": "P04-S3"
+        },
+        {
+          "id": "T01-P04-T04",
+          "event": "SAMPLE_FLOW",
+          "from": [
+            "P04-S3"
+          ],
+          "to": "P04-S4"
+        },
+        {
+          "id": "T01-P04-T05",
+          "event": "SAMPLE_SHIPPED",
+          "from": [
+            "P04-S4"
+          ],
+          "to": "P04-S5"
+        },
+        {
+          "id": "T01-P04-T06",
+          "event": "SAMPLE_DELIVERED",
+          "from": [
+            "P04-S5"
+          ],
+          "to": "P04-S6"
+        },
+        {
+          "id": "T01-P04-T07",
+          "event": "CONTENT_DUE",
+          "from": [
+            "P04-S6"
+          ],
+          "to": "P04-S7"
+        },
+        {
+          "id": "T01-P04-T08",
+          "event": "NO_SAMPLE_NEEDED",
+          "from": [
+            "P04-S3"
+          ],
+          "to": "P04-S7"
+        },
+        {
+          "id": "T01-P04-T09",
+          "event": "CONTENT_PUBLISHED",
+          "from": [
+            "P04-S7"
+          ],
+          "to": "P04-S8"
+        },
+        {
+          "id": "T01-P04-T10",
+          "event": "REVIEW_RESULT",
+          "from": [
+            "P04-S8"
+          ],
+          "to": "P04-S9"
+        },
+        {
+          "id": "T01-P04-T11",
+          "event": "CLOSE_OR_CONTINUE",
+          "from": [
+            "P04-S9"
+          ],
+          "to": "P04-S10"
+        }
+      ],
+      "evidence_required": [
+        "Creator ID/链接",
+        "邀约日期",
+        "合作方式",
+        "佣金",
+        "样品类型/成本",
+        "发货/签收/截止日",
+        "内容链接",
+        "订单/GMV"
+      ],
+      "notify_policy": "样品审批/发货/内容截止按当前规则生成提醒；具体时限由课程配置中心管理。",
+      "dynamic_rule_note": "美国站2026-07官方样品管理要求卖家处理免费样品申请、发货并跟踪内容；2026-09 Refundable Sample规则又有更新，因此所有时限/资格均配置化。",
+      "exit": "至少一批Creator走到触达，并对有回复/样品/发布者持续追踪；规模化转S02。",
+      "source_event_descriptions": [
+        "触达：S0→S1→S2",
+        "接受合作：S2→S3",
+        "进入样品：S3→S4→S5→S6→S7",
+        "无需样品可S3→S7",
+        "内容发布：S7→S8→S9",
+        "复盘：S9→S10"
+      ]
+    },
+    {
+      "code": "T01-P05",
+      "stage": "阶段08",
+      "title": "第一笔真实订单陪跑",
+      "entry": "学员收到第一笔真实TikTok Shop订单；未出单时先由W10沙盘完成能力验收。",
+      "initial_state": "P05-S0",
+      "states": [
+        {
+          "key": "P05-S0",
+          "label_en": "ORDER_RECEIVED",
+          "label_zh": "收到订单",
+          "description": "订单进入待处理。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S1",
+          "label_en": "FULFILLMENT_READY",
+          "label_zh": "待履约",
+          "description": "库存、地址、Shipping Type、截止已确认。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S2",
+          "label_en": "TRACKING_READY",
+          "label_zh": "物流信息就绪",
+          "description": "按当前方式创建/录入合法Tracking。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S3",
+          "label_en": "HANDED_TO_LSP",
+          "label_zh": "已交物流",
+          "description": "已交接物流商/等待有效扫描。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S4",
+          "label_en": "IN_TRANSIT",
+          "label_zh": "运输中",
+          "description": "平台确认有效运输状态。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S5",
+          "label_en": "DELIVERED",
+          "label_zh": "已送达",
+          "description": "进入可能的售后窗口。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S6",
+          "label_en": "AFTER_SALES",
+          "label_zh": "售后处理中",
+          "description": "取消/退款/退货/物流问题等。",
+          "terminal": false
+        },
+        {
+          "key": "P05-S7",
+          "label_en": "CLOSED",
+          "label_zh": "完成",
+          "description": "订单和必要售后完成，记录经营结果。",
+          "terminal": true
+        },
+        {
+          "key": "P05-S8",
+          "label_en": "RISK_ACTION",
+          "label_zh": "风险处理",
+          "description": "SLA/Tracking/取消/违规风险需要优先处理。",
+          "terminal": false
+        }
+      ],
+      "transitions": [
+        {
+          "id": "T01-P05-T01",
+          "event": "ORDER_RECEIVED",
+          "from": [
+            "*"
+          ],
+          "to": "P05-S0"
+        },
+        {
+          "id": "T01-P05-T02",
+          "event": "READY_FULFILL",
+          "from": [
+            "P05-S0"
+          ],
+          "to": "P05-S1"
+        },
+        {
+          "id": "T01-P05-T03",
+          "event": "TRACKING_READY",
+          "from": [
+            "P05-S1"
+          ],
+          "to": "P05-S2"
+        },
+        {
+          "id": "T01-P05-T04",
+          "event": "HAND_TO_LSP",
+          "from": [
+            "P05-S2"
+          ],
+          "to": "P05-S3"
+        },
+        {
+          "id": "T01-P05-T05",
+          "event": "VALID_SCAN",
+          "from": [
+            "P05-S3"
+          ],
+          "to": "P05-S4"
+        },
+        {
+          "id": "T01-P05-T06",
+          "event": "DELIVERED",
+          "from": [
+            "P05-S4"
+          ],
+          "to": "P05-S5"
+        },
+        {
+          "id": "T01-P05-T07",
+          "event": "AFTER_SALES",
+          "from": [
+            "P05-S0",
+            "P05-S1",
+            "P05-S2",
+            "P05-S3",
+            "P05-S4",
+            "P05-S5"
+          ],
+          "to": "P05-S6"
+        },
+        {
+          "id": "T01-P05-T08",
+          "event": "AFTER_SALES_CLOSED",
+          "from": [
+            "P05-S6"
+          ],
+          "to": "P05-S7"
+        },
+        {
+          "id": "T01-P05-T09",
+          "event": "CLOSE_NO_AFTER_SALES",
+          "from": [
+            "P05-S5"
+          ],
+          "to": "P05-S7"
+        },
+        {
+          "id": "T01-P05-T10",
+          "event": "RISK_TRIGGER",
+          "from": [
+            "P05-S1",
+            "P05-S2",
+            "P05-S3",
+            "P05-S4"
+          ],
+          "to": "P05-S8"
+        }
+      ],
+      "evidence_required": [
+        "订单号脱敏",
+        "Shipping Type",
+        "SLA/截止",
+        "Tracking/LSP",
+        "平台状态",
+        "客户沟通",
+        "退款/损失",
+        "VTR/LDR/OTDR/SFCR及AHR/SPS相关记录"
+      ],
+      "notify_policy": "临近SLA、Tracking无有效扫描、售后待处理时提醒；具体阈值由当期规则配置。",
+      "dynamic_rule_note": "美国站2026-09 Fulfillment Policy规定Regular Order等具体SLA，但不同站点/订单类型会变化；系统只把数字作为动态规则，不嵌入固定流程代码。SPS新版本在2026-09/10处于过渡期，前端应区分当前生效与预览。",
+      "exit": "CLOSED后把真实履约/售后/成本数据送入W11经营复盘。",
+      "source_event_descriptions": [
+        "订单进入：→S0→S1",
+        "物流信息完成：S1→S2",
+        "交物流：S2→S3",
+        "有效扫描/平台In Transit：S3→S4",
+        "送达：S4→S5",
+        "发生售后：S0–S5→S6→S7",
+        "无售后/完成：S5→S7",
+        "触发关键风险：任意履约中状态→S8，处理后返回对应状态"
+      ]
+    }
+  ]
+}

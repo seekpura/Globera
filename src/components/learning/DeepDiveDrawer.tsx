@@ -1,0 +1,1 @@
+import {useState} from 'react'; export function DeepDiveDrawer({items}:{items:string[]}){const[open,setOpen]=useState(false);return <div className="card drawer"><button className="btn secondary" onClick={()=>setOpen(!open)}>{open?'收起深入层':'点击深入｜不打断主线'}</button>{open&&<ul className="list section">{items.map(x=><li key={x}>{x}</li>)}</ul>}</div>}

@@ -1,0 +1,1329 @@
+{
+  "version": "2.8",
+  "course": "T01 TikTok跨境电商0–1实战班",
+  "stages": [
+    {
+      "stage": "阶段01｜确定 TikTok 经营路线",
+      "courses": [
+        {
+          "code": "T01-C01",
+          "title": "TikTok Shop经营全景",
+          "duration": "30分钟",
+          "objective": "让零基础学员建立唯一主线：用户如何从内容/搜索/商城发现商品，经商品页、Creator、广告或LIVE进入成交，再回到Seller Center完成履约与复盘。学员结束时能画出自己的第一张TikTok经营闭环图。",
+          "tree": [
+            "发现：For You、Search、Shop Tab、Creator、LIVE",
+            "转化：商品链接→PDP（商品详情页）→SKU→支付",
+            "增长：自营内容、Affiliate（联盟达人）、Shop Ads（店铺广告）、LIVE",
+            "经营：Seller Center→订单→履约→售后→Account Health（账户健康）→Analytics（数据分析）"
+          ],
+          "visible": [
+            "一张横向“流量—商品—成交—履约—数据”主图；默认只展示TikTok内部对象，不铺开Amazon/Shopee知识。",
+            "四种主要成交入口用可点击节点表示：短视频、达人、广告、LIVE。",
+            "首页只让学员回答：我的商品从哪里被看见？在哪里完成购买？后台在哪里处理？"
+          ],
+          "deep": [
+            "点击“其他平台差异”才出现：TikTok内容发现逻辑与Amazon搜索货架、Shopee/Lazada货架流量、独立站自采流量的简短对照。",
+            "点击各节点展开Seller Center对应任务，不锁死菜单层级；每期开课按当前导航校准。"
+          ],
+          "demo": "用一个标准商品，从一条可购物短视频开始，依次展示商品链接、PDP、下单、Seller Center订单、履约状态、Analytics结果。演示要求同一商品贯穿，不换案例。",
+          "cases": [
+            "正例：内容展示解决真实使用问题，商品链接与PDP信息一致，成交后履约信息可追踪。",
+            "反例：视频很火但没有商品挂载、PDP信息不完整、库存和配送未配置，流量无法变成经营结果。"
+          ],
+          "variables": [
+            "流量入口",
+            "内容类型",
+            "商品是否挂载",
+            "库存状态",
+            "履约方式",
+            "是否进入Affiliate/广告/LIVE"
+          ],
+          "interaction": "SVG经营闭环图。点击任一节点高亮上下游；拖动“流量来源”到商品节点，系统显示下一步经营动作。动效只用于表达流向，不做装饰性粒子。",
+          "assessment": "让学员用60秒解释“一个订单是怎么来的，又如何回到数据复盘”。不能把“发视频”当作完整经营闭环。",
+          "gaps": [
+            "准备1套真实或脱敏的Seller Center全链路截图/录屏。",
+            "每期开课前核验Seller Center当前一级导航。"
+          ]
+        },
+        {
+          "code": "T01-C02",
+          "title": "市场、主体、店型与履约路线",
+          "duration": "45分钟",
+          "objective": "让学员依据自己的主体条件、目标市场、店铺准入和履约能力，确定第一条可执行TikTok Shop路线，而不是做全球市场研究。",
+          "tree": [
+            "目标站点：可开通性、语言、消费与竞争仅做启动判断",
+            "主体：公司/个人等当期允许形式与资料一致性",
+            "店型/准入：跨境、本地及其他当期可用路径",
+            "履约：中国直发、本地仓、海外仓/平台履约等"
+          ],
+          "visible": [
+            "一张“四问路线卡”：我卖哪里→谁来开店→商品从哪里发→订单如何到消费者。",
+            "默认只显示与本期开班站点和学员条件相关的路线。"
+          ],
+          "deep": [
+            "点击站点才展开当地市场资料；点击主体才展开公司/地址/银行/负责人等细节。",
+            "不在主页面展示几十个国家排名。"
+          ],
+          "demo": "给出3个不同条件案例：国内公司+轻小件、中国供应链+海外仓、当地团队/主体，现场反推适合的店型与履约。",
+          "cases": [
+            "正例：主体、收款、仓库、退货地址与站点要求形成一条闭环。",
+            "反例：先决定“做美国”，后发现主体、商品准入、物流和退货都不成立。"
+          ],
+          "variables": [
+            "目标市场",
+            "主体所在地",
+            "商品属性/重量体积",
+            "库存位置",
+            "退货能力",
+            "时效要求",
+            "语言/内容能力"
+          ],
+          "interaction": "路线决策器。用户选择条件后，前端只显示“可执行/需补条件/不建议当前启动”三种状态，并展示缺口，不给政治/市场主观排名。",
+          "assessment": "产出T01-W01输入：首站、主体、店型、履约、语言、商品方向和缺口。",
+          "gaps": [
+            "每期开课确认当前开店市场、店型、主体与物流规则。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段02｜TikTok Shop达到经营就绪",
+      "courses": [
+        {
+          "code": "T01-C03",
+          "title": "TikTok账号、设备、网络与权限",
+          "duration": "45分钟",
+          "objective": "建立可管理、可交接、可审计的经营账号与权限体系，避免把“环境”讲成绕平台规则的技巧。",
+          "tree": [
+            "账号对象：Seller Center、TikTok账号、广告账号、成员/角色",
+            "设备与登录：稳定、可追踪、符合平台要求",
+            "权限：Owner/Admin/Operator等按当前后台角色配置",
+            "安全：2FA、多人员协作、离职/外包权限回收"
+          ],
+          "visible": [
+            "账号关系图：店铺↔官方/营销账号↔广告账号↔团队成员。",
+            "默认强调“合规、稳定、可追踪”，不教授规避风控或伪装身份。"
+          ],
+          "deep": [
+            "点击权限节点展开最小权限原则、多人协作与交接清单。"
+          ],
+          "demo": "搭一套标准团队账号结构：负责人、运营、内容、客服、广告；演示谁需要什么权限。",
+          "cases": [
+            "正例：不同岗位独立成员权限，关键账号启用双重验证并记录归属。",
+            "反例：所有人共享同一个主账号密码，离职后仍能访问。"
+          ],
+          "variables": [
+            "成员数量",
+            "岗位",
+            "权限级别",
+            "2FA状态",
+            "绑定账号",
+            "主广告账号"
+          ],
+          "interaction": "权限矩阵拖拽：把“商品运营/客服/广告/财务”拖到对应权限，错误配置即时提示“权限过大/不足”。",
+          "assessment": "学员完成自己的账号/角色/权限清单，并指出至少1个当前单点风险。",
+          "gaps": [
+            "准备当前Seller Center成员权限截图；避免写死可能调整的角色名称。"
+          ]
+        },
+        {
+          "code": "T01-C04",
+          "title": "入驻资料、KYC与开店准备",
+          "duration": "60分钟",
+          "objective": "让学员按目标站点当前要求准备真实一致的主体、负责人、地址、结算等资料，并学会处理“需核验/缺失/等待审核”状态。",
+          "tree": [
+            "主体真实性",
+            "负责人/受益人与身份验证",
+            "地址/联系方式一致性",
+            "银行/结算信息",
+            "类目/商品额外资质",
+            "提交后补件与申诉"
+          ],
+          "visible": [
+            "资料一致性检查面板：文件名不是重点，字段一致才是重点。",
+            "四态：已具备、缺失、需核验、等待审核。"
+          ],
+          "deep": [
+            "点击某资料项显示“为什么需要、常见不一致、如何核验官方要求”。"
+          ],
+          "demo": "用一套合格资料与一套“公司名/地址/负责人拼写不一致”的反例做逐项检查。",
+          "cases": [
+            "正例：主体名称、地址、负责人和银行信息之间逻辑一致。",
+            "反例：为了快速过审临时拼凑不真实材料。"
+          ],
+          "variables": [
+            "主体类型",
+            "文件有效期",
+            "拼写/地址格式",
+            "负责人",
+            "银行账户",
+            "站点",
+            "类目资质"
+          ],
+          "interaction": "资料差异高亮：前端模拟比对多个字段，不做OCR依赖；人工点选发现不一致后生成缺口清单。",
+          "assessment": "形成T01-K02中的资料缺口清单，并明确每项下一步。",
+          "gaps": [
+            "每期开课核验目标站点Seller Identity Verification（卖家身份验证）要求。"
+          ]
+        },
+        {
+          "code": "T01-C05",
+          "title": "Seller Center经营后台",
+          "duration": "90分钟",
+          "objective": "让学员不依赖“记菜单”，而是能用经营任务找到当前后台入口，并理解Products、Orders、Affiliate、Marketing/Shop Ads、Analytics、Account Health、Finance等模块之间的关系。",
+          "tree": [
+            "商品任务：Products（商品）",
+            "订单/物流任务：Orders/Logistics（订单/物流）",
+            "增长任务：Affiliate、Marketing/Shop Ads、LIVE/Content Hub",
+            "数据任务：Analytics（数据分析）",
+            "治理任务：Account Health / Shop Performance（账户健康/店铺表现）",
+            "资金任务：Finance/Settlement（财务/结算）"
+          ],
+          "visible": [
+            "“任务导航地图”而不是菜单截图墙。",
+            "8张任务卡：上架、发货、找达人、投广告、看视频数据、看店铺健康、看结算、处理售后。"
+          ],
+          "deep": [
+            "点击任务卡显示当前入口、备用搜索方式和“改版后怎么找”。",
+            "增加“导航变更记录”卡，提醒美国站2026年仍在调整Seller Center导航。"
+          ],
+          "demo": "讲师随机抽5个任务，不按固定顺序，在当前后台现场定位。第二轮让学员反向操作。",
+          "cases": [
+            "正例：后台改版后仍能从任务和搜索/一级模块找到功能。",
+            "反例：只背“左侧第几个菜单”，一改版就不会操作。"
+          ],
+          "variables": [
+            "任务类型",
+            "站点",
+            "后台版本",
+            "成员权限",
+            "是否已开通功能"
+          ],
+          "interaction": "后台热区模拟：使用当前截图做可点击热点，点击错误区域不给“红叉羞辱”，而是提示当前任务应该寻找哪类模块。",
+          "assessment": "学员独立完成5个后台任务定位；不能只说菜单名称。",
+          "gaps": [
+            "每期开课前更新导航截图；2026-09官方已发布Seller Center Navigation Update，应纳入核验。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段03｜确定首批测试SKU",
+      "courses": [
+        {
+          "code": "T01-C06",
+          "title": "TikTok商品适配判断",
+          "duration": "45分钟",
+          "objective": "让学员用一套轻量框架判断“是否值得在TikTok做首测”，而不是做完整行业研究。",
+          "tree": [
+            "需求强度",
+            "内容展示性",
+            "价格/冲动购买门槛",
+            "单位经济性",
+            "履约难度",
+            "合规/IP风险"
+          ],
+          "visible": [
+            "六维雷达/条形判断卡，但不做综合打分排名；每维只要求“高/中/低/需核验+证据”。",
+            "默认展示“为什么适合测试/为什么不适合现在测试”。"
+          ],
+          "deep": [
+            "点击任一维展开验证方法，如展示性看Demo空间、履约看体积重量/易损/退货。"
+          ],
+          "demo": "对同一类目中两个差异商品做六维判断，强调不存在“TikTok万能爆品”。",
+          "cases": [
+            "正例：视觉演示强、价格合理、利润可承受达人佣金/广告、履约简单。",
+            "反例：毛利极薄、需要大量解释、易碎重货、合规不明却只因“看起来热门”就上。"
+          ],
+          "variables": [
+            "客单价",
+            "毛利",
+            "体积重量",
+            "演示难度",
+            "使用场景",
+            "复购",
+            "风险等级"
+          ],
+          "interaction": "六维开关面板；调整售价/物流/佣金预留后，适配判断同步变化。",
+          "assessment": "对3–5个候选SKU完成初筛并解释保留/淘汰原因。",
+          "gaps": [
+            "准备至少6个跨品类正反例，避免只教美妆/小商品。"
+          ]
+        },
+        {
+          "code": "T01-C07",
+          "title": "TikTok商品与内容信号验证",
+          "duration": "60分钟",
+          "objective": "让学员从TikTok Shop商品、可购物视频、Creator、价格与用户互动中收集可追溯信号，形成“值得测/需要更多证据/暂缓”的判断。",
+          "tree": [
+            "商品信号：销量/评价/价格/库存/推荐资格等可见信息",
+            "内容信号：可购物视频数量、结构、互动与商业指标",
+            "Creator信号：谁在推、内容质量、受众匹配",
+            "竞争信号：价格带、卖点同质化、素材同质化",
+            "时间窗：信号必须带日期，不把旧爆款当当前事实"
+          ],
+          "visible": [
+            "“商品→内容→Creator→竞争”四栏取证板。",
+            "每条信号必须有来源和抓取日期。"
+          ],
+          "deep": [
+            "点击“数据偏差”展开：公开页面可见数据与Seller Center内部数据不是同一口径。"
+          ],
+          "demo": "从一个商品PDP反向找可购物内容与Creator，再回到同类商品比较。",
+          "cases": [
+            "正例：多个Creator用不同角度稳定带货，商品评价与价格支持测试。",
+            "反例：只截一条高播放视频，不看是否挂商品、是否有订单信号、是否已经过时。"
+          ],
+          "variables": [
+            "时间窗",
+            "价格带",
+            "内容数量",
+            "Creator数量",
+            "商业指标",
+            "评价/退货信号"
+          ],
+          "interaction": "证据卡片拖到“支持/反对/未知”三栏，系统自动生成待验证问题。",
+          "assessment": "每个首选SKU至少有多源证据；不允许仅凭“感觉会爆”。",
+          "gaps": [
+            "准备可公开演示的商品/视频/Creator案例；真实数据涉及隐私时使用脱敏样本。"
+          ]
+        },
+        {
+          "code": "T01-C08",
+          "title": "商品基础合规与IP风险",
+          "duration": "45分钟",
+          "objective": "让学员在首测前识别明显禁限售、类目资格、商品/内容宣称、商标版权和AI误导风险；复杂法规交给专项课。",
+          "tree": [
+            "禁售/限售",
+            "类目资格与文档",
+            "商标/版权/外观/IP",
+            "标签与安全信息",
+            "商品宣称与内容真实性",
+            "AI生成/编辑不得改变商品事实"
+          ],
+          "visible": [
+            "红黄绿风险卡：红=停止，黄=需专业/官方核验，绿=基础可继续。",
+            "主页面不展开HS/VAT等非本课核心。"
+          ],
+          "deep": [
+            "点击风险项直达官方政策卡；站点差异用动态核验标识。"
+          ],
+          "demo": "对“普通家居用品”和“带功能性健康宣称/品牌元素商品”做对比筛查。",
+          "cases": [
+            "正例：无法确认资格时先标“需核验”，不先上架后补。",
+            "反例：AI素材把真实产品尺寸、颜色、材质或效果改掉。"
+          ],
+          "variables": [
+            "类目",
+            "品牌/IP",
+            "宣称强度",
+            "AI编辑程度",
+            "目标市场",
+            "资质状态"
+          ],
+          "interaction": "风险情景选择：给出商品+标题+图片+宣称，学员点击风险点，系统展开原因与官方证据入口。",
+          "assessment": "首批SKU全部有风险状态；红线商品不得进入W03主测组合。",
+          "gaps": [
+            "每期开课核验Restricted/Prohibited Products、Product Listing、Content Policy。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段04｜商品真正进入 TikTok Shop",
+      "courses": [
+        {
+          "code": "T01-C09",
+          "title": "类目、属性、SKU与变体",
+          "duration": "60分钟",
+          "objective": "把商品结构做成可被TikTok Shop正确识别、展示、履约和统计的Listing基础。",
+          "tree": [
+            "类目选择与资格",
+            "必填/关键属性",
+            "父商品与SKU",
+            "变体维度",
+            "库存/编码一致性",
+            "错误类目与变体滥用"
+          ],
+          "visible": [
+            "商品结构树：Product→Variation→SKU。",
+            "通过具体商品展示“颜色/尺寸”何时可以做变体，何时应该拆成不同商品。"
+          ],
+          "deep": [
+            "点击类目节点展示“类目资格/额外文档/平台属性”；动态要求不写死。"
+          ],
+          "demo": "把一组杂乱原始SKU整理成TikTok可上架结构，并现场解释每个变体字段。",
+          "cases": [
+            "正例：同一真实商品的颜色/尺寸变体。",
+            "反例：把不同功能、不同套装、不同商品硬塞成变体以聚合销量。"
+          ],
+          "variables": [
+            "类目",
+            "变体维度",
+            "SKU数量",
+            "库存",
+            "条码/内部编码",
+            "资格状态"
+          ],
+          "interaction": "SKU树编辑器：增加/删除变体，前端实时预览消费者端选择逻辑。",
+          "assessment": "完成至少1个首测商品的类目、属性、SKU和变体结构草稿。",
+          "gaps": [
+            "准备单SKU、多颜色、多尺寸、多套装四种样例。"
+          ]
+        },
+        {
+          "code": "T01-C10",
+          "title": "TikTok Listing标题、关键词、卖点与本地化",
+          "duration": "75分钟",
+          "objective": "让学员把真实产品资料转成准确、易懂、可发现、符合目标市场语言习惯的Listing文本，同时避免堆词、误导宣称和站外导流。",
+          "tree": [
+            "商品事实源",
+            "标题结构",
+            "关键词自然覆盖",
+            "卖点/描述层级",
+            "规格/适用范围/注意事项",
+            "本地化与禁用表达"
+          ],
+          "visible": [
+            "“事实层→消费者表达层”双栏编辑器。任何文案必须能回指事实。",
+            "默认中文解释英文标题/术语。"
+          ],
+          "deep": [
+            "点击关键词展开Search Insights（搜索洞察）/平台搜索数据如何辅助，而不是做传统SEO大课。"
+          ],
+          "demo": "同一产品从中文工厂资料→英文/目标语标题→卖点→描述；同时标出哪些词不能凭空添加。",
+          "cases": [
+            "正例：标题准确区分品牌/品类/关键属性，描述解释规格和使用场景。",
+            "反例：堆砌关键词、未经证明的“best/medical/guaranteed”等绝对或功能宣称、加入站外联系方式。"
+          ],
+          "variables": [
+            "目标语言",
+            "核心属性",
+            "用户场景",
+            "关键词",
+            "宣称强度",
+            "品牌授权"
+          ],
+          "interaction": "事实锁定器：左侧勾选已确认事实，右侧生成文案；使用未确认事实时提示“需证据”。",
+          "assessment": "完成标题、核心卖点与描述，并通过事实一致性检查。",
+          "gaps": [
+            "准备多语言本地化对照案例；每期开课核验当前Listing文本政策。"
+          ]
+        },
+        {
+          "code": "T01-C11",
+          "title": "TikTok商品图片、详情和商品视频",
+          "duration": "90分钟",
+          "objective": "让学员建立“PDP（商品详情页）素材既要真实合规，也要帮助成交”的双重标准，并能识别AI视觉误导。",
+          "tree": [
+            "主图/辅助图",
+            "规格与差异表达",
+            "场景图与细节图",
+            "商品视频",
+            "AI生成/编辑真实性",
+            "前台移动端阅读顺序"
+          ],
+          "visible": [
+            "素材序列视图：第一屏回答“是什么”，后续回答“为什么买/怎么用/规格是什么/有什么证明”。",
+            "政策QA和转化QA并排显示。"
+          ],
+          "deep": [
+            "点击AI节点展开：允许的质量增强/背景调整 vs 改变产品事实/虚构效果。"
+          ],
+          "demo": "对一套低质量素材重排信息层级，并演示AI换背景前后如何做真实性QA。",
+          "cases": [
+            "正例：图片与真实SKU颜色、数量、材质、配件完全一致。",
+            "反例：AI把小商品变大、增加不存在配件、改变材质光泽、生成虚假前后效果。"
+          ],
+          "variables": [
+            "图片顺序",
+            "信息密度",
+            "展示角度",
+            "场景",
+            "AI编辑强度",
+            "视频长度/结构"
+          ],
+          "interaction": "素材排序器+真实性对比滑块；学员拖图排序，前端模拟移动端首屏和滑动体验。",
+          "assessment": "形成可发布素材集或明确补拍/补做清单；所有AI编辑通过真实性检查。",
+          "gaps": [
+            "准备真实商品原图、优化图和AI误导反例；美国站Listing政策当前建议至少5张高分辨率图片，其他站点按当期规则核验。"
+          ]
+        },
+        {
+          "code": "T01-C12",
+          "title": "定价、库存与配送设置",
+          "duration": "60分钟",
+          "objective": "把价格、折扣、库存和配送从“后台字段”变成一个可经营的单位经济与履约组合。",
+          "tree": [
+            "标价与卖家折扣",
+            "单位贡献",
+            "库存真实性",
+            "仓库/Shipping Type（配送类型）",
+            "时效/SLA",
+            "促销与库存风险"
+          ],
+          "visible": [
+            "价格—利润—履约联动卡。调整价格或物流成本，单位贡献实时变化。"
+          ],
+          "deep": [
+            "点击促销展开“平台补贴/卖家折扣/广告/达人佣金”的不同责任，不把所有优惠都算成卖家成本。"
+          ],
+          "demo": "同一SKU做两套价格+物流方案，比较成交空间、利润和履约风险。",
+          "cases": [
+            "正例：价格能覆盖商品、履约、佣金/广告预留和售后损耗。",
+            "反例：只看毛利，不预留Affiliate/广告；库存填高于真实可发数量。"
+          ],
+          "variables": [
+            "售价",
+            "卖家折扣",
+            "商品成本",
+            "物流",
+            "佣金",
+            "广告",
+            "库存",
+            "配送时效"
+          ],
+          "interaction": "滑杆模拟价格/佣金/物流变化，显示单位贡献与“是否适合继续测试”。",
+          "assessment": "完成首测SKU价格、库存与配送设置，并与T01-K04一致。",
+          "gaps": [
+            "准备标准成本数据；站点配送选项和SLA每期开课核验。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段05｜TikTok内容成交与短视频实战",
+      "courses": [
+        {
+          "code": "T01-C13",
+          "title": "TikTok内容为什么能够产生商品成交",
+          "duration": "45分钟",
+          "objective": "让学员从“播放量思维”切换到“可购物内容漏斗思维”，理解Video Views（视频播放）只是上游，商品曝光、点击、下单和GMV才构成商业结果。",
+          "tree": [
+            "Video Views（视频播放）",
+            "Product Impressions（商品曝光）",
+            "Product Clicks（商品点击）",
+            "CTR（点击率）",
+            "SKU Orders（SKU订单）",
+            "CTOR（点击转订单率）",
+            "GMV（成交额）/GPM（千次播放成交额）"
+          ],
+          "visible": [
+            "一条竖向漏斗，默认只显示7个核心商业指标；点赞评论作为辅助内容信号。"
+          ],
+          "deep": [
+            "点击指标展开定义、常见误判和“如果这一层掉得厉害，优先改什么”。"
+          ],
+          "demo": "对两条视频：A播放高但商品点击低，B播放较低但CTOR高，现场判断各自问题。",
+          "cases": [
+            "正例：播放一般但点击和下单效率高，值得继续迭代/放大。",
+            "反例：播放很高就宣布“爆了”，完全不看商品点击和订单。"
+          ],
+          "variables": [
+            "Hook",
+            "商品曝光",
+            "商品点击",
+            "CTA",
+            "PDP质量",
+            "价格",
+            "内容受众匹配"
+          ],
+          "interaction": "漏斗断点诊断：拖动各层数据，系统高亮“内容问题/PDP问题/价格问题/证据不足”。",
+          "assessment": "学员能用商业指标解释一条视频“哪里断了”。",
+          "gaps": [
+            "使用Seller Center Video Analytics当前默认指标作为演示口径。"
+          ]
+        },
+        {
+          "code": "T01-C14",
+          "title": "TikTok成交内容搜索与拆解",
+          "duration": "75分钟",
+          "objective": "让学员会找到“可比较、可复用”的成交内容，而不是只收藏高播放视频。",
+          "tree": [
+            "案例来源：自营/Creator/同品/同场景",
+            "可购物性：是否挂商品、商品是否匹配",
+            "内容结构：Hook→Problem/Desire→Demo→Proof→Offer→CTA",
+            "商业表现：CTR/CTOR/GMV/Orders等可获得指标",
+            "可迁移 vs 不可复制元素"
+          ],
+          "visible": [
+            "案例卡按“结构、商品、人群、商业结果、可迁移点”展示。"
+          ],
+          "deep": [
+            "点击Performance（表现）展开Affiliate Seller Analytics或Video Analytics中的数据口径。"
+          ],
+          "demo": "现场找3条内容，淘汰2条不具可比性的，只深拆1条；让学员看到“选案例”本身也是能力。",
+          "cases": [
+            "正例：同品/同人群/同价格带内容，并能看到商品点击或订单信号。",
+            "反例：明星大号品牌片、纯娱乐爆款直接当普通店铺模板。"
+          ],
+          "variables": [
+            "商品相似度",
+            "人群",
+            "内容形式",
+            "Creator类型",
+            "价格带",
+            "商业表现"
+          ],
+          "interaction": "案例筛选器：按“可比性”而非“播放量”排序，学员选择理由会影响推荐。",
+          "assessment": "建立至少一组可追溯案例池，并对1条做完整拆解。",
+          "gaps": [
+            "准备Video Analytics与Affiliate Performance脱敏截图；注意销售指标归因口径在2026年有调整。"
+          ]
+        },
+        {
+          "code": "T01-C15",
+          "title": "从商品卖点到TikTok内容选题",
+          "duration": "45分钟",
+          "objective": "把产品资料转成一组可以拍、可以测试、彼此差异明确的内容角度。",
+          "tree": [
+            "事实卖点",
+            "用户问题/欲望",
+            "使用场景",
+            "演示动作",
+            "证据",
+            "人物/视角",
+            "内容形式"
+          ],
+          "visible": [
+            "选题生成器以“卖点×人群/场景×证据方式”组合，不直接给一堆泛化标题。"
+          ],
+          "deep": [
+            "点击内容形式展开口播、演示、对比、教程、UGC、评论回应等适用条件。"
+          ],
+          "demo": "拿同一SKU生成至少6个不同角度，并删掉彼此本质重复的选题。",
+          "cases": [
+            "正例：每个选题只验证一个核心假设。",
+            "反例：10个选题只是换标题，镜头和卖点完全一样。"
+          ],
+          "variables": [
+            "人群",
+            "痛点",
+            "场景",
+            "核心卖点",
+            "证据",
+            "内容形式",
+            "创作者身份"
+          ],
+          "interaction": "组合矩阵：拖动卖点与场景自动形成“内容假设卡”，用户再人工修改。",
+          "assessment": "形成首批选题池，至少覆盖不同假设而不是数量堆叠。",
+          "gaps": [
+            "准备不同类目选题案例，避免全部用美妆/服装。"
+          ]
+        },
+        {
+          "code": "T01-C16",
+          "title": "TikTok带货脚本与镜头设计",
+          "duration": "60分钟",
+          "objective": "把选题变成可以直接拍摄/生成的短视频生产指令，做到“每一句为什么说、每个镜头为什么拍”可解释。",
+          "tree": [
+            "Hook（开场钩子）",
+            "Problem/Desire（问题/欲望）",
+            "Demo（演示）",
+            "Proof（证明）",
+            "Offer（成交条件）",
+            "CTA（行动引导）",
+            "Shot List（镜头表）"
+          ],
+          "visible": [
+            "左右双轨：左边脚本语言，右边镜头/字幕/道具/商品动作。"
+          ],
+          "deep": [
+            "点击Hook/Proof等节点展开适配示例与反例；不做“万能爆款话术库”。"
+          ],
+          "demo": "把C15一个选题现场改写成20–35秒脚本并拆镜头；再删掉冗余镜头。",
+          "cases": [
+            "正例：前几秒明确问题/结果，Demo真实，Proof有依据，CTA与商品链接一致。",
+            "反例：前15秒都是品牌介绍，产品最后才出现；Proof靠虚构评价。"
+          ],
+          "variables": [
+            "视频长度",
+            "镜头数量",
+            "主角",
+            "口播/字幕",
+            "Demo动作",
+            "Proof类型",
+            "CTA"
+          ],
+          "interaction": "时间轴编辑器：镜头块拖拽重排，显示累计时长和每个镜头承担的转化任务。",
+          "assessment": "至少1条脚本达到“可直接拍”标准。",
+          "gaps": [
+            "准备真实样品/道具或标准商品素材。"
+          ]
+        },
+        {
+          "code": "T01-C17",
+          "title": "拍摄、剪辑、AI辅助与本地化",
+          "duration": "75分钟",
+          "objective": "让学员把脚本真正做成可购物视频，并理解商品链接、商业披露、AI内容真实性、本地语言与发布后诊断入口。",
+          "tree": [
+            "拍摄：光线/构图/商品可见",
+            "剪辑：节奏/字幕/声音",
+            "AI辅助：脚本、翻译、配音、背景/画质、素材生成边界",
+            "本地化：语言、货币、尺寸、文化表达",
+            "发布：商品链接/商业披露",
+            "发布后：Video Analytics/Content Hub诊断"
+          ],
+          "visible": [
+            "制作工作台：脚本→素材→剪辑→本地化→商品链接→披露→发布→数据。"
+          ],
+          "deep": [
+            "点击AI展开“可用/谨慎/禁止”三层：优化画质/翻译；显著编辑需披露；不得虚构产品效果/外观。"
+          ],
+          "demo": "同一条素材完成剪辑、本地字幕/配音、商品挂载和披露设置演示，再进入Video Analytics看指标位置。",
+          "cases": [
+            "正例：AI改善背景和字幕但产品事实不变，并按规则披露。",
+            "反例：AI替换真实产品、生成不存在功能或使用未授权人物声音/肖像。"
+          ],
+          "variables": [
+            "语言",
+            "字幕",
+            "配音",
+            "AI编辑强度",
+            "商品链接",
+            "披露开关",
+            "发布时间"
+          ],
+          "interaction": "制作检查清单+AI前后对比；发布前必须通过“商品事实一致性”闸门。",
+          "assessment": "形成W05/W06可发布成片并通过发布检查。",
+          "gaps": [
+            "准备当前Content Policy、Creator/Content Policy Guide和Video Analytics截图。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段06｜Creator与Affiliate第一轮经营",
+      "courses": [
+        {
+          "code": "T01-C18",
+          "title": "Creator与Affiliate成交机制",
+          "duration": "60分钟",
+          "objective": "让学员理解Affiliate Center不是“找达人通讯录”，而是一个产品—佣金—样品—Creator—内容—订单/GMV的合作系统。",
+          "tree": [
+            "Open Collaboration（开放合作）",
+            "Target Collaboration（定向合作）",
+            "Standard Commission（标准佣金）",
+            "Shop Ads Commission（店铺广告佣金）",
+            "Samples（样品）",
+            "Creator内容/订单/GMV",
+            "Performance Analytics（表现分析）"
+          ],
+          "visible": [
+            "一张Affiliate闭环图，并明确Open与Target可同时存在但规则/优先级不同。"
+          ],
+          "deep": [
+            "点击佣金展开标准佣金与Shop Ads佣金；点击样品展开Free/Refundable等当期可用类型。",
+            "点击“高级合作”可了解Flat Fee/Exclusive等，但不作为0–1主操作。"
+          ],
+          "demo": "用同一SKU分别创建Open和Target合作思路，展示佣金、样品和Creator可见性差异。",
+          "cases": [
+            "正例：新SKU用Open做广覆盖，同时对高匹配Creator用Target做更具体条件。",
+            "反例：所有Creator统一高佣金，忽略利润和内容质量。"
+          ],
+          "variables": [
+            "合作类型",
+            "佣金",
+            "Shop Ads佣金",
+            "样品类型",
+            "Creator范围",
+            "商品",
+            "合作期限"
+          ],
+          "interaction": "合作模式切换器：切Open/Target后，界面显示谁能看到、谁主动发起、佣金/样品如何配置。",
+          "assessment": "学员能为一个SKU解释为什么选Open、Target或组合。",
+          "gaps": [
+            "当前美国站Open/Target佣金、保护期与样品规则较动态，每期开课核验。"
+          ]
+        },
+        {
+          "code": "T01-C19",
+          "title": "TikTok达人搜索、筛选与匹配",
+          "duration": "75分钟",
+          "objective": "让学员能从Find Creators/Creator详情和Performance数据中建立有证据的候选池，而不是只看粉丝量。",
+          "tree": [
+            "商品/类目匹配",
+            "受众匹配",
+            "购物内容质量",
+            "内容稳定性",
+            "历史商业信号",
+            "样品/合作表现",
+            "账号健康/风险",
+            "优先级分层"
+          ],
+          "visible": [
+            "达人卡默认只显示对经营决策有用的字段，不堆粉丝画像。"
+          ],
+          "deep": [
+            "点击Creator展开近期开播/视频表现、带货品类、合作状态等可得信息；数据字段随站点和版本动态。"
+          ],
+          "demo": "连续筛5个Creator，并故意放入“粉丝大但不匹配”“粉丝小但内容高转化”的对比。",
+          "cases": [
+            "正例：产品/受众/内容能力三者匹配，且有可验证商业信号。",
+            "反例：只因粉丝数量高就寄样；忽略其内容从不展示商品。"
+          ],
+          "variables": [
+            "类目匹配",
+            "受众",
+            "视频质量",
+            "LIVE能力",
+            "订单/GMV信号",
+            "样品历史",
+            "内容频率"
+          ],
+          "interaction": "A/B/C分层看板；拖Creator卡到层级后必须填写一条证据，否则不能保存。",
+          "assessment": "建立一批可执行候选Creator并完成优先级。",
+          "gaps": [
+            "准备Affiliate Center Find/Manage Creators当前截图与脱敏Creator样本。"
+          ]
+        },
+        {
+          "code": "T01-C20",
+          "title": "佣金、样品与合作机制",
+          "duration": "75分钟",
+          "objective": "让学员把佣金与样品当作经营投资来配置，能追踪请求、审批、发货、内容截止与结果，而不是“寄了样就结束”。",
+          "tree": [
+            "佣金经济边界",
+            "Standard vs Shop Ads Commission",
+            "佣金变更/保护期",
+            "Free Sample（免费样品）",
+            "Refundable Sample（可退款样品，若当前站点可用）",
+            "请求审批",
+            "发货/内容截止",
+            "订单/GMV复盘"
+          ],
+          "visible": [
+            "“成本—行为—结果”链：佣金/样品成本→Creator动作→内容→订单/GMV。"
+          ],
+          "deep": [
+            "点击时限显示当前站点动态规则；不把2026美国站7天审批、7天发货、14天发布等参数写成永久全球规则。"
+          ],
+          "demo": "同一SKU做低/中/高三套佣金方案并看单位贡献；再演示样品从请求到发布的状态机。",
+          "cases": [
+            "正例：对高匹配Creator给更有吸引力的Target方案并设置可承受经济边界。",
+            "反例：高佣金+免费样品+广告佣金叠加后已无单位贡献仍继续扩量。"
+          ],
+          "variables": [
+            "标准佣金",
+            "Shop Ads佣金",
+            "样品成本",
+            "运费",
+            "Creator级别",
+            "截止日",
+            "单位贡献"
+          ],
+          "interaction": "合作成本模拟器+样品状态流。调整佣金后即时显示单位贡献变化。",
+          "assessment": "完成至少一套可执行合作参数和样品跟踪计划。",
+          "gaps": [
+            "每期开课核验佣金生效/保护期、样品审批与发布时限。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段07｜广告与LIVE基础启动",
+      "courses": [
+        {
+          "code": "T01-C21",
+          "title": "TikTok广告什么时候应该介入",
+          "duration": "45分钟",
+          "objective": "让学员先判断“是否具备被广告放大的条件”，避免把广告当成救活差商品/差素材的按钮。",
+          "tree": [
+            "商品/PDP是否就绪",
+            "库存/履约是否稳定",
+            "内容/Creator是否有信号",
+            "单位经济是否有广告空间",
+            "广告目标",
+            "测试预算与停止条件"
+          ],
+          "visible": [
+            "五道门：商品→PDP→库存履约→创意→经济账。任一关键门未过，默认先修基础。"
+          ],
+          "deep": [
+            "点击目标展开“验证/放大/补流量”等不同投放目的，不讲复杂账户结构。"
+          ],
+          "demo": "给3个经营状态：新Listing无数据、已有自然转化素材、库存不稳；判断是否适合启动。",
+          "cases": [
+            "正例：已有可转化素材和单位经济空间，用广告验证能否放大。",
+            "反例：Listing没优化、无库存、视频无商品点击，直接加预算。"
+          ],
+          "variables": [
+            "素材信号",
+            "PDP转化",
+            "库存",
+            "履约",
+            "单位贡献",
+            "预算",
+            "停止条件"
+          ],
+          "interaction": "广告就绪诊断卡；缺关键条件时不显示“启动”按钮，只显示先修动作。",
+          "assessment": "对自己的SKU给出“现在投/暂不投”以及明确理由。",
+          "gaps": [
+            "准备正反投放前状态案例。"
+          ]
+        },
+        {
+          "code": "T01-C22",
+          "title": "GMV Max启动与基础数据判断",
+          "duration": "90分钟",
+          "objective": "让学员能够正确设置基础Product/LIVE GMV Max，并理解Primary Ad Account（主广告账号）、目标/预算/创意供给及“总渠道归因”，避免把Total ROI直接当纯付费增量。",
+          "tree": [
+            "Product GMV Max / LIVE GMV Max",
+            "Primary Ad Account",
+            "商品/LIVE对象",
+            "Target ROI / Max Delivery等当期模式",
+            "预算",
+            "Creative Supply（创意供给）",
+            "Cost/Orders/Total GMV/Total ROI",
+            "Attribution（归因）：运行期间相关自然+付费订单进入GMV Max口径"
+          ],
+          "visible": [
+            "启动流程图+归因警示条：“GMV Max面板的Total ROI不是纯付费广告ROAS。”"
+          ],
+          "deep": [
+            "点击归因展开Product与LIVE归因示例；点击创意展开自营/Creator可购物内容作为创意供给的关系。"
+          ],
+          "demo": "从Seller Center/Ads Manager当前入口创建基础方案，展示Primary Ad Account限制、对象、预算/ROI、创意和报表。随后用一个自然订单示例解释为何也可能出现在GMV Max归因中。",
+          "cases": [
+            "正例：用Total ROI做GMV Max经营结果观察，同时另结合业务基线判断增量。",
+            "反例：看到GMV Max GMV/Spend就宣称“广告ROAS非常高”，忽略自然和Affiliate订单被归因。"
+          ],
+          "variables": [
+            "Campaign Type",
+            "Primary Ad Account",
+            "商品/LIVE",
+            "ROI目标",
+            "预算",
+            "素材供给",
+            "总GMV",
+            "Spend",
+            "订单",
+            "单位经济"
+          ],
+          "interaction": "归因沙盘：开启/关闭GMV Max前后加入“自然订单/广告订单/Affiliate订单”，让学员判断哪些会进入当前面板。",
+          "assessment": "完成W08基础启动方案，并能口头解释Total ROI的口径。",
+          "gaps": [
+            "当前官方GMV Max归因和Primary Ad Account规则每期开课核验；准备Product/LIVE两套截图。"
+          ]
+        },
+        {
+          "code": "T01-C23",
+          "title": "TikTok LIVE基础成交结构",
+          "duration": "60分钟",
+          "objective": "让零基础学员完成一次“有商品挂载、有销售循环、有基础数据复盘”的LIVE演练，不扩展成专业直播间运营。",
+          "tree": [
+            "LIVE商品/Shopping Bag（购物袋）",
+            "Pin Product（置顶商品）",
+            "开场",
+            "需求/场景",
+            "Demo",
+            "Proof",
+            "Offer",
+            "互动",
+            "CTA",
+            "LIVE数据：Impressions/Views/Product Clicks/CTR/SKU Orders/CTOR/GMV"
+          ],
+          "visible": [
+            "一条10分钟基础销售循环时间轴。"
+          ],
+          "deep": [
+            "点击数据节点展开“流量不足/商品点击低/点击后不下单”分别意味着什么。",
+            "AI直播作为扩展卡，不占主流程。"
+          ],
+          "demo": "讲师完成一轮商品挂载→置顶→介绍→互动→CTA→切品→数据位置演示。",
+          "cases": [
+            "正例：每个直播段落围绕一个商品问题和行动引导。",
+            "反例：一直闲聊或只喊优惠，不展示产品与证据。"
+          ],
+          "variables": [
+            "商品顺序",
+            "Pin节奏",
+            "Offer",
+            "互动问题",
+            "演示方式",
+            "CTA",
+            "直播时长"
+          ],
+          "interaction": "直播控制台模拟：点击Pin、切品、触发互动卡，旁边实时生成CTR/CTOR示意数据。",
+          "assessment": "完成W09一次基础销售循环演练并记录问题。",
+          "gaps": [
+            "准备当前LIVE后台/Analytics截图；AI直播规则作为扩展资料动态维护。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段08｜订单、售后与店铺经营健康",
+      "courses": [
+        {
+          "code": "T01-C24",
+          "title": "TikTok订单、发货与Tracking",
+          "duration": "60分钟",
+          "objective": "让学员从订单状态出发，正确选择履约动作、Tracking与物流服务，并理解VTR/LDR/OTDR/SFCR等核心履约指标的作用。",
+          "tree": [
+            "Order Status（订单状态）",
+            "Shipping Type（配送类型）",
+            "SLA（服务时限）",
+            "LSP/承运商",
+            "Tracking",
+            "VTR（有效追踪率）",
+            "LDR（迟发率）",
+            "OTDR（准时送达率）",
+            "SFCR（卖家责任取消率）"
+          ],
+          "visible": [
+            "订单状态机+四个履约指标卡。不同站点阈值放动态规则层。"
+          ],
+          "deep": [
+            "点击指标展开定义、计算逻辑和对AHR/SPS的当前影响；例如美国站2026-09官方说明OTDR是SPS核心履约指标之一，VTR直接关联AHR。"
+          ],
+          "demo": "处理正常订单、Tracking异常、即将超SLA三种情景。",
+          "cases": [
+            "正例：按真实发货状态更新Tracking，发现异常提前处理。",
+            "反例：提前标记发货、无效单号、库存缺货导致卖家取消。"
+          ],
+          "variables": [
+            "Shipping Type",
+            "截止时间",
+            "Tracking状态",
+            "承运商",
+            "库存",
+            "订单异常"
+          ],
+          "interaction": "订单状态机沙盘；时间推进会触发SLA预警，学员选择动作影响各指标。",
+          "assessment": "能对3类订单情景给出正确动作并说明指标影响。",
+          "gaps": [
+            "每期开课核验目标站点Fulfillment Policy与指标阈值。"
+          ]
+        },
+        {
+          "code": "T01-C25",
+          "title": "取消、退款、退货与客户沟通",
+          "duration": "60分钟",
+          "objective": "让学员按订单状态、责任归属与平台政策处理售后，同时理解客户沟通、资金结果和店铺健康之间的关系。",
+          "tree": [
+            "取消",
+            "退款",
+            "退货",
+            "物流异常",
+            "商品问题",
+            "客户沟通",
+            "证据",
+            "财务/健康影响"
+          ],
+          "visible": [
+            "售后决策树：订单状态→问题类型→责任→后台动作→客户沟通→后续影响。"
+          ],
+          "deep": [
+            "点击案例展开平台当期处理期限和证据要求，不把数字写死在主内容。"
+          ],
+          "demo": "演示“未发货取消”“已送达商品问题”两类不同流程。",
+          "cases": [
+            "正例：后台动作与客户说明一致，保留必要证据。",
+            "反例：私下承诺与平台处理不同步，或引导站外解决。"
+          ],
+          "variables": [
+            "订单状态",
+            "责任方",
+            "退款金额",
+            "是否退货",
+            "证据",
+            "时限",
+            "客户沟通"
+          ],
+          "interaction": "分支情景：每一步选择会改变后续可用动作与店铺影响。",
+          "assessment": "学员处理至少3个售后情景并给出后台动作+沟通话术要点。",
+          "gaps": [
+            "每期开课核验Customer Order Cancellation, Return, and Refund Policy。"
+          ]
+        },
+        {
+          "code": "T01-C26",
+          "title": "Shop Health与TikTok Shop经营风险",
+          "duration": "60分钟",
+          "objective": "让学员区分AHR（账户健康评分）与SPS（店铺表现评分），理解违规、履约、商品满意度与客户服务问题如何从“症状”追到根因。",
+          "tree": [
+            "AHR：合规/违规与执法",
+            "SPS：商品满意度/履约/客服等店铺表现",
+            "VTR/LDR/OTDR/SFCR履约指标",
+            "Violation/Appeal（违规/申诉）",
+            "问题→根因→整改→复查"
+          ],
+          "visible": [
+            "AHR与SPS双轴图：AHR不是“服务评分”，SPS也不是违规扣分表。",
+            "当前美国站AHR 0–1000、SPS 0–5等具体数值标“站点/日期”。"
+          ],
+          "deep": [
+            "点击指标展开当期阈值和权益/执法；避免把某次活动门槛当永久标准。"
+          ],
+          "demo": "从一个“订单迟发+差评+违规内容”组合案例判断分别影响什么，再给整改顺序。",
+          "cases": [
+            "正例：先识别是合规问题、履约问题还是客户体验问题，再改流程。",
+            "反例：只看总分，不看具体违规与履约根因。"
+          ],
+          "variables": [
+            "AHR",
+            "SPS",
+            "违规类型",
+            "履约指标",
+            "客户反馈",
+            "申诉状态"
+          ],
+          "interaction": "健康度诊断面板：把问题拖到AHR/SPS/履约指标下，系统显示可能影响链。",
+          "assessment": "完成一次Shop Health根因定位，并给出整改动作和复查指标。",
+          "gaps": [
+            "美国站AHR/SPS及履约指标在2026年持续更新，每期开课核验。"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "阶段09｜第一次经营复盘与第二轮30天",
+      "courses": [
+        {
+          "code": "T01-C27",
+          "title": "TikTok完整经营数据漏斗",
+          "duration": "90分钟",
+          "objective": "让学员学会先选正确数据源，再把Shop/Product/Video/LIVE/Affiliate/Shop Ads/Orders连回同一经营问题，避免“到处看数字但不会决策”。",
+          "tree": [
+            "Shop/Shop Tab & Search",
+            "Product Analytics",
+            "Video/LIVE Analytics",
+            "Affiliate Performance",
+            "GMV Max/Shop Ads",
+            "Orders/Fulfillment",
+            "Account Health",
+            "统一问题：流量→点击→订单→履约→利润"
+          ],
+          "visible": [
+            "“问题驱动数据地图”：先问问题，再决定去哪个数据入口。",
+            "默认给5个经营问题，而不是列所有指标。"
+          ],
+          "deep": [
+            "点击数据源显示当前指标口径与归因差异；2026销售指标拆分已统一为Seller/Affiliate等新的来源逻辑。"
+          ],
+          "demo": "用一组标准数据，从“GMV下降”开始依次排查是曝光、点击、CTOR、库存、履约还是退款问题。",
+          "cases": [
+            "正例：视频CTR低就回内容；Product clicks高但CTOR低就查PDP/价格/信任。",
+            "反例：同时打开十个报表，只看环比涨跌，没有明确问题假设。"
+          ],
+          "variables": [
+            "时间窗",
+            "数据源",
+            "流量渠道",
+            "商品",
+            "内容",
+            "Creator",
+            "订单状态",
+            "退款"
+          ],
+          "interaction": "故障诊断图：点击某一指标异常，前端只展开下一层最相关的2–3个检查方向。",
+          "assessment": "对真实/模拟经营数据指出1–2个最大瓶颈并给出证据链。",
+          "gaps": [
+            "准备Shop Analytics、Product Traffic、Video Analytics、Affiliate Performance、GMV Max等当前截图。"
+          ]
+        },
+        {
+          "code": "T01-C28",
+          "title": "平台结算、利润与经营结果",
+          "duration": "90分钟",
+          "objective": "让学员从GMV回到Settlement（平台结算）和单位贡献，理解“卖了多少”和“赚了多少”不是同一个问题。",
+          "tree": [
+            "GMV",
+            "Seller discount/平台补贴区分",
+            "退款/退货",
+            "平台/支付相关费用",
+            "Affiliate佣金",
+            "广告Spend",
+            "物流/履约",
+            "商品成本",
+            "Settlement",
+            "单位贡献/贡献率",
+            "周期P&L"
+          ],
+          "visible": [
+            "一条“GMV→Settlement→经营P&L”瀑布图。",
+            "先做单SKU单位贡献，再做周期汇总。"
+          ],
+          "deep": [
+            "点击结算项展示Finance/Settlement对应证据来源；税务复杂处理进入专业课，不在T01给统一全球结论。"
+          ],
+          "demo": "用一笔订单和一周经营数据做两次还原：订单级单位贡献、周级P&L。",
+          "cases": [
+            "正例：把卖家承担折扣、佣金、广告和退款准确归入成本，能解释利润变化。",
+            "反例：用GMV减货值就当利润，忽略结算与成本责任。"
+          ],
+          "variables": [
+            "售价",
+            "折扣承担方",
+            "退款",
+            "佣金",
+            "广告",
+            "物流",
+            "商品成本",
+            "平台结算"
+          ],
+          "interaction": "瀑布图可调变量，学员改佣金/广告/退款后即时看到Settlement和单位贡献变化。",
+          "assessment": "完成T01-W11经营复盘所需P&L，并能解释GMV、Settlement、毛利/贡献的差异。",
+          "gaps": [
+            "准备Finance/Settlement脱敏样本；各站点税费/平台费动态核验，主课只教核对方法。"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Seller Center Navigation Update",
+      "date": "TikTok Shop Academy, 2026-09",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=8599840045483796&lang=en"
+    },
+    {
+      "name": "Product Listing Policy",
+      "date": "TikTok Shop Academy, 2026-09-01",
+      "url": "https://seller-us.tiktok.com/university/essay?from=policy&identity=1&knowledge_id=3196690250417921&role=1"
+    },
+    {
+      "name": "Content Policy",
+      "date": "TikTok Shop Academy, 2026-09",
+      "url": "https://seller-us.tiktok.com/university/essay?anchor_link=EB6900D1&from=policy&identity=1&knowledge_id=6837891779151617&role=2"
+    },
+    {
+      "name": "Video Analytics",
+      "date": "TikTok Shop Academy, 2026",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7464845487671082"
+    },
+    {
+      "name": "Affiliate Collaborations",
+      "date": "TikTok Shop Academy, 2026-07-16",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6837873164896001"
+    },
+    {
+      "name": "Sample Management",
+      "date": "TikTok Shop Academy, 2026-07-16",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=5694209038927617&role=1"
+    },
+    {
+      "name": "Affiliate Seller Analytics v3",
+      "date": "TikTok Shop Academy, 2026-07-13",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6115786490283790&lang=en"
+    },
+    {
+      "name": "GMV Max Guidelines",
+      "date": "TikTok for Business, updated 2026-06",
+      "url": "https://ads.tiktok.com/help/article/gmv-max-guidelines?lang=en"
+    },
+    {
+      "name": "GMV Max Attribution",
+      "date": "TikTok for Business, updated 2026-06",
+      "url": "https://ads.tiktok.com/resources/help/article/about-attribution-for-gmv-max?lang=en"
+    },
+    {
+      "name": "Valid Tracking Rate Requirements",
+      "date": "TikTok Shop Academy, 2026",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1274968588748558&role=1"
+    },
+    {
+      "name": "On-Time Delivery Rate Requirements",
+      "date": "TikTok Shop Academy, 2026-09-16",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7671875816589099&role=1"
+    },
+    {
+      "name": "Managing Shop Health & Violations",
+      "date": "TikTok Shop Academy, 2026",
+      "url": "https://seller-us.tiktok.com/university/course?content_id=6750828276418350&learning_id=6206800991225631"
+    },
+    {
+      "name": "Seller Enforcement Policy",
+      "date": "TikTok Shop Academy, 2026-07-31",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=2380042836166443&role=1"
+    },
+    {
+      "name": "Shop Tab & Search Analytics",
+      "date": "TikTok Shop Academy, 2026-05-22",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6276577063585582"
+    },
+    {
+      "name": "Sales Metrics Breakdown Logic Upgrade",
+      "date": "TikTok Shop Academy, 2026-04-28",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6494954580231950"
+    },
+    {
+      "title": "Requirements for Seller Identity Verification",
+      "date": "2026-06-30",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3309659860764430",
+      "use": "KYC与身份验证；具体站点要求每期开课核验"
+    },
+    {
+      "title": "How to Add Products to Your Shop",
+      "date": "2026-07-24",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6581713858676522",
+      "use": "商品Draft/Submit for review/Pending review/Live与Manage Products"
+    },
+    {
+      "title": "Manage Products - Redesigned!",
+      "date": "2025",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=2310197693695786",
+      "use": "Manage Products的Live/Reviewing/Needs attention等管理视图"
+    },
+    {
+      "title": "How to Use the Product Link Status Review Tool",
+      "date": "2025-11-21",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1939311827912494",
+      "use": "可购物视频商品链接的in review/need attention处理"
+    },
+    {
+      "title": "How to set up and manage samples",
+      "date": "2026-07-16",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=5694209038927617",
+      "use": "Affiliate样品申请、审批、发货、内容跟踪"
+    },
+    {
+      "title": "Guide to Samples: Free and Refundable",
+      "date": "2026-09-01",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=5764641632306946",
+      "use": "Free/Refundable Samples；时限与资格为动态规则"
+    },
+    {
+      "title": "GMV Max guidelines",
+      "date": "2026-06",
+      "scope": "Global help center",
+      "url": "https://ads.tiktok.com/resources/help/article/gmv-max-guidelines?lang=en",
+      "use": "Primary Ad Account、Product/LIVE GMV Max及与既有购物广告的关系"
+    },
+    {
+      "title": "Fulfillment Policy",
+      "date": "2026-09-17",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633",
+      "use": "订单履约、Tracking、SLA；具体天数只作为开课时动态配置"
+    },
+    {
+      "title": "Late Dispatch Rate Requirements",
+      "date": "2026-09-16",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511",
+      "use": "LDR及VTR/LDR/OTDR/SFCR四类履约指标"
+    },
+    {
+      "title": "Account Health Rating (AHR) Requirements",
+      "date": "2026-06-29",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350",
+      "use": "AHR训练案例；阈值按站点/日期动态核验"
+    },
+    {
+      "title": "Shop Performance Score New Version Trial-run Guide",
+      "date": "2026-09-22",
+      "scope": "US",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7105568016090887",
+      "use": "SPS版本切换；2026-09/10处于版本过渡期，不能写死长期口径"
+    }
+  ]
+}

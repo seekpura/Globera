@@ -1,0 +1,163 @@
+{
+  "version": "2.8",
+  "shell": [
+    {
+      "name": "AppShell",
+      "purpose": "全局布局、路由出口、模式切换"
+    },
+    {
+      "name": "CourseRail",
+      "purpose": "9阶段进度轨道；显示课程/工作坊/陪跑状态"
+    },
+    {
+      "name": "TopContextBar",
+      "purpose": "当前阶段、对象、真实/模拟标识、规则新鲜度"
+    },
+    {
+      "name": "ActionDock",
+      "purpose": "证据、笔记、术语、继续/返回操作"
+    }
+  ],
+  "learning": [
+    {
+      "name": "KnowledgeTree",
+      "purpose": "课程知识树，支持折叠和节点聚焦"
+    },
+    {
+      "name": "FlowGraph",
+      "purpose": "SVG经营链路/流量/状态流可视化"
+    },
+    {
+      "name": "DecisionPath",
+      "purpose": "市场、主体、店型、履约等条件选择与路径反馈"
+    },
+    {
+      "name": "CaseCompare",
+      "purpose": "正例/反例并排或翻转对比"
+    },
+    {
+      "name": "VariableLab",
+      "purpose": "调整可操作变量并观察结果变化"
+    },
+    {
+      "name": "DemoDeck",
+      "purpose": "后台截图/录屏/步骤演示；可标注热点"
+    },
+    {
+      "name": "MetricFunnel",
+      "purpose": "Impression→Click→Order→GMV等漏斗"
+    },
+    {
+      "name": "RuleCard",
+      "purpose": "动态平台规则：market/source/verified_at/effective_or_preview"
+    },
+    {
+      "name": "GlossaryChip",
+      "purpose": "英文术语旁显示中文释义，不要求学员猜缩写"
+    },
+    {
+      "name": "DeepDiveDrawer",
+      "purpose": "点击深入知识，默认不打断主线"
+    },
+    {
+      "name": "AssessmentGate",
+      "purpose": "60秒复述、选择、判断、证据型验收"
+    },
+    {
+      "name": "SellerCenterSimulator",
+      "purpose": "按经营任务定位Products/Orders/Affiliate/Shop Ads/Analytics/Health/Finance/Settings的高保真后台训练台"
+    },
+    {
+      "name": "ListingStudio",
+      "purpose": "C09-C12一体化商品发布工作台：类目/SKU、文案事实、素材真实性、价格库存配送和PDP预览"
+    },
+    {
+      "name": "VideoCommerceStudio",
+      "purpose": "C14/C16/C17逐秒内容成交时间轴、脚本镜头和发布商业链路训练台"
+    },
+    {
+      "name": "CreatorWorkbench",
+      "purpose": "C18-C20 Creator筛选、合作链路、多维画像、佣金与样品经济账工作台"
+    },
+    {
+      "name": "GmvAttributionLab",
+      "purpose": "Product/LIVE GMV Max总渠道归因可视化控制室"
+    },
+    {
+      "name": "LiveDirector",
+      "purpose": "商品Pin、成交循环、Cue和商业指标联动的LIVE导演台"
+    },
+    {
+      "name": "OrderConsole",
+      "purpose": "订单SLA、Tracking、履约状态与售后情景经营台"
+    },
+    {
+      "name": "ShopHealthConsole",
+      "purpose": "AHR/SPS/履约指标分层与根因队列驾驶舱"
+    },
+    {
+      "name": "FunnelDiagnoser",
+      "purpose": "曝光→点击→订单→GMV经营漏斗诊断台"
+    }
+  ],
+  "practice": [
+    {
+      "name": "WorkshopStepper",
+      "purpose": "W01-W11步骤推进、分支与回退"
+    },
+    {
+      "name": "EvidenceCollector",
+      "purpose": "收集截图/URL/文本/日期/真实模拟标记"
+    },
+    {
+      "name": "StatusGate",
+      "purpose": "通过/需补/阻断/等待等稳定教学状态"
+    },
+    {
+      "name": "SimulationBadge",
+      "purpose": "任何模拟数据或模拟后台显式标记"
+    },
+    {
+      "name": "ToolWorkspace",
+      "purpose": "K01-K15可填写工具在前端直接编辑"
+    },
+    {
+      "name": "ResultChecklist",
+      "purpose": "R01-R10里程碑验收与返工"
+    }
+  ],
+  "coaching": [
+    {
+      "name": "CoachingTimeline",
+      "purpose": "P01-P05等待型事项的状态时间线"
+    },
+    {
+      "name": "TransitionPanel",
+      "purpose": "显示当前状态、允许事件、下一动作、证据要求"
+    },
+    {
+      "name": "StaleRuleAlert",
+      "purpose": "动态规则超过新鲜度或处于preview时提醒核验"
+    }
+  ],
+  "instructor": [
+    {
+      "name": "InstructorDashboard",
+      "purpose": "班级/学员进度、阻断点、待验收、待核规则"
+    },
+    {
+      "name": "RuleVerificationDesk",
+      "purpose": "开课前动态规则核验；不写死平台参数"
+    },
+    {
+      "name": "EvidenceReviewPanel",
+      "purpose": "审核学员证据，给通过/返工和评语"
+    }
+  ],
+  "constraints": {
+    "english_terms": "所有面向学员的英文术语首次出现必须有中文对应；缩写使用“英文缩写｜中文”格式。",
+    "dynamic_rules": "站点、阈值、菜单和时限属于动态规则时只能从配置读取，不允许写死到组件。",
+    "visual_density": "默认层只展示主线；扩展知识进入Drawer/Popover，不在首页堆满。",
+    "backend": "默认纯静态React交付；进度、证据草稿与设置本地持久化；预留Repository接口供未来SaaS后端接入。"
+  }
+}

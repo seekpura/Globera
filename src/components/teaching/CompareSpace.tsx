@@ -1,2 +1,0 @@
-export interface CompareItem{name:string;values:Record<string,string>}
-export function CompareSpace({items,dimensions}:{items:CompareItem[];dimensions:string[]}){return <div className="compare-space"><div className="compare-space-head"><span>判断维度</span>{items.map(x=><strong key={x.name}>{x.name}</strong>)}</div>{dimensions.map(d=><div className="compare-space-row" key={d}><span>{d}</span>{items.map(x=><p key={x.name}>{x.values[d]??'待核验'}</p>)}</div>)}</div>}

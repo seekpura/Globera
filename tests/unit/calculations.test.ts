@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {safeRatio,gpm,contribution} from '../../src/domain/calculations';describe('metrics',()=>{it('zero denominator safe',()=>expect(safeRatio(2,0)).toBe(0));it('gpm',()=>expect(gpm(100,1000)).toBe(100));it('contribution',()=>expect(contribution(100,[20,10])).toBe(70))});

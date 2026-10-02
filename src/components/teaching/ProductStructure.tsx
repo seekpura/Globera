@@ -1,3 +1,0 @@
-import { useState } from 'react'
-const levels=['Product｜商品','Variant｜变体','SKU｜库存单元','Inventory｜库存','Package｜包装']
-export function ProductStructure(){const [active,setActive]=useState(0);return <div className="product-structure">{levels.map((x,i)=><button key={x} className={i===active?'selected':''} onClick={()=>setActive(i)}><span>{i+1}</span><strong>{x}</strong></button>)}<div><h3>{levels[active]}</h3><p>{active===2?'SKU 必须与可实际履约的物理库存单元保持一一对应。':'点击不同层级，检查商品信息如何映射到真实库存与包装。'}</p></div></div>}

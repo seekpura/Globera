@@ -1,2 +1,0 @@
-export interface MoneyNode{label:string;value:number;kind?:'income'|'cost'|'reserve'}
-export function MoneyFlow({nodes}:{nodes:MoneyNode[]}){let running=0;return <section className="mother-component"><header><span>Money Flow｜资金流</span><strong>交易额 ≠ 利润 ≠ 到账</strong></header><div className="money-flow">{nodes.map((n,i)=>{running+=n.kind==='income'?n.value:-n.value;return <article key={n.label}><span>{String(i+1).padStart(2,'0')}</span><strong>{n.label}</strong><b>{n.kind==='income'?'+':'−'}{n.value}</b><small>运行余额 {running}</small></article>})}</div></section>}

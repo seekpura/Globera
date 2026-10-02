@@ -1,0 +1,1 @@
+import {useParams} from 'react-router-dom';export default function DeepKnowledgePanel(){const{topicId}=useParams();return <div className="hero"><div className="eyebrow">DEEP KNOWLEDGE｜点击深入</div><h1>{topicId}</h1><p>扩展知识不会打断 TikTok 主经营路线。后续可由专题JSON独立装载。</p></div>}
