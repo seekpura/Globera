@@ -48,4 +48,4 @@ jobs:
           git commit -m "feat: expand T01 TikTok React 2.8 source" || exit 0
           git push origin HEAD:t01-react-2.8-bootstrap
 
-# synchronize PR after trusted base trigger
+# retry source expansion after workflow-file exclusion
