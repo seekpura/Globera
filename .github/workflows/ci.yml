@@ -1,0 +1,26 @@
+name: T01 React 2.8 CI
+
+on:
+  push:
+    branches: [main, t01-react-2.8-bootstrap]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm test:static
+      - run: pnpm test:ui-contracts
+      - run: pnpm test:dataflow
+      - run: pnpm test
+      - run: pnpm build
