@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import type {WorkshopMachine,WorkspaceEvidence} from '../../domain/types';
 import {useAppState} from '../../state/AppState';
 import {workshopBlueprints} from './workshopBlueprints';
-import {getUpstreamSeed} from '../../domain/dataFlow';
+import {buildReviewSignals,getUpstreamSeed} from '../../domain/dataFlow';
 
 const now=()=>new Date().toISOString();
 export default function WorkshopWorkbench({machine,current}:{machine:WorkshopMachine;current:string}){
@@ -11,13 +11,7 @@ export default function WorkshopWorkbench({machine,current}:{machine:WorkshopMac
  const[eType,setEType]=useState<WorkspaceEvidence['type']>('截图');const[eTitle,setETitle]=useState('');const[eSource,setESource]=useState('');const[eNotes,setENotes]=useState('');
  const seed=getUpstreamSeed(machine.code,state);const seedKey=JSON.stringify(seed);
  useEffect(()=>{for(const [key,value] of Object.entries(seed)){if(value&&!ws.values[key])dispatch({type:'WORKSHOP_VALUE',id:machine.code,payload:{key,value}})}},[machine.code,seedKey]);
- const reviewSignals=machine.code==='T01-W11'?[
-  ['SKU',`${state.workshopWorkspace['T01-W03']?.values.sku||'—'} · 单位贡献 ${state.workshopWorkspace['T01-W03']?.values.unitContribution||'—'}`],
-  ['内容',`CTR ${state.workshopWorkspace['T01-W06']?.values.ctr||'—'} · CTOR ${state.workshopWorkspace['T01-W06']?.values.ctor||'—'} · ${state.workshopWorkspace['T01-W06']?.values.next||''}`],
-  ['达人',`候选 ${state.workshopWorkspace['T01-W07']?.values.pool||'—'} · A档 ${state.workshopWorkspace['T01-W07']?.values.priority||'—'} · ${state.workshopWorkspace['T01-W07']?.values.outreach||''}`],
-  ['广告',`${state.workshopWorkspace['T01-W08']?.values.type||'—'} · ${state.workshopWorkspace['T01-W08']?.values.decision||'—'}`],
-  ['履约',`${state.workshopWorkspace['T01-W10']?.values.case||'—'} · ${state.workshopWorkspace['T01-W10']?.values.health||''}`]
- ]:[];
+ const reviewSignals=machine.code==='T01-W11'?buildReviewSignals(state):[];
  const required=bp?.fields.filter(f=>f.required)||[];const fieldReady=required.every(f=>String(ws.values[f.key]||'').trim().length>0);const checkReady=bp?bp.checks.every((_,i)=>ws.checks[String(i)]):true;const evidenceReady=bp?ws.evidence.length>=bp.minEvidence:true;
  const gate=useMemo(()=>({fieldReady,checkReady,evidenceReady,ready:fieldReady&&checkReady&&evidenceReady}),[fieldReady,checkReady,evidenceReady]);
  if(!bp)return null;
