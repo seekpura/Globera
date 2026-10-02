@@ -8,5 +8,7 @@
   "local_dependency_install": "BLOCKED_BY_ENV_DNS_EAI_AGAIN",
   "local_production_build": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
   "local_playwright_e2e": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
-  "github_ci": "CONFIGURED_FOR_NODE22_PNPM10"
+  "github_ci": "WORKFLOW_COMMITTED_AWAITING_GITHUB_RUN",
+  "dataflow_contracts": "PASS_11_EDGES_15_TOOLS",
+  "local_dataflow_validator": "PASS"
 }
