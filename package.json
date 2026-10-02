@@ -15,7 +15,8 @@
     "test": "vitest run",
     "test:static": "node scripts/validate-data.mjs",
     "test:e2e": "playwright test",
-    "test:ui-contracts": "node scripts/validate-ui.mjs"
+    "test:ui-contracts": "node scripts/validate-ui.mjs",
+    "test:dataflow": "node scripts/validate-dataflow.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.6.3",
