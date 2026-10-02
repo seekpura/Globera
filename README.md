@@ -18,6 +18,9 @@ T01 是以 TikTok / TikTok Shop 为唯一主经营场景的 0–1 实战教学�
 
 ## 2.8 数据流
 
+- K01–K15 全覆盖：每个核心工具都有明确的工作坊/陪跑数据来源。
+- 数据血缘同时固化在 `src/data/t01/dataflow.json`，可由 CI 独立审计。
+
 课程系统不再是互相独立的页面。关键经营结果会沿业务链自动流动：
 
 - W03 首测 SKU → W04 Listing / W05 内容 / W08 GMV Max / W09 LIVE
@@ -42,6 +45,7 @@ corepack enable
 pnpm install
 pnpm test:static
 pnpm test:ui-contracts
+pnpm test:dataflow
 pnpm test
 pnpm build
 pnpm dev
